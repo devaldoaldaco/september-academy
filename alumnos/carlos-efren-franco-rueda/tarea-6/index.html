@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulario financiero</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="wrap">
+    <h1>Registro</h1>
+
+    
+    <div class="progress">
+      <meter id="progressMeter" min="0" max="3" value="0"></meter>
+      <span id="progressText">0%</span>
+    </div>
+  </header>
+
+  
+  <form id="formulario" class="wrap">
+
+    
+    <fieldset id="step1" class="step" data-step="1">
+      <legend>Datos personales</legend>
+
+      <label>
+        Nombre(s)
+        <input type="text" name="nombres" required>
+      </label>
+
+      <label>
+        Apellidos
+        <input type="text" name="apellidos" required>
+      </label>
+
+      <label>
+        Correo
+        <input type="email" name="correo" required>
+      </label>
+
+      <div class="actions">
+        <button type="button" class="btn" onclick="nextModal(1)">Siguiente</button>
+      </div>
+    </fieldset>
+
+    
+    <fieldset id="step2" class="step" data-step="2" hidden>
+      <legend>Datos financieros</legend>
+
+      <label>
+        Ingreso mensual (MXN)
+        <input type="number" name="ingreso" min="0" step="0.01" required>
+      </label>
+
+      <label>
+        Banco:
+        <input type="text" name="banco" required>
+      </label>
+
+      <label>
+        ¿Tienes tarjeta de crédito?
+        <select name="tiene_tc" required>
+          <option value="" selected disabled>Selecciona…</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+      </label>
+
+      <div class="actions">
+        <button type="button" class="btn secondary" onclick="openModal(1)">Anterior</button>
+        <button type="button" class="btn" onclick="nextModal(2)">Siguiente</button>
+      </div>
+    </fieldset>
+
+    
+    <fieldset id="step3" class="step" data-step="3" hidden>
+      <legend>Datos generales</legend>
+
+      <label>
+        Estado de procedencia
+        <input type="text" name="estado" required>
+      </label>
+
+      <label>
+        Color favorito
+        <input type="color" name="color" value="#2e7d32" required>
+      </label>
+
+      <label>
+        Comentarios
+        <textarea name="comentarios" rows="3" required></textarea>
+      </label>
+
+      <div class="actions">
+        <button type="button" class="btn secondary" onclick="openModal(2)">Anterior</button>
+        <button type="submit" class="btn">Finalizar</button>
+      </div>
+    </fieldset>
+
+  </form>
+
+  <footer class="wrap muted">
+    <small>Formulario dirigido solo para datos financieros</small>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
