@@ -1,0 +1,244 @@
+body {
+  background-color: rgba(6, 71, 6, 0.756);
+  font-family: sans-serif;
+}
+
+.formulario {
+  width: 400px;
+  background-color: rgba(128, 128, 128, 0.213);
+  padding: 30px;
+  border-radius: 20px;
+  background-color: white;
+  margin-top: 200px;
+  margin-left: 400px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.nombre {
+  text-align: left;
+}
+
+.nombre input {
+  margin-bottom: 20px;
+  width: 100%;
+  border: 3px solid gray;
+  font-size: 14px;
+}
+
+.email {
+  text-align: left;
+}
+
+.email input {
+  margin-bottom: 20px;
+  width: 100%;
+  border: 3px solid gray;
+  font-size: 14px;
+}
+
+.password {
+  text-align: left;
+}
+
+.password input {
+  margin-bottom: 20px;
+  width: 100%;
+  border: 3px solid gray;
+  font-size: 14px;
+}
+
+.paralelo {
+  display: flex;
+}
+
+.edad input {
+  border: 3px solid gray;
+  font-size: 14px;
+}
+
+.telefono input {
+  border: 3px solid gray;
+  font-size: 14px;
+}
+
+.terminos {
+  margin-top: 20px;
+}
+
+.politica {
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+.reset {
+  margin-top: 20px;
+  font-size: 14px;
+  margin-left: 50px;
+}
+
+.reset input {
+  border: 3px dashed black;
+  background-color: rgba(6, 71, 6, 0.756);
+  color: white;
+  padding: 5px;
+  border-radius: 100px;
+  font-size: 14px;
+}
+
+.reset input:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.boton_siguiente {
+  border: 3px dashed black;
+  border-radius: 100px;
+  background-color: rgba(6, 71, 6, 0.756);
+  color: white;
+  margin-top: 20px;
+  font-size: 14px;
+  margin-left: 120px;
+}
+
+.boton_siguiente:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.progreso {
+  display: block;
+  border: none;
+  height: 15px;
+  width: 100%;
+}
+
+h2 {
+  text-align: center;
+}
+
+.fecha {
+  margin-left: 60px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.fecha input {
+  border: 3px solid gray;
+  margin-bottom: 20px;
+}
+
+.hora {
+  margin-left: 150px;
+}
+
+.hora input {
+  border: 3px solid gray;
+}
+
+.ingreso {
+  float: left;
+}
+
+.ingreso input {
+  border: 3px solid gray;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.url {
+  margin-left: 80px;
+}
+
+.url input {
+  border: 3px solid gray;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+dialog {
+  width: 40%;
+  height: 50%;
+}
+
+.experiencia {
+  margin-top: 10px;
+}
+
+.reset_2 {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.reset_2 input {
+  border: 3px dashed black;
+  background-color: rgba(6, 71, 6, 0.756);
+  color: white;
+  padding: 5px;
+  border-radius: 100px;
+  font-size: 14px;
+}
+
+.reset_2 input:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.boton_siguiente_2 {
+  border: 3px dashed black;
+  border-radius: 100px;
+  background-color: rgba(6, 71, 6, 0.756);
+  color: white;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.boton_siguiente_2:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.archivo {
+  margin-bottom: 20px;
+}
+
+.archivo input {
+  border: 3px solid gray;
+  font-size: 18px;
+  width: 100%;
+}
+
+.mes {
+  margin-bottom: 20px;
+}
+
+.mes input {
+  border: 3px solid gray;
+  font-size: 14px;
+  width: 50%;
+}
+
+.semana {
+  margin-bottom: 20px;
+}
+
+.semana input {
+  border: 3px solid gray;
+  width: 50%;
+  font-size: 14px;
+}
+
+.color {
+  margin-bottom: 20px;
+}
+
+.buscar input {
+  border: 3px solid gray;
+  border-radius: 100px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.img input {
+  border: 3px solid gray;
+}

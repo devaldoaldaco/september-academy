@@ -1,0 +1,118 @@
+html {
+    background-color: rgb(60, 60, 60);
+}
+
+.cabecero {
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0px;
+    padding: 20px;
+    font-family: Google Sans, Helvetica Neue, sans-serif;
+    font-size: 14px;
+}
+
+.lista {
+    float: right;
+}
+
+.lista a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.lista a:hover {
+    text-decoration: underline;
+}
+
+.lista ion-icon {
+    padding: 10px;
+}
+
+
+.google {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+}
+
+
+.buscar {
+    display: flex;
+    justify-content: center; 
+}
+
+.buscar button {
+    border-radius: 48px;
+    padding: 13px;
+    background-color: white;
+}
+
+.buscador {
+    overflow: hidden;
+    border: none;
+    border-radius: 48px;
+    width: 700px;
+    font-size: 18px;
+}
+
+.pie {
+    overflow: hidden;
+    margin: 0px;
+    padding: 20px;
+}
+
+.lapiz {
+    border: none;
+    border-radius: 48px;
+    padding: 13px;
+    float: right;
+    background-color: #004a77ff;
+    color: #c2e7ffff;
+    margin-top: 250px;
+}
+
+.acceso {
+    height: 70px;
+    padding-top: 18px;
+}
+
+.acceso input {
+    background: #3c4043;
+    background-color: #303134;
+    border: 1px solid #303134;
+    color: #e8eaed;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 8px;
+    font-optical-sizing: none;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.acceso input:hover {
+    box-shadow: 0 1px 3px rgba(23, 23, 23, 0.24);
+    background-color: #303134;
+    border: 1px solid #5f6368;
+    color: #e8eaed;
+    background: #3c4043;
+}
+
+.acceso input:focus {
+    border: 1px solid #5f6368;
+    outline: none
+}
+
+.input_contenedor{
+    display: flex;
+    justify-content: center;
+}

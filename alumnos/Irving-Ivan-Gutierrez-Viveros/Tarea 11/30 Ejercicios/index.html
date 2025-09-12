@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>30 Ejercicios JS</title>
+</head>
+<body>
+  <h1>30 Ejercicios JS</h1>
+
+  <script>
+    console.log("EJERCICIOS NÚMERICOS");
+
+//1. Declara dos variables numéricas y calcula la suma.//
+ let number_a = 2, numer_b = 2;
+let add = number_a + numer_b;
+
+console.log("Resultado de suma =", add);
+
+//2. Declara dos variables numéricas y calcula la resta.//
+ let number_c = 4, numer_d = 2;
+let subtract = number_c - numer_d;
+
+console.log("Resultado de resta =", subtract);
+
+//3. Declara dos variables numéricas y calcula la multiplicación.//
+ let number_e = 4, numer_f = 2;
+let multiplication = number_e * numer_f;
+
+console.log("Resultado de multiplicacion =", multiplication);
+
+//4. Declara dos variables numéricas y calcula la división.//
+ let number_g = 4, numer_h = 2;
+let division= number_g / numer_h;
+
+console.log("Resultado de division =", division);
+
+//5. Declara dos variables numéricas y calcula el resto (módulo) de la división//
+ let number_i = 6, numer_j = 2;
+let module= number_i % numer_j;
+
+console.log("Resultado de residuo de division =", module);
+
+//6. Declara una variable y calcula su cuadrado.//
+
+let lado_a = 2
+let cuadrado = lado_a * lado_a
+console.log("Resultado de cuadrado =", cuadrado, "cm");
+
+//7. Calcula el área de un rectángulo con base y altura guardadas en variables.//
+
+let base = 4, altura = 8;
+let rectangulo = base * altura;
+console.log("Resultado de area de rectangulo =", rectangulo, "cm");
+
+//8. Calcula el área de un círculo usando el radio guardado en una variable.//
+
+let π = 3.141615, radio = 5; //Teniendo en cuenta que el valor ya es la mitad del ciruculo//
+let circulo = radio * radio * π;
+console.log("Resultado de area de circulo =", circulo, "cm2");
+
+//9. Calcula el perímetro de un cuadrado usando una variable para el lado.//
+let perimetroCuadrado = 5;
+let perimetro = perimetroCuadrado * 4;
+console.log("Resultado de perimetro de cuadrado =", perimetro, "cm");
+
+//10. Convierte una temperatura en Celsius a Fahrenheit usando variables.//
+let celcius = 5;
+let fahrenheit = (celcius * (9/5)) + 32;
+console.log("Resultado de conversion de ºC a ºF =", fahrenheit, "ºF");
+
+//11. Convierte una distancia en kilómetros a millas usando variables.//
+let kilometro = 10;
+let millas = kilometro / 1.609;
+console.log("Resultado de kilometro a millas =", millas, "mi");
+
+//12. Calcula el promedio de tres números guardados en variables.//
+let numero_1 = 8, numero_2 = 10, numero_3 = 8;
+let promedio = (numero_1 + numero_2 + numero_3) / 3;
+console.log("Resultado de calcular promedio =" ,promedio);
+
+//13. Declara una variable y calcula su doble. //
+let sinDoble = 5;
+let doble = sinDoble + sinDoble;
+console.log("Respuesta doble de un numero =", doble);
+
+//14. Declara una variable y calcula su triple.//
+let numeroBase = 2;
+let triple = numeroBase * 3;
+console.log("Respuesta triple de un numero =", triple);
+
+//15. Declara una variable y calcula su cuadrado y cubo.//
+ let ladoCuadrado = 5;
+ let cuadrado2 = ladoCuadrado * ladoCuadrado;
+ let cubo = ladoCuadrado * ladoCuadrado * ladoCuadrado;
+ console.log("Respuesta de calcular cuadrado =", cuadrado2, "cm");
+ console.log("Respuesta de calcular cubo", cubo, "cm")
+
+
+console.log("EJERCICIOS STRING");
+// 1. Declara una variable con tu nombre y muestra un mensaje que diga: Hola, [nombre].//
+let nombre = 'Irving Ivan Gutierrez Viveros';
+let saludo = `Hola ${nombre}`;
+console.log(saludo);
+
+//2. Declara dos variables con tu nombre y apellido, y únelas en una sola cadena//
+let firstName = 'Ivan';
+let lastName = 'Gutierrez';
+let fullName = `${firstName} ${lastName}`;
+console.log(fullName);
+
+// 3. Declara una cadena y muestra cuántos caracteres tiene.//
+let caracteres = 'Conteo de caracteres';
+console.log("Total de caracteres =", caracteres.length);
+
+// 4. Declara una cadena y conviértela a mayúsculas.//
+let minisculas = 'letras en minisculas';
+let mayusculas = minisculas.toLocaleUpperCase();
+console.log(mayusculas);
+
+//5. Declara una cadena y conviértela a minúsculas.//
+let mayusc = 'TEXTO EN MINUSCULAS';
+let minusc = mayusc.toLocaleLowerCase();
+console.log(minusc);
+
+//6. Declara una cadena y muestra la primera letra.//
+// Se puede hacer con notacion de corchetes [0], o con el metodo ("n".charAt(0))//
+let Letra = 'Letra';
+let primeraLetra = Letra[0];
+console.log("Esta es la primera letra de la variable =", primeraLetra);
+
+//7. Declara una cadena y muestra la última letra.
+// Tambien se puede realizar con el metodo "n".charAt("n".length -1)//
+let letras = 'Letras';
+let ultimaLetra = letras[letras.length - 1];
+console.log("Esta es la ultima letra de la variable =", ultimaLetra);
+
+// 8. Declara una cadena y extrae una parte usando substring o slice.//
+let extraer = 'Interior de caja a extraer';
+let extraido = extraer.substring(12,26);
+console.log("Este es el texto extraido de una string =", extraido);
+
+let extraer2 = 'Interior de caja a extraer con slice';
+let extraido2 = extraer2.slice(-36);
+console.log("Este es el texto extraido con slice =", extraido2);
+
+//9. Declara una cadena y reemplaza una palabra por otra.//
+let reemplazar = 'Este es un texto que se va a reemplazar';
+let reemplazado = reemplazar.replace("se va a reemplazar", "fue reemplazado");
+console.log(reemplazado);
+
+//10. Declara una cadena y verifica si contiene cierta palabra.//
+let verificar = 'Texto a verificar';
+let verificado = verificar.includes('verificar');
+console.log("El texto contiene la palabra? =", verificado);
+
+//11. Declara una cadena y separa las palabras en un arreglo usando split.//
+let separar = 'Texto a separar';
+let separado = separar.split("");
+console.log("Este es el texto separado", separado);
+
+// 12. Declara una cadena y elimina los espacios al inicio y al final.//
+let conEspacios = '    Texto a eliminar los espacios    ';
+let sinEspacios = conEspacios.trim();
+console.log("SIN USAR .trim =",conEspacios, "USANDO .trim =",sinEspacios);
+
+//13. Declara una cadena y repite el texto varias veces.//
+let repetir = 'Repetido ';
+let repetido = repetir.repeat(50);
+console.log(repetido);
+
+//14. Declara una cadena y convierte la primera letra en mayúscula.//
+let sinMayuscula = 'electroencefalografista';
+let conMayuscula = sinMayuscula[0].toLocaleUpperCase() + sinMayuscula.slice(1);
+console.log("Este es el texto normal =", sinMayuscula ,"| Este es el texto cambiado =", conMayuscula);
+
+// 15. Declara una cadena con una frase y cuenta cuántas veces aparece una letra.//
+let letra = 'around the world around the world around the world around the world around the world around the world around the world around the world';
+let palabra = "around";
+
+let contador = letra.split(" ").filter(letra => letra === palabra);
+console.log("La palabra se repite =", contador.length, "Veces");
+  </script>
+</body>
+</html>

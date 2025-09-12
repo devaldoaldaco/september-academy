@@ -1,0 +1,52 @@
+html{
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  height: 100%;
+  width: 100%;
+  margin: 0rem;
+}
+
+section{
+display: flex;
+height: 100%;
+}
+
+section h2{
+  padding: 0rem 3rem;
+  font-size: 3rem;
+}
+
+section p{
+  padding: 0rem 3rem;
+}
+
+section button{
+  color: rgb(5, 65, 5);
+  background-color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 0.7rem 2rem;
+  margin-left: 3rem;
+  margin-top: 3rem;
+}
+
+.container_1{
+  background-color: orange;
+  color: white;
+  height: 100%;
+}
+
+.container_2{
+  background-color: rgba(6, 81, 42, 0.733);
+  color: white;
+  height: 100%;
+}
+
+.container_3{
+  background-color: rgb(5, 65, 5);
+  color: white;
+  height: 100%;
+}

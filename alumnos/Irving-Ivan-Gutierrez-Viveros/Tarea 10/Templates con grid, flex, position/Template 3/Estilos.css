@@ -1,0 +1,52 @@
+html{
+  max-width: 100%;
+  height: 100%;
+}
+body{
+  max-width: 100%;
+  height: 100%;
+
+}
+
+.template{
+  max-width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas:
+    "cabecero cabecero"
+    "navegacion  principal"
+    "lateral  principal"
+    "pie pie";
+  grid-template-rows: 22% 40% 16% 22%;
+  grid-template-columns: 20% 80%;
+}
+
+.template header{
+  grid-area: cabecero;
+  background-color: #8ca0ff;
+  margin: 0.2rem;
+}
+
+.template aside{
+  grid-area: lateral;
+  background-color: purple;
+  margin: 0.2rem;
+}
+
+.template nav{
+  grid-area: navegacion;
+  background-color: #ffa08c;
+  margin: 0.2rem;
+}
+
+.template main{
+  grid-area: principal;
+  background-color: #ffff64;
+  margin: 0.2rem;
+}
+
+.template footer{
+  grid-area: pie;
+  background-color: #8cffa0;
+  margin: 0.2rem;
+}

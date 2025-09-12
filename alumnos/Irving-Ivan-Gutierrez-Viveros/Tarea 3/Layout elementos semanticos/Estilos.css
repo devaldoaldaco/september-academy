@@ -1,0 +1,58 @@
+.cabecero{
+    background-color: aqua;
+    text-align: center;
+    border: 3px solid;
+    height: 100px;
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+
+
+.nav{
+    background-color: burlywood;
+    height: 430px;
+    width: 150px;
+    float: left;
+    border: 3px solid;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 50px;
+    padding-right: 30px;
+}
+
+.main{
+    background-color: gray;
+    border: 3px solid;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 50px;
+}
+
+.article_1{
+    background-color: greenyellow;
+    border: 3px solid;
+    margin-top: 10px;
+    padding: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.article_2{
+    background-color: yellow;
+    border: 3px solid;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px;
+}
+
+.pie_de_pagina{
+    background-color: brown;
+    text-align: center;
+    border: 3px solid;
+    height: 100px;
+    font-size: 70px;
+    margin-top: 10px;
+}

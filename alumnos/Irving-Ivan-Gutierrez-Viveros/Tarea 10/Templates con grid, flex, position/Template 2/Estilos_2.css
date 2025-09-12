@@ -1,0 +1,44 @@
+section{
+  display: flex;
+}
+
+section p{
+  font-size: 0.7rem;
+}
+
+.img_responsive{
+  max-width: 100%;
+}
+
+.avatar{
+  max-width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.avatar_img{
+  max-width: 10%;
+  height: 10%;
+  margin-left: 1rem;
+}
+
+.avatar div{
+  height: 100%;
+}
+
+.user{
+  padding-top: 0.5rem;
+  padding-right: 25rem;
+}
+
+.button_share{
+  margin-top: 1rem;
+}
+
+.data{
+  margin-left: 1rem;
+  margin-top: 3rem;
+  margin-right: 4rem;
+  max-width: 100%;
+  height: auto;
+}

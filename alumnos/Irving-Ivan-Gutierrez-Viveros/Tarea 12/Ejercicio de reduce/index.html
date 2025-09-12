@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio con reduce</title>
+</head>
+<body>
+  <h1>Ejercicios con reduce</h1>
+</body>
+
+<script>
+
+let frase = 'around the world around the world around the world around the world around the world around the world around the world around the world';
+let separadorPalabras = frase.split(" ");
+
+console.log(separadorPalabras);
+
+let contador = separadorPalabras.reduce((acumulado, palabra) =>{
+    acumulado[palabra] = (acumulado[palabra] || 0) +1;
+    return acumulado;
+}, {});
+ 
+console.log(contador);
+
+</script>
+</html>

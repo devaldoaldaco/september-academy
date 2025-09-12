@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combinadores CSS</title>
+</head>
+<style>
+.titulo2{
+font-size: 1.5rem;
+font-weight: bold;
+}
+
+.ejemplo{
+  font-weight: bold;
+}
+
+body li{
+  list-style-type: decimal;
+}
+
+</style>
+
+<body>
+
+  <h1>
+    Selectores en CSS
+  </h1>
+  <ul>
+    
+<p class="titulo2">Selectores básicos</p>
+<li><p>* = Selecciona todos los elementos</p></li>
+  <p class="ejemplo"> Ejemplo: *{ margin: 0; } </p>
+
+<li><p>elemento = Selecciona todos los elementos de ese tipo</p></li>
+  <p class="ejemplo"> Ejemplo: p { color: red; } </p>
+
+  <li><p>.clase = Selecciona elementos con esa clase</p></li>
+  <p class="ejemplo"> Ejemplo: .boton { ... } </p>
+
+  <li><p>#id = Selecciona un elemento por su id</p></li>
+  <p class="ejemplo"> Ejemplo: #menu { ... }</p>
+</ul>
+
+<ul>
+<p class="titulo2">Selectores combinadores</p>
+<li><p>A B = Selecciona B dentro de A (descendiente)</p></li>
+  <p class="ejemplo"> Ejemplo: div p {} </p>
+
+<li><p>A > B = Selecciona B hijo directo de A</p></li>
+  <p class="ejemplo"> Ejemplo: ul > li {} </p>
+
+<li><p>A + B = Selecciona B que está justo después de A (hermano siguiente)</p></li>
+  <p class="ejemplo"> Ejemplo: h1 + p {} </p>
+
+<li><p>A ~ B = Selecciona todos los B hermanos posteriores de A(hermano siguiente)</p></li>
+  <p class="ejemplo"> Ejemplo: h1 ~ p {} </p>
+</ul>
+
+<ul>
+<p class="titulo2">Selectores de Pseudoclases</p>
+<li><p>:hover = Actua cuando el mouse pasa por encima</p></li>
+  <p class="ejemplo"> Ejemplo: a:hover {} </p>
+
+<li><p>:first-child = Actua sobre el primer hijo</p></li>
+  <p class="ejemplo"> Ejemplo: li:first-child {} </p>
+
+<li><p>:last-child = Actua sobre el ultimo hijo</p></li>
+  <p class="ejemplo"> Ejemplo: li:last-child {} </p>
+
+<li><p>:nth-child(n) = Elemento en la posición n</p></li>
+  <p class="ejemplo"> Ejemplo: tr:nth-child(odd) {}</p>
+
+<li><p>:checked = Genera un elemento marcado (checkbox, radio)</p></li>
+  <p class="ejemplo"> Ejemplo: input:checked {}</p>
+
+</ul>
+
+<ul>
+<p class="titulo2">Selectores de Pseudoelementos</p>
+<li><p>::before = Inserta contenido antes</p></li>
+  <p class="ejemplo"> Ejemplo: p::before { content: "*"; }</p>
+
+<li><p>::after = Inserta contenido despues</p></li>
+  <p class="ejemplo"> Ejemplo: p::after { content: "."; }</p>
+
+<li><p>::first-letter = Selecciona la primera letra</p></li>
+  <p class="ejemplo"> Ejemplo: p::first-letter {}</p>
+
+<li><p>::first-line = Selecciona la primera línea</p></li>
+  <p class="ejemplo"> Ejemplo: p::first-line {}</p>
+
+</ul>
+
+<ul>
+<p class="titulo2">Selectores de atributo</p>
+<li><p>[attr] = Selecciona todos los elementos que tienen ese atributo (sin importar su valor)</p></li>
+  <p class="ejemplo"> Ejemplo: input[placeholder] {border: 2px solid blue;}</p>
+
+<li><p>[attr="valor"] = Selecciona elementos cuyo atributo tenga ese valor exacto</p></li>
+  <p class="ejemplo"> Ejemplo: input[type="password"] {border: 2px solid red;}</p>
+
+<li><p>[attr^="valor"] = Selecciona elementos donde el valor del atributo empieza por cierto texto</p></li>
+  <p class="ejemplo"> Ejemplo: a[href^="https"] {color: green;}</p>
+
+<li><p>[attr$="valor"] = Selecciona elementos donde el valor del atributo termina en cierto texto</p></li>
+  <p class="ejemplo"> Ejemplo: img[src$=".jpg"] {border: 3px solid orange;}</p>
+
+<li><p>[attr*="valor"] = Selecciona elementos donde el valor del atributo contiene cierto texto (en cualquier parte)</p></li>
+  <p class="ejemplo"> Ejemplo: a[href*="contacto"] {font-weight: bold;}</p>
+
+</ul>
+
+
+</body>
+</html>

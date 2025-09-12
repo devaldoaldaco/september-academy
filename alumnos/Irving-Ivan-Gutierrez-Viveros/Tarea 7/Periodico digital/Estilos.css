@@ -1,0 +1,225 @@
+body {
+  margin: 32px;
+}
+
+.contenedor_titulo {
+  text-align: center;
+  border-bottom: 2px solid;
+  height: 80px;
+  font-size: 55px;
+  margin-bottom: 5px;
+  font-family: "Playfair Display", serif;
+}
+
+.navegacion ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid;
+  padding-bottom: 13px;
+  border-bottom: 1px solid;
+}
+
+.navegacion li {
+  margin-top: 10px;
+  margin-left: 70px;
+}
+
+.navegacion a {
+  text-decoration: none;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: rgba(128, 128, 128, 0.274);
+}
+
+.contenedor_subtitulo {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-size: 10px;
+  font-family: "Oswald", sans-serif;
+}
+
+.contenedor_cabecero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 140px;
+  float: left;
+  border: 2px solid;
+  font-size: 15px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+}
+
+.contenedor_fecha {
+  height: 70px;
+  width: 140px;
+  float: right;
+  text-align: right;
+  font-size: 15px;
+  font-family: "Oswald", sans-serif;
+}
+
+.contenedor_fila_izq {
+  width: 120px;
+  float: left;
+  border-top: 1px solid;
+  padding-right: 10px;
+}
+
+.titulo_fila_izq {
+  font-size: 15px;
+  text-align: left;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.subtitulo_fila_izq {
+  font-size: 10px;
+  text-align: justify;
+  font-family: "Playfair Display", serif;
+  margin: 0;
+}
+
+.contenedor_fila_der {
+  height: 430px;
+  width: 120px;
+  float: right;
+  border-top: 1px solid;
+  padding-left: 10px;
+}
+
+.img_politica{
+  height: 110%;
+  width: 105%;
+  margin-top: 20px;
+}
+
+ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+.article_1_der {
+  background-color: rgb(225, 225, 225);
+  padding: 10px;
+  margin: 10px 0 10px;
+}
+
+.titulo_parrafo_der {
+  margin: 0px;
+  font-size: 12px;
+  text-align: left;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+}
+
+.subtitulo_parrafo_der {
+  text-align: left;
+  font-size: 8px;
+  font-family: "Playfair Display", serif;
+  margin: 0;
+}
+
+.main {
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 50px;
+  border-top: 1px solid;
+
+  margin-bottom: 60px;
+}
+
+.article_1 {
+  border-bottom: 1px solid;
+  margin: 10px 10px 0;
+}
+
+.desplegable {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.oculto {
+  border: 2px solid;
+  max-height: 80px;
+  padding-left: 20px;
+}
+
+.centrar {
+  display: flex;
+  justify-content: center;
+}
+
+.centrar img {
+  width: 400px;
+}
+
+.titulo_h2 {
+  text-align: center;
+}
+
+.titulo_parrafo {
+  margin: 0px;
+  font-size: 25px;
+  text-align: justify;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+}
+
+.subtitulo_parrafo {
+  text-align: justify;
+  font-size: 13px;
+  font-family: "Playfair Display", serif;
+}
+
+.article_2 {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  margin: 10px;
+  padding: 20px;
+}
+.article_3 {
+  border-top: 1px solid;
+  margin: 0px 10px 10px;
+}
+
+.pie_de_pagina {
+  background-color: rgb(225, 225, 225);
+  border-left: 5px sandybrown solid;
+  text-align: center;
+  height: 140px;
+  font-size: 70px;
+  margin-top: 110px;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+  padding-right: 130px;
+}
+
+.contacto {
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.copy {
+  border: 2px solid;
+}
+
+.datos {
+  border: 2px solid;
+}
+
+.color_fondo {
+  background-color: rgba(128, 128, 128, 0.14);
+  border-right: 1px solid;
+  border-left: 1px solid;
+}

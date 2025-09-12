@@ -1,0 +1,38 @@
+body{
+background-image: url(pokemon-background-imt8r1fc53lvmmyp.jpg);
+}
+
+h1{
+    text-align: center;
+    margin-top: 150px;
+    border: 3px solid;
+    margin-left: 350px;
+    margin-right: 350px;
+    background-color: white;
+}
+
+.contenedor{
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 20px;
+}
+
+.contenedor input{
+    padding: 15px;
+    border: none;
+    border-radius: 100px;
+}
+
+.buscar{
+    border: none;
+    border-radius: 100px;
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+}
+
+.buscar:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}

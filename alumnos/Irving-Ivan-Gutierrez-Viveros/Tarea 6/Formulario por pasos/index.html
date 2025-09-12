@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario con pasos</title>
+        <link href="Estilos.css" rel="stylesheet">
+</head>
+
+<body>
+
+        <form>
+
+                <section class="formulario">
+
+                        <meter value="0" min="0" max="1" class="progreso"></meter>
+
+                        <h1>Formulario de ids</h1>
+
+                        <div class="nombre">
+                                <label for="nombre">Nombre:</label>
+                                <br>
+                                <input type="text" id="nombre" placeholder="Nombre completo">
+                        </div>
+
+                        <div class="email">
+                                <label for="email">Email:</label>
+                                <br>
+                                <input type="email" id="email" placeholder="Email">
+                        </div>
+
+                        <div class="password">
+                                <label for="password">Password</label>
+                                <br>
+                                <input type="password" id="password" placeholder="Password">
+                        </div>
+
+                        <div class="paralelo">
+                                <div class="edad">
+                                        <label for="edad">Edad</label>
+                                        <br>
+                                        <input type="number" id="edad" placeholder="Edad">
+                                </div>
+                                <div class="telefono">
+                                        <label for="telefono">Número de telefono</label>
+                                        <input type="tel" id="telefono" placeholder="Número de telefono">
+                                </div>
+                        </div>
+
+                        <div class="paralelo">
+
+                                <div class="terminos">
+                                        <label for="">Acepta terminos <br> y condiciones</label>
+                                        <input type="checkbox">
+                                </div>
+
+                                <div class="politica">
+                                        <label for="radio">Acepta politica <br> de privacidad</label>
+                                        <input type="radio" id="politica">
+                                </div>
+
+                        </div>
+
+                        <div class="paralelo">
+
+                                <div class="reset">
+                                        <input type="reset">
+                                </div>
+
+                                <button type="button" class="boton_siguiente"
+                                        onclick="abrirModal('modal1')">Siguiente</button>
+
+                        </div>
+        </form>
+
+        <dialog id="modal1">
+
+                <form id="formulario1">
+
+                        <meter value="0.3" min="0" max="1" class="progreso"></meter>
+
+                        <h2>Formulario de ids</h2>
+                        <div class="paralelo">
+
+                                <div class="fecha">
+                                        <label for="fecha">Fecha</label>
+                                        <br>
+                                        <input type="date" id="fecha" placeholder="Fecha de nacimiento">
+                                </div>
+
+                                <div class="hora">
+                                        <label for="hora">Hora de entrada</label>
+                                        <br>
+                                        <input type="time" id="hora">
+
+                                </div>
+                        </div>
+
+                        <div class="ingreso">
+                                <label for="ingreso">Dia y hora de ingreso</label>
+                                <br>
+                                <input type="datetime-local" id="ingreso">
+                        </div>
+
+                        <div class="paralelo">
+                                <div class="url">
+                                        <label for="url">URL de i talent</label>
+                                        <br>
+                                        <input type="url" id="url" placeholder="URL de i talent">
+                                </div>
+                        </div>
+
+                        <div class="experiencia">
+                                <label>Señala tu experiencia</label> <br>
+                                <input type="range">
+                        </div>
+
+
+                        <div class="reset_2">
+                                <input type="reset">
+                        </div>
+                        <button type="button" class="boton_siguiente_2"
+                                onclick="abrirModal2('modal2')">Siguiente</button>
+
+                </form>
+
+        </dialog>
+
+        <dialog id="modal2">
+
+                <form id="formulario2" action="">
+
+                        <meter value="0.6" min="0" max="1" class="progreso"></meter>
+
+                        <h2>Formulario de ids</h2>
+
+                        <div class="archivo">
+                                <label for="archivo">Agrega un archivo de tu trabajo</label>
+                                <br>
+                                <input type="file" id="archivo">
+                        </div>
+
+                        <div class="mes">
+                                <label for="mes">Mes de realizado</label>
+                                <br>
+                                <input type="month" id="mes" placeholder="Agrega un mes">
+                        </div>
+
+                        <div class="semana">
+                                <label for="semana">Semana</label>
+                                <br>
+                                <input type="week" id="semana" placeholder="Semana">
+                        </div>
+
+                        <div class="color">
+                                <label for="color">Color favorito</label>
+                                <br>
+                                <input type="color" id="color">
+                        </div>
+
+                        <div class="buscar">
+                                <label for="buscar">Buscar</label>
+                                <br>
+                                <input type="search" id="buscar" placeholder="Buscar">
+                        </div>
+
+                        <div class="img">
+                                <label for="img">input type img</label>
+                                <br>
+                                <input type="image" id="img">
+                        </div>
+
+
+                        <div class="reset_2">
+                                <input type="reset">
+                        </div>
+
+                        <button type="button" value="cancel" class="boton_siguiente_2"
+                                onclick="abrirModal3('modal3')">Siguiente</button>
+
+                </form>
+
+        </dialog>
+
+        <dialog id="modal3">
+
+                <meter value="1" min="0" max="1" class="progreso"></meter>
+
+                <h3>¡¡Formulario completado!!</h3>
+                <p>Gracias por tu participación</p>
+                <button type="button"
+                        onclick="cerrarModales('modal3'), cerrarModales('modal2'), cerrarModales('modal1')">Cerrar</button>
+
+        </dialog>
+
+
+        <script src="formulario.js"></script>
+</body>
+
+</html>
