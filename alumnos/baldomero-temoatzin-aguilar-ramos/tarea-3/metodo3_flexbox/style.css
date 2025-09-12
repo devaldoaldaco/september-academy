@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+head, footer {
+    padding: 1rem;
+    background: #a9d18e;
+}
+
+footer {
+    background: #c99;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+}
+
+nav {
+    width: 200px;
+    background: #999;
+    padding: 1rem;
+}
+
+main {
+    flex: 1;
+    background: #eee;
+    padding: 1rem;
+}
+
+article {
+    background: #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+}

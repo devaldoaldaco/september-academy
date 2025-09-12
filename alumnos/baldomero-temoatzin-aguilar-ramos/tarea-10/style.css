@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.tablero-ajedrez {
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  height: 480px;
+  border: 4px solid #4a4a4a;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.fila {
+  display: flex;
+  flex: 1;
+}
+
+.casilla {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1; 
+  transition: all 0.2s ease;
+}
+
+.casilla:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+
+.casilla-clara {
+  background-color: #f0d9b5;
+}
+
+.casilla-oscura {
+  background-color: #b58863;
+}
+
+.titulo {
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
