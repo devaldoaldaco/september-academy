@@ -1,0 +1,160 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+    height: 100vh;
+}
+
+header {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+nav, ul {
+    width: 100%;
+    height: 5rem;
+    background-color: #ddd;
+    box-sizing: border-box;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+    width: 6.25rem;
+    height: 2.5rem;
+    display: flex;
+text-align: center;
+    align-items: center;
+}
+
+a {
+    flex: 1;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+a:hover {
+    background-color: rgb(48, 47, 47);
+    color: white;
+}
+
+main {
+    width: 100%;
+    height: 64rem;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 2rem 4rem 2rem 4rem;
+}
+
+section {
+    box-sizing: border-box;
+    line-height: 2;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 5rem;
+    border-bottom: 1px solid black;
+}
+
+
+main div {
+    box-sizing: border-box;
+    width: 100%;
+    height: 25rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "aside article"
+    "aside article2";
+    column-gap: 2rem;
+}
+
+
+aside {
+    grid-area: aside;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    line-height: 1.8;
+    transition: transform 0.3s ease-in-out;
+}
+
+aside p {
+    color: gray;
+}
+
+aside:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.article-1 {
+    grid-area: article;
+    border-bottom: 1px solid black;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+
+.article-2 {
+    grid-area: article2;
+    transition: 0.3s ease-in-out;
+}
+
+.article-1:hover, .article-2:hover {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    cursor: pointer;
+}
+
+article {
+    border-left: 1px solid black;
+    padding-left: 2rem;
+    line-height: 1.7;
+}
+
+footer {
+    box-sizing: border-box;
+    margin: 0;
+    width: 100%;
+    height: 15rem;
+    background-color: rgb(31, 31, 31);
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+}
+
+footer span {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+footer div p {
+    text-align: end;
+}
+
+footer div p a {
+    color: white;
+}

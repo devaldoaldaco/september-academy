@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    background-color: gray;
+    color: white;
+    font-family: sans-serif;
+}
+
+.main-container {
+    position: absolute;
+    top: 25%;
+}
+
+.container {
+    box-sizing: border-box;
+    height: 50vh;
+    width: 33%;
+    margin: 0;
+    display: inline-block;
+    padding: 2rem 4rem;
+    h2 {
+       font-size: 2rem; 
+       margin-bottom: 3rem;
+    }
+
+    p {
+        margin-bottom: 3rem;
+        line-height: 1.5;
+    }
+
+    button {
+        padding: 0.5rem;
+        border: none;
+        width: 8rem;
+        border-radius: 1rem;
+        cursor: pointer;
+    }
+}
+
+.container-1 {background-color: orange;}
+.container-2 {background-color: darkcyan;}
+.container-3 {background-color: darkgreen;}

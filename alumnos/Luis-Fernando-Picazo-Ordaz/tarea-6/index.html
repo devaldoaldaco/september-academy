@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Formulario</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="meter">
+            <meter min="0" max="21"></meter>
+        </div>
+        <div class="button">
+            <button onclick="openModal('modal-1')">Abrir modal</button>
+        </div>
+    </div>
+    <dialog id="modal-1" >
+        <div class="button-container">
+            <button onclick="closeModal('modal-1')" class="exit">Salir</button>
+        </div>
+        <form>
+            <fieldset>
+                <legend>Datos personales</legend>
+                <input type="text" placeholder="Nombre" class="input-text">
+                <input type="tel" name="telephone" id="telephone" placeholder="Número de teléfono" class="input-text">
+                <input type="email" name="email" id="email" placeholder="Email" class="input-text">
+                <input type="number" name="age" id="age" placeholder="Edad" class="input-text">
+                <label for="married">¿Casado?</label>
+                <input type="checkbox" name="married" id="married">
+                <label for="color">Color Favorito</label>
+                <input type="color" id="color">
+                <label for="birthday">Fecha de nacimiento</label>
+                <input type="date" name="birthday" id="birthday" class="input-text">
+                <input type="reset" value="Reset" class="input-button">                
+            </fieldset>
+        </form>
+        <div class="button-container">
+            <button id="next-1">Siguiente</button>
+        </div>
+    </dialog>
+
+    <dialog id="modal-2">
+        <div class="button-container">
+            <button onclick="closeModal('modal-2')" class="exit">Salir</button>
+        </div>
+        <form>
+            <fieldset>
+                <legend>Datos personales</legend>
+                <label for="month">Mes de nacimiento</label>
+                <input type="month" name="month" id="month" class="input-text">
+                <div class="container-gender">
+                    <label for="male">Masculino</label>
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="female">Femenino</label>
+                    <input type="radio" name="gender" id="female" value="female">
+                </div>
+                <input type="file" name="file" id="file">
+                <label for="current-time">Fecha actual:</label>
+                <input type="datetime-local" name="current-time" id="current-time" class="input-text">
+                <label for="image">Input de imagen:</label>
+                <input
+                    name="image"
+                    id="image"
+                    type="image"
+                    width="30"
+                    height="30"
+                    alt="Enviar"
+                    src="../maquetado_2/images/favicon-32x32.png" />
+            </fieldset>
+        </form>
+        <div class="buttons">
+            <button id="previous-1">Anterior</button>
+            <button id="next-2">Siguiente</button>
+        </div>
+    </dialog>
+
+    <dialog id="modal-3" >
+        <div class="button-container">
+            <button onclick="closeModal('modal-3')" class="exit">Salir</button>
+        </div>
+
+        <form action="">
+            <fieldset>
+                <legend>Datos</legend>
+                <input type="url" name="url" id="url" placeholder="Ingresa una url" class="input-text">
+                <input type="search" name="state" id="state" list="states" placeholder="Estado" class="input-text">
+                <datalist id="states">
+                    <option value="Aguascalientes">Aguascalientes</option>
+                    <option value="Baja California">Baja California</option>
+                    <option value="Baja California Sur">Baja California Sur</option>
+                    <option value="Campeche">Campeche</option>
+                    <option value="Chiapas">Chiapas</option>
+                    <option value="Chihuahua">Chihuahua</option>
+                    <option value="Ciudad de México">Ciudad de México</option>
+                    <option value="Coahuila">Coahuila</option>
+                    <option value="Colima">Colima</option>
+                    <option value="Durango">Durango</option>
+                    <option value="Estado de México">Estado de México</option>
+                    <option value="Guanajuato">Guanajuato</option>
+                    <option value="Guerrero">Guerrero</option>
+                    <option value="Hidalgo">Hidalgo</option>
+                    <option value="Jalisco">Jalisco</option>
+                    <option value="Michoacán">Michoacán</option>
+                    <option value="Morelos">Morelos</option>
+                    <option value="Nayarit">Nayarit</option>
+                    <option value="Nuevo Leon">Nuevo Leon</option>
+                    <option value="Oaxaca">Oaxaca</option>
+                    <option value="Puebla">Puebla</option>
+                    <option value="Querétaro">Querétaro</option>
+                    <option value="Quintana Roo">Quintana Roo</option>
+                    <option value="San Luis Potosí">San Luis Potosí</option>
+                    <option value="Sinaloa">Sinaloa</option>
+                    <option value="Sonora">Sonora</option>
+                    <option value="Tabasco">Tabasco</option>
+                    <option value="Tamaulipas">Tamaulipas</option>
+                    <option value="Tlaxcala">Tlaxcala</option>
+                    <option value="Veracruz">Veracruz</option>
+                    <option value="Yucatán">Yucatán</option>
+                    <option value="Zacatecas">Zacatecas</option>
+                </datalist>
+                <input type="time" name="time" id="time" class="input-text">
+                <input type="week" name="week" id="week">
+                <label for="range">Volumen</label>
+                <input type="range" name="range" id="range" min="0" max="10">
+                <input type="hidden" name="hidden" value="5">
+                <input type="password" name="password" id="password" placeholder="password" class="input-text">
+                <input type="submit" class="input-button" value="Submit">
+            </fieldset>
+        </form>
+        <div class="buttons">
+            <button id="previous-2">Anterior</button>
+            <button id="next-3" class="exit">Finalizar</button>
+        </div>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>

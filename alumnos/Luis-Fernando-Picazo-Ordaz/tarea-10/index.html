@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de Conectores en CSS</title>
+    <style>
+        /* “ ” El espacio selecciona todos los elementos dentro de otro */
+        div p {
+            color: red;
+        }
+        /* Cambia todos los <p> que estén dentro de un <div> (hijos, nietos, etc.). */
+
+        /* “>” Selecciona solo los elementos que son hijos directos */
+        div > h3 {
+            color: blue;
+        }
+        /* Cambia todos los <h3> que sean hijos directos de <div> */
+
+        /* “+” El signo de más selecciona el primer hermano inmediato siguiente. */
+        h2 + p {
+            background-color: yellow;
+        }
+        /* Cambia el <p> que viene justo después de un <h2> */
+
+       /* “~” Selecciona todos los hermanos posteriores que coincidan con el selector. */
+        h2 ~ span {
+            font-weight: bold;
+            color: green;
+        }
+        /* Cambia todos los <span> después de un <h2>, si están en el mismo nivel. */
+    </style>
+    </head>
+    <body>
+        <div>
+            <p>p Hijo</p>
+            <h3>h3 Hijo directo</h3>
+            <section>
+                <h3>h3 nieto</h3>
+            <p>p nieto 1</p>
+            <p>nieto 2</p>
+            </section>
+        </div>
+
+        <h2>Título</h2>
+        <p>Párrafo después de un h2 (hermano inmediato)</p>
+        <p>Segundo Párrafo después de un h2</p>
+        <div>
+            <span>span que no es hermano</span>
+        </div>
+        <span>Span 1</span>
+        <span>Span 2</span>
+        <p>espacio</p>
+        <span>Span 3</span>
+
+    </body>
+</html>
