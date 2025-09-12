@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 10</title>
+    <style>
+        body    {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+        }
+        .content    {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .box    {
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .box h2     {
+            color: white;
+        }
+        .box p  {
+            color: white;
+            line-height: 1.6;
+        }
+        .box.orange     {
+            background-color: #ff8c00;
+            color: #333;
+        }
+        .box.blue   {
+            background-color: #0b87b0;
+            color: white;
+        }
+        .box.green  {
+            background-color: #006847;
+        }
+        .button-box     {
+            background-color: #007bff;
+            color: white;
+            padding: 30px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 15px;
+            transition: background-color 0.3 ease;
+        }
+        .button-box :hover  {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="box orange">
+        <h2>SEDANS</h2>
+        <p> A sedan is a type of passenger car with four doors, a separate trunk, and a classic three-box design. It's a vehicle known for its comfort and interior space, making it ideal for families and long trips. Its aerodynamic structure contributes to good fuel efficiency. In short, the sedan is a versatile and practical option that combines functionality and performance.</p>
+        <button class="button-box">read more...</button>
+        </div>
+
+        <div class="box blue">
+            <h2>SUVS</h2>
+            <p>SUVs (Sports Utility Vehicles) are vehicles with a taller body, more interior space, and a high driving position. They combine the comfort of a passenger car with off-road features, such as all-wheel drive. They are popular for their versatility, ample cargo space, and a sense of security and robustness.</p>
+        <button class="button-box">read more...</button>
+        </div>
+        <div class="box green">
+            <h2>LUXURY</h2>
+            <p>Luxury cars are distinguished by offering superior levels of comfort, equipment, and technology. They use high-quality materials, such as leather and wood, and are meticulously constructed and finished. In addition to their superior performance, they often include advanced safety and entertainment features and represent a symbol of prestige and status.</p>
+         <button class="button-box">read more...</button>
+        </div>
+    </div>
+    
+</body>
+</html>
