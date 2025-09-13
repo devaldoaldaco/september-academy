@@ -1,0 +1,120 @@
+:root { 
+    --gap: 14px; 
+    --radius: 10px; 
+}
+
+* { 
+    box-sizing: border-box; 
+    font-family: system-ui, Arial, sans-serif; 
+}
+
+body { 
+    margin: 0; 
+    background: #f7f7f7; 
+    color: #222; 
+}
+
+.wrap { 
+    width: min(920px, 92%); 
+    margin: 18px auto; 
+}
+
+h1 { 
+    margin: 0 0 10px; 
+    font-size: 1.4rem; 
+}
+
+.progress {
+  display: grid; 
+  
+  align-items: center; 
+  gap: 8px; 
+  margin: 8px 0 16px;
+}
+
+
+meter { 
+    width: 100%; 
+    height: 14px; 
+}
+
+#progressText { 
+    min-width: 40px; 
+    text-align: right; 
+    
+    font-variant-numeric: tabular-nums; 
+}
+
+form { 
+    background: #fff; 
+    padding: 18px; 
+    border-radius: var(--radius); 
+    box-shadow: 0 2px 10px rgba(0,0,0,.06); 
+
+}
+
+.step { 
+    display: block; 
+    border: 1px solid #e6e6e6; 
+    padding: 16px; 
+    border-radius: var(--radius); 
+
+
+}
+
+.step[hidden] { 
+
+    display: none; 
+}
+
+legend { 
+    font-weight: 700; 
+
+    margin-bottom: .5rem; 
+}
+
+label { 
+    display: grid; 
+    gap: 6px; 
+
+    margin: 10px 0; 
+}
+
+input, select, textarea {
+  padding: 10px; 
+
+  border-radius: 8px; 
+  border: 1px solid #cfcfcf; 
+  background: #fff;
+}
+
+.actions { 
+    margin-top: 12px; 
+    display: flex; 
+    gap: 10px; 
+    justify-content: end; 
+}
+
+.btn {
+  border: none; 
+  background: #2563eb; 
+  color: #fff; 
+
+  padding: 10px 14px;
+  border-radius: 999px; 
+  cursor: pointer;
+}
+
+.btn:hover { 
+    filter: brightness(0.95); 
+}
+.btn.secondary { 
+    background: #6b7280; 
+}
+
+
+.muted { 
+    color: #666; 
+    text-align: center; 
+    margin-bottom: 22px; 
+}

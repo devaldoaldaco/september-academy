@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="calcu">
+        <div class="calcu_estilo" aria-live="polite" aria-atomic="true">
+            <div class="calcu_antes" id="antes"></div>
+            <div class="calcu_actual" id="actual"></div>
+        </div>
+        <div class="calcu_botons">
+            <button data-fn="sin" class="butt">sin</button>
+            <button data-fn="cos" class="butt">cos</button>
+            <button data-fn="tan" class="butt">tan</button>
+            <button data-fn="sqrt" class="butt">√</button>
+
+            <button data-fn="pow2" class="butt">x^2</button>
+            <button data-fn="pow" class="butt">x^y</button>
+            <button data-fn="exp" class="butt">e^x</button>
+            <button data-fn="log" class="butt">log</button>
+
+            <button data-fn="ln" class="butt">ln</button>
+            <button data-fn="pi" class="butt">π</button>
+            <button data-fn="e" class="butt">e</button>
+            <button data-fn="fact" class="butt">n!</button>
+
+            <button data-fn="clear-todo" class="butt butt--fn">CE</button>
+            <button data-fn="clear" class="butt butt--fn">C</button>
+            <button data-fn="delete" class="butt butt--fn">DEL</button>
+            <button data-fn="divicion" class="butt butt--op">÷</button>
+
+            <button data-fn="7" class="butt">7</button>
+            <button data-fn="8" class="butt">8</button>
+            <button data-fn="9" class="butt">9</button>
+            <button data-fn="multiplicacion" class="butt butt--op">x</button>
+
+            <button data-fn="4" class="butt">4</button>
+            <button data-fn="5" class="butt">5</button>
+            <button data-fn="6" class="butt">6</button>
+            <button data-fn="resta" class="butt butt--op">-</button>
+
+            <button data-fn="1" class="butt">1</button>
+            <button data-fn="2" class="butt">2</button>
+            <button data-fn="3" class="butt">3</button>
+            <button data-fn="suma" class="butt butt--op">+</button>
+
+            <button data-fn="negativo" class="butt">+/-</button>
+            <button data-fn="0" class="butt">0</button>
+            <button data-fn="." class="butt">.</button>
+            <button data-fn="igual" class="butt butt--eq">=</button>
+        </div>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>
