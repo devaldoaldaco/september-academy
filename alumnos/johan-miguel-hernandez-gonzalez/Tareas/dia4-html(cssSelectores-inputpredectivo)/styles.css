@@ -1,0 +1,64 @@
+body{
+    height: 100%;
+    background: rgb(225, 227, 235);
+    /*border: 2px solid black;*/
+    margin: 0px;
+}
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    /*margin: 20px;
+    border: 2px solid black;*/
+}
+
+.fijo{
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(9, 121, 151);
+    border-radius: 12px;
+    padding: 20px;
+    width: 90%;
+    display: block;
+    text-align: center;
+}
+
+.fijo meter{
+    vertical-align: middle;
+    width: 300px;
+}
+
+.form{
+    margin-top: 200px;
+    width: 60%;
+    background: rgb(177, 192, 230);
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.form label{
+    display: block;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form input,.form button{
+    width: 80%;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #fbfdff;
+    font-size: 18px;
+}
+
+dialog{
+    width: 70%;
+    border-radius: 12px;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día 3</title>
+</head>
+<body>
+    <!--Etiquetas de texto-->
+    <h1>No debe de haber mas de una etiqueta h1</h1>
+    <h2>Seguimos el patron como la sig. etiqueta h2</h2>
+    <h3>Seguimos h3</h3>
+    <h4>h4</h4>
+    <h5>h5</h5>
+    <h6>h6</h6>
+
+    <!--Etiquetas de texto-->
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero necessitatibus quae rem magnam non maiores, optio, deleniti quidem blanditiis nulla molestiae illum sint doloribus est amet excepturi nobis voluptas atque!</p>
+    <span>la diferencia de span y p es que tiene margin de arriba y abajo, cambian los estilos. igual solo p ocupa display en block y span en display inline.</span>
+    <span style="display: block;">prueba de span</span>
+    <ol>order de list, va acompañanado de li</ol>
+    <ol>
+        <li>
+            <a href="">Inicio</a>
+        </li>
+        <li>
+            <a href="">Nosotros</a>
+        </li>
+    </ol>
+
+    <ul>
+        <li>
+            <a href="">Inicio</a>
+        </li>
+        <li>
+            <a href="https://google.com" target="_blank">no se piered d tu pagina, abre otra ventana con el atributo target</a>
+        </li>
+    </ul>
+    <br>
+    
+    <p>caracter en b&nbsp;lan&nbsp;co</p>
+
+    <img src="https://placehold.co/600x400" alt="dimension de imagen" width="100px" height="100px" >
+
+    <form action="https://pokeapi.co/api/v2/pokemon/ditto" method="GET">
+        <fieldset><!--Genera un conjunto de campos la etiqueta fieldset-->
+            <legend>Registro</legend><!--el legend es agregar la aleyenda-->
+            <label for="name">Name:</label> <!--con el atributo for hace referencia al id de la etiqueta input-->
+            <input type="text"  placeholder="Nombre completo" id="name" maxlength="10">
+            <input type="submit">
+            <input type="checkbox" onclick="saludar()">
+
+            <label for="pass">Password: <label>
+            <input type="password" id="pass">
+        </fieldset>
+    </form>
+
+    <script>
+        function saludar(){
+            alert("sadas");
+        }
+    </script>
+</body>
+</html>

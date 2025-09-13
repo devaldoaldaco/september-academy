@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>                                                     </title>
+    <style>
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(8, 100px);
+        grid-template-rows: repeat(8, 100px);
+        justify-content: center;
+        margin-top: 100px;
+      }
+      span {
+        background: black;
+        color: white;
+      }
+      .white {
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span ></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span class="white"></span>
+      <span ></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      <span class="white"></span>
+      <span></span>
+      
+    </div>
+    <script>
+      var nombre = "johan";
+      console.log(nombre);
+
+      let saludar = function () {
+        console.log("Hola");
+      };
+
+      console.log(typeof saludar);
+      console.log(saludar.prototype);
+
+      saludar();
+
+      //tipos de datos primitivos son los que almecenan valores y para cambiar de valor debe de cambiar
+      //totalmente el valor, no solo por indices.
+
+      //objeto
+      let persona = {
+        name: "johan",
+        age: 25,
+      };
+
+      let otraPersona = persona;
+
+      otraPersona.name = "Karen";
+
+      console.log(persona, otraPersona);
+
+      let otraPersona2 = { ...otraPersona };
+
+      otraPersona2.name = "jonathan";
+
+      console.log(otraPersona2);
+
+      //Imprimir tipos de datos
+      let miString = "JavaScript - HTML - CSS";
+      let miNumber = 56;
+      let miNumberFloat = 579.827;
+      let miBoolean = true;
+      let miArreglo = [
+        "string",
+        7,
+        9756.89,
+        false,
+        (miObjetoMoto = {
+          marca: "bajaj",
+          modelo: "pulsar ns",
+          cc: 125,
+        }),
+      ];
+
+      let miMatriz = [
+        [2, 3, 6, 7, 2, 4],
+        [true, false],
+        [234.12, -324, 32.2, 0],
+        ["johan", "karen", "kira"],
+      ];
+
+      console.log(`Tipos de datos primitivos como String ${miString},
+      , number ${miNumber}, flotante ${miNumberFloat} y mi boolean ${miBoolean}`); //template string con ``
+
+      console.log("Tipos de datos no priitivos");
+
+      console.log("Mi arreglo");
+      for (let i = 0; i < miArreglo.length; i++) {
+        console.log(`Posicion ${i + 1}: ${miArreglo[i]}`);
+      }
+
+      //metodos estaticos
+      let modulo = String.fromCharCode(74, 83);
+      console.log(modulo);
+
+      //metodos de instancia
+      console.log(modulo.toLocaleLowerCase());
+    </script>
+  </body>
+</html>

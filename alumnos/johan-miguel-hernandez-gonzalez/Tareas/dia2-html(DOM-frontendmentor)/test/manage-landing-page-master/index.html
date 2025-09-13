@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../manage-landing-page-master/images/favicon-32x32.png"
+      href="/alumnos/johan-miguel-hernandez-gonzalez/Tareas/dia2-html(DOM-frontendmentor)/test/manage-landing-page-master/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Manage landing page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      /*Contenedor primcipal con nav*/
+      .container {
+        max-width: 100%;
+        margin: 0;
+        padding: 40px 20px;
+      }
+      header {
+        padding: 20px 0px;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+      nav a {
+        color: rgb(27, 8, 80);
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .btn {
+        background: rgb(192, 102, 11);
+        color: white;
+        padding: 12px 22px;
+        border-radius: 15px;
+        border: none;
+        cursor: pointer;
+      }
+      .btn:hover {
+        opacity: 0.95;
+      }
+
+      /* info principal*/
+      .info {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        padding: 40px 0px;
+      }
+      .info-izquierda {
+        width: 50%;
+      }
+      .info-izquierda h1 {
+        font-size: 50px;
+        line-height: 1.05;
+        color: rgb(27, 8, 80);
+      }
+      .info-izquierda p {
+        color: rgb(152, 166, 169);
+        font-size: 16px;
+        margin-bottom: 28px;
+      }
+      .info-derecha {
+        width: 50%;
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      /*info-secundaria*/
+      .info-secundario {
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+        padding: 60px 0px;
+      }
+      .info-secundario-izquierda {
+        width: 40%;
+      }
+      .info-secundario-izquierda h2 {
+        font-size: 28px;
+        color: rgb(27, 8, 80);
+        margin-bottom: 10px;
+      }
+      .info-secundario-izquierda p {
+        color: rgb(152, 166, 169);
+        line-height: 1.5;
+      }
+      .info-secundario-derecha {
+        width: 60%;
+      }
+      .info-secundario-item {
+        display: flex;
+        gap: 18px;
+        align-items: flex-start;
+        margin-bottom: 22px;
+      }
+      .item {
+        background: rgb(192, 102, 11);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+      }
+      .item-texto h3 {
+        margin-bottom: 6px;
+        font-size: 16px;
+      }
+      .item-texto p {
+        color: rgb(152, 166, 169);
+        font-size: 14px;
+      }
+
+      /*testimonios*/
+      .testimonios {
+        padding: 40px 0px;
+      }
+      .testimonios-tarjetas {
+        display: flex;
+        gap: 18px;
+      }
+      .tarjeta {
+        background: white;
+        padding: 22px;
+        border-radius: 8px;
+        flex: 1;
+        text-align: left;
+      }
+      .avatar-testimonio {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: beige;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+      }
+      .fondo-texto{
+        position: relative;
+        background: rgb(192, 102, 11);
+        padding: 5px 15px;
+        border-radius: 5px;
+        color: white;
+      }
+
+      /*footer*/
+      .arriba-footer{
+        display: flex;
+        justify-content: space-between;
+        background-image: url('/images/logo.svg');
+      }
+      footer {
+        background: var(--gray-dark);
+        color: white;
+        padding: 36px;
+        border-top-left-radius: 12px;
+      }
+      .footer {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      .footer-izquierda {
+        max-width: 300px;
+      }
+      .list-footer li{
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="nav">
+          <div class="logo"><img src="./images/logo.svg" /></div>
+          <nav>
+            <ul>
+              <li><a href="">Pricing</a></li>
+              <li><a href="">Product</a></li>
+              <li><a href="">About Us</a></li>
+              <li><a href="">Careers</a></li>
+              <li><a href="">Community</a></li>
+            </ul>
+          </nav>
+          <div>
+            <button class="btn">Get Started</button>
+          </div>
+        </div>
+      </header>
+
+      <section class="info">
+        <div class="info-izquierda">
+          <h1>Bring everyone together to build better products.</h1>
+          <p>
+            Manage makes it simple for software teams to plan day-to-day tasks
+            while keeping the larger team goals in view.
+          </p>
+          <a href="" class="a-start"
+            ><button class="btn">Get Started</button></a
+          >
+        </div>
+
+        <div class="info-derecha">
+          <img src="./images/illustration-intro.svg" />
+        </div>
+      </section>
+
+      <section class="info-secundario">
+        <div class="info-secundario-izquierda">
+          <h2>What’s different about Manage?</h2>
+          <p>
+            Manage provides all the functionality your team needs, without the
+            complexity. Our software is tailor-made for modern digital product
+            teams.
+          </p>
+        </div>
+
+        <div class="info-secundario-derecha">
+          <div class="info-secundario-item">
+            <div class="item">01</div>
+            <div class="item-texto">
+              <h3>Track company-wide progress</h3>
+              <p>
+                See how your day-to-day tasks fit into the wider vision. Go from
+                tracking progress at the milestone level all the way done to the
+                smallest of details. Never lose sight of the bigger picture
+                again.
+              </p>
+            </div>
+          </div>
+
+          <div class="info-secundario-item">
+            <div class="item">02</div>
+            <div class="item-texto">
+              <h3>Advanced built-in reports</h3>
+              <p>
+                Set internal delivery estimates and track progress toward
+                company goals. Our customisable dashboard helps you build out
+                the reports you need to keep key stakeholders informed.
+              </p>
+            </div>
+          </div>
+
+          <div class="info-secundario-item">
+            <div class="item">03</div>
+            <div class="item-texto">
+              <h3>Everything you need in one place</h3>
+              <p>
+                Stop jumping from one service to another to communicate, store
+                files, track tasks and share documents. Manage offers an
+                all-in-one team productivity solution.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonios">
+        <h2>What they’ve said</h2>
+        <div class="testimonios-tarjetas">
+          <div class="tarjeta">
+            <div class="avatar-testimonio">
+              <img src="./images/avatar-anisha.png" />
+            </div>
+            <p class="fondo-texto">
+              “Manage has supercharged our team’s workflow. The ability to
+              maintain visibility on larger milestones at all times keeps
+              everyone motivated.”
+            </p>
+            <h4>Anisha Li</h4>
+          </div>
+
+          <div class="tarjeta">
+            <div class="avatar-testimonio">
+              <img src="./images/avatar-ali.png" />
+            </div>
+            <p class="fondo-texto">
+              “We have been able to cancel so many other subscriptions since
+              using Manage. There is no more cross-channel confusion and
+              everyone is much more focused.”
+            </p>
+            <h4>Ali Bravo</h4>
+          </div>
+
+          <div class="tarjeta">
+            <div class="avatar-testimonio">
+              <img src="./images/avatar-richard.png" />
+            </div>
+            <p class="fondo-texto">
+              “Manage allows us to provide structure and process. It keeps us
+              organized and focused. I can’t stop recommending them to everyone
+              I talk to!”
+            </p>
+            <h4>Richard Watts</h4>
+          </div>
+
+          <div class="tarjeta">
+            <div class="avatar-testimonio">
+              <img src="./images/avatar-shanai.png" />
+            </div>
+            <p class="fondo-texto">
+              “Their software allows us to track, manage and collaborate on our
+              projects from anywhere. It keeps the whole team in-sync without
+              being intrusive.”
+            </p>
+            <h4>Shanai Gough</h4>
+          </div>
+        </div>
+      </section>
+
+      <section class="arriba-footer">
+        <h3>Simplify how your team works today.</h3>
+        <button class="btn">Get Started</button>
+      </section>
+    </div>
+
+    <footer>
+      <div class="footer">
+        <div class="footer-izquierda">
+          <div>manage</div>
+          <div>Copyright 2020. All Rights Reserved</div>
+        </div>
+
+        <div>
+          <ul class="list-footer">
+            <li>Home</li>
+            <li>Pricing</li>
+            <li>Products</li>
+            <li>About Us</li>
+          </ul>
+
+          <div>
+            <input placeholder="Updates in your inbox..." />
+            <button>Go</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

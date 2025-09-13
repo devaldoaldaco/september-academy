@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title-numeros">Ejercicios de numeros</h1>
+
+      <div class="ejer1">
+        <h2>Suma</h2>
+        <div class="items-flex">
+          <input type="number" id="ejer1-a" />
+          <label for=""> + </label>
+          <input type="number" id="ejer1-b" />
+          <p>= <label id="res1"></label></p>
+        </div>
+        <button onclick="ejer1()">Calcular</button>
+      </div>
+      <div class="ejer2">
+        <h2>Resta</h2>
+        <div class="items-flex">
+          <input type="number" id="ejer2-a" />
+          <label for=""> - </label>
+          <input type="number" id="ejer2-b" />
+          <p>= <label id="res2"></label></p>
+        </div>
+        <button onclick="ejer2()">Calcular</button>
+      </div>
+      <div class="ejer3">
+        <h2>Multiplicación</h2>
+        <div class="items-flex">
+          <input type="number" id="ejer3-a" />
+          <label for=""> * </label>
+          <input type="number" id="ejer3-b" />
+          <p>= <label id="res3"></label></p>
+        </div>
+        <button onclick="ejer3()">Calcular</button>
+      </div>
+      <div class="ejer4">
+        <h2>División</h2>
+        <div class="items-flex">
+          <input type="number" id="ejer4-a" />
+          <label for=""> / </label>
+          <input type="number"  id="ejer4-b" />
+          <p>= <label id="res4"></label></p>
+        </div>
+        <button onclick="ejer4()">Calcular</button>
+      </div>
+      <div class="ejer5">
+        <h2>Modulo</h2>
+        <div class="items-flex">
+          <input type="number" id="ejer5-a" />
+          <label for=""> % </label>
+          <input type="number" id="ejer5-b" />
+          <p>= <label id="res5"></label></p>
+        </div>
+        <button onclick="ejer5()">Calcular</button>
+      </div>
+      <div class="ejer6">
+        <h2>Al cuadrado</h2>
+        <div class="items-flex">
+          <input type="number"  id="ejer6-a" />
+          <p>= <label id="res6"></label></p>
+        </div>
+        <button onclick="ejer6()">Calcular</button>
+      </div>
+      <div class="ejer7">
+        <h2>Area de un rectangulo</h2>
+        <div class="items-flex">
+          <input type="number" placeholder="base" id="ejer7-a" />
+          <input type="number" placeholder="altura" id="ejer7-b" />
+          <p>= <label id="res7"></label> cm</p>
+        </div>
+        <button onclick="ejer7()">Calcular</button>
+      </div>
+      <div class="ejer8">
+        <h2>Radio de un circulo</h2>
+        <div class="items-flex">
+          <input type="number" id="ejer8-a" />
+          <p>= <label id="res8"></label></p>
+        </div>
+        <button onclick="ejer8()">Calcular</button>
+      </div>
+      <div class="ejer9">
+        <h2>Perimetro de un cuadrado</h2>
+        <div class="items-flex">
+          <input type="number" id="ejer9-a"/>
+          <p>= <label id="res9"></label></p>
+        </div>
+        <button onclick="ejer9()">Calcular</button>
+      </div>
+      <div class="ejer10">
+        <h2>Farenheit a Celsius</h2>
+        <div class="items-flex">
+          <input type="number" id="ejer10-a" placeholder="Farenheit"/>
+          <p>= <label id="res10"></label></p>
+        </div>
+        <button onclick="ejer10()">Calcular</button>
+      </div>
+      <div class="ejer11">
+        <h2>Kilometros a millas</h2>
+        <div class="items-flex">
+          <input type="number" placeholder="Kilometros" id="ejer11-a" />
+          <p>= <label id="res11"></label> millas</p>
+        </div>
+        <button onclick="ejer11()">Calcular</button>
+      </div>
+      <div class="ejer12">
+        <h2>Promedio</h2>
+        <div class="items-flex">
+          <input type="number" id="ejer12-a" />
+          <label for=""> , </label>
+          <input type="text" id="ejer12-b" />
+          <label for=""> , </label>
+          <input type="text" id="ejer12-c" />
+          <p>= <label id="res12"></label></p>
+        </div>
+        <button onclick="ejer12()">Calcular</button>
+      </div>
+      <div class="ejer13">
+        <h2>Doble de un numero</h2>
+        <div class="items-flex">
+          <input type="number" id="ejer13-a" />
+          <p>= <label id="res13"></label></p>
+        </div>
+        <button onclick="ejer13()">Calcular</button>
+      </div>
+      <div class="ejer14">
+        <h2>Triple de un numero</h2>
+        <div class="items-flex">
+          <input type="number" id="ejer14-a" />
+          <p>= <label id="res14"></label></p>
+        </div>
+        <button onclick="ejer14()">Calcular</button>
+      </div>
+      <div class="ejer15">
+        <h2>Cuadrado y cubo</h2>
+        <div class="items-flex">
+          <input type="number" id="ejer15-a" />
+          <p>= <label id="res15"></label></p>
+        </div>
+        <button onclick="ejer15()">Calcular</button>
+      </div>
+
+      <h1 class="title-strings">Ejercicios de strings</h1>
+
+      <div class="ejer16">
+        <h2>Como te llamas?</h2>
+        <div class="items-flex">
+          <input type="text" id="ejer16-a" />
+          <p>= <label id="res16"></label></p>
+        </div>
+        <button onclick="ejer16()">Imprimir</button>
+      </div>
+      <div class="ejer17">
+        <h2>Nombre copmpleto?</h2>
+        <div class="items-flex">
+          <input type="text" placeholder="Nombres" id="ejer17-a" />
+          <input type="text" placeholder="Apellidos" id="ejer17-b" />
+          <p>= <label id="res17"></label></p>
+        </div>
+        <button onclick="ejer17()">Imprimir</button>
+      </div>
+      <div class="ejer18">
+        <h2>Caracteres de una cadena</h2>
+        <div class="items-flex">
+          <input type="text" id="ejer18-a" />
+          <p>= <label id="res18"></label></p>
+        </div>
+        <button onclick="ejer18()">Imprimir</button>
+      </div>
+      <div class="ejer19">
+        <h2>Conversión a mayusculas</h2>
+        <div class="items-flex">
+          <input type="text" placeholder="Texto en minusculas" id="ejer19-a" />
+          <p>= <label id="res19"></label></p>
+        </div>
+        <button onclick="ejer19()">Imprimir</button>
+      </div>
+      <div class="ejer20">
+        <h2>Conversión a minusculas</h2>
+        <div class="items-flex">
+          <input type="text" id="ejer20-a" />
+          <p>= <label id="res20"></label></p>
+        </div>
+        <button onclick="ejer20()">imprimir</button>
+      </div>
+      <div class="ejer21">
+        <h2>Primer letra del texto</h2>
+        <div class="items-flex">
+          <input type="text" id="ejer21-a" />
+          <p>= <label id="res21"></label></p>
+        </div>
+        <button onclick="ejer21()">Imprimir</button>
+      </div>
+      <div class="ejer22">
+        <h2>Ultima letra del texto</h2>
+        <div class="items-flex">
+          <input type="text" id="ejer22-a" />
+          <p>= <label id="res22"></label></p>
+        </div>
+        <button onclick="ejer22()">Imprimir</button>
+      </div>
+      <div class="ejer23">
+        <h2>Ultima mitad del texto</h2>
+        <div class="items-flex">
+          <input type="text" id="ejer23-a" />
+          <p>= <label id="res23"></label></p>
+        </div>
+        <button onclick="ejer23()">Iprimir</button>
+      </div>
+      <div class="ejer24" >
+        <h2 id="ejer24-a">Me ancentan las motos</h2>
+        <div class="items-flex">
+          <input type="text" placeholder="remplazar por?" id="ejer24-b" />
+          <p>= <label id="res24"></label></p>
+        </div>
+        <button onclick="ejer24()">Imprimir</button>
+      </div>
+      <div class="ejer25">
+        <h2 id="ejer25-a">Hola Aldo JS</h2>
+        <div class="items-flex">
+          <input type="text" id="ejer25-b" />
+          <p>= <label id="res25"></label></p>
+        </div>
+        <button onclick="ejer25()">Imprimir</button>
+      </div>
+      <div class="ejer26">
+        <h2>Separar frase</h2>
+        <div class="items-flex">
+          <input type="text" id="ejer26-a" />
+          <p>= <label id="res26"></label></p>
+        </div>
+        <button onclick="ejer26()">Imprimir</button>
+      </div>
+      <div class="ejer27">
+        <h2>Elimina espacios</h2>
+        <div class="items-flex">
+          <input type="text"  id="ejer27-a" />
+          <p>= <label id="res27"></label></p>
+        </div>
+        <button onclick="ejer27()">Imprimir</button>
+      </div>
+      <div class="ejer28">
+        <h2>Repite 3 veces</h2>
+        <div class="items-flex">
+          <input type="text" id="ejer28-a" />
+          <p>= <label id="res28"></label></p>
+        </div>
+        <button onclick="ejer28()">Calcular</button>
+      </div>
+      <div class="ejer29">
+        <h2>Primer letra a mayuscula</h2>
+        <div class="items-flex">
+          <input type="text" id="ejer29-a" />
+          <p>= <label id="res29"></label></p>
+        </div>
+        <button onclick="ejer29()">Imprimir</button>
+      </div>
+      <div class="ejer30">
+        <h2>Cuantas veces aparece 'a'?</h2>
+        <div class="items-flex">
+          <input type="text" id="ejer30-a" />
+          <p>= <label id="res30"></label></p>
+        </div>
+        <button onclick="ejer30()">Imprimir</button>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>

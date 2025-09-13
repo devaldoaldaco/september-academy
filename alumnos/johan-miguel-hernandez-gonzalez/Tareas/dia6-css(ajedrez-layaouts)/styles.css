@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container,
+.cards,
+.picture,
+.nota {
+    border: 1px solid black;
+}
+
+.container {
+    position: relative;
+    /* se basa al conetendor y no al viewport */
+    max-width: 90%;
+    margin: 14px;
+    padding: 14px;
+    background: #fff;
+    border-radius: 10px;
+    min-height: 700px;
+}
+
+.container h1 {
+    position: absolute;
+    left: 33%;
+    margin: 0;
+}
+
+.div-izquierda {
+    position: absolute;
+    left: 24px;
+    top: 80px;
+    max-width: 70%;
+}
+
+.cards {
+    display: flex;
+    background: #ffffff;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(15, 15, 15, 0.03);
+    border: none;
+}
+
+.cards h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fff;
+}
+
+.cards p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #ddc6c6;
+}
+
+.card1 {
+    background-color: rgb(164, 169, 30);
+    padding: 10px;
+}
+
+.card2 {
+    background-color: rgb(17, 66, 103);
+    padding: 10px;
+}
+
+.card3 {
+    background-color: rgb(2, 90, 80);
+    padding: 10px;
+}
+
+.card1 button:hover,
+.card2 button:hover,
+.card3 button:hover,
+.nota button:hover {
+    opacity: 0.5;
+}
+
+.cards button {
+    display: inline-block;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #ffffff;
+    color: #000000;
+}
+
+.nota {
+    background: rgb(225, 231, 234);
+    display: flex;
+    border: none;
+}
+
+.contenido-nota {
+    padding: 14px;
+}
+
+.nota .img-nota img {
+    width: 100%;
+}
+
+.nota-footer {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.nota-footer img,
+.picture-footer img {
+    width: 50px;
+}
+
+.nota button {
+    display: inline-block;
+    padding: 4px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #ffffff;
+    color: #000000;
+}
+
+.picture {
+    position: absolute;
+    margin-right: 28px;
+    right: 0px;
+    top: 80px;
+    width: 23%;
+    padding: 0;
+    background: #041d4b;
+    border-radius: 8px;
+    border: none;
+}
+
+.texto {
+    padding: 28px;
+    color: white;
+}
+
+.img-picture {
+    display: flex;
+    justify-content: center;
+}
+
+
+.img-picture img {
+    width: 200px;
+    padding: 20px 20px 0px 20px;
+}
+
+.picture-footer {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    padding-bottom: 14px;
+    color: white;
+}

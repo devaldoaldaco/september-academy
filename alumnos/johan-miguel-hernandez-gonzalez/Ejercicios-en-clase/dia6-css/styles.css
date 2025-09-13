@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor{
+    display: flex;
+    flex-flow: row wrap;
+    background: yellow;
+    height: 1000px;
+    justify-content: center;
+    gap:20px;
+
+    span{
+        background-color: aqua;
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+    }
+}

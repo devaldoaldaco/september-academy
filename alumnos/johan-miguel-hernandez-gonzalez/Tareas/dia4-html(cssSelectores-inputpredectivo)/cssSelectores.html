@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Práctica CSS Combinadores</title>
+<style>
+  /* 1. Descendiente */
+  div p {
+    color: blue;
+  }
+
+  /* 2. Hijo directo */
+  div > p {
+    font-weight: bold;
+  }
+
+  /* 3. Hermano adyacente */
+  h2 + p {
+    background: lightgreen;
+  }
+
+  /* 4. Hermanos generales */
+  h2 ~ p {
+    border: 1px dashed orange;
+  }
+</style>
+</head>
+<body>
+  <div>
+    <p>Yo soy un párrafo dentro de un DIV (descendiente e hijo directo).</p>
+    <section>
+      <p>Yo soy un párrafo dentro de SECTION, que está dentro de un DIV (solo descendiente).</p>
+    </section>
+  </div>
+
+  <h2>Título h2</h2>
+  <p>Yo soy el párrafo justo después del h2 (hermano adyacente + general).</p>
+  <p>Yo soy otro párrafo después del h2 (hermano general).</p>
+</body>
+</html>

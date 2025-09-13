@@ -1,0 +1,84 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    background-color: rgb(29, 29, 28);
+}
+
+.bar{
+    display:flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+.bar li{
+    margin-right: 15px; 
+}
+
+.bar li a{
+    color: white;
+    text-decoration: none;
+}
+
+.menu{
+    width: 15px;
+}
+
+.button-bar{
+    border-radius: 5px;
+    background-color: rgb(210, 199, 199);
+    padding: 5px;
+}
+
+.logo{
+    width: 300px;
+}
+
+.input-google{
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 500px;
+    border-radius: 5px;
+}
+
+.buscador-google{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: calc(100% - 150px);
+    justify-content: center;
+    
+}
+
+.butn{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(210, 199, 199);
+
+}
+
+button:hover{
+    background-color: rgb(93, 89, 89);
+}
+
+.lista-footer{
+    display:flex;
+    justify-content: center;
+    padding: 15px 0px;
+    list-style: none;
+}
+
+h3{
+    color: white;
+    margin: 15px;
+}
+
+.footer{
+    background-color: black;
+    position: relative;
+    height: 80px;
+    width: 100%;
+}
+.footer li {
+    margin-right: 15px; 
+    color: white;
+}

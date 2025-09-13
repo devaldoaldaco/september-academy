@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS conectores</title>
+    <style>
+      div {
+        color: red;
+      }
+
+      div ~ span {
+        /*aplica a todos los hermanos con esa etiqueta*/
+        color: inherit;
+      }
+
+      div + span {
+        /*busca el primer hemano*/
+        color: initial;
+      }
+
+      div > span {
+        /*hijo directo*/
+        background-color: blueviolet;
+      }
+
+      span {
+        margin: 2em; /*em se calculan con el tañano del afuente del padre por defecto osea el padre */
+      }
+      span {
+        margin: 2rem; /*rem se calcula de base la etiqueta html del tamaño del font-size*/
+      }
+      section {
+        border: 2px solid black;
+        width: 500px;
+        min-width: 400px;
+        max-width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div>
+        <div>
+          <span> Cualuier texto </span>
+        </div>
+        <span>color</span>
+        <span>color</span>
+        <span>color</span>
+        <span>color</span>
+        <span>color</span>
+      </div>
+      <span>color</span>
+      <span>color</span>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custiónate</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+    
+    <div class="fijo">
+        <h1>Test sobre ti</h1>
+        <p>Progreso
+        <meter id="progreso" max="16" value="0"></meter>
+        <strong id="progreso-porcentaje"> 0%</strong>
+        </p>
+    </div>
+
+    <form action="url" method="GET" class="form">
+        <fieldset><!--Genera un conjunto de campos la etiqueta fieldset-->
+            <legend>Registro de tus datos 0_0</legend><!--el legend es agregar la aleyenda-->
+
+            <label for="name">¿Nombre completo?</label> <!--con el atributo for hace referencia al id de la etiqueta input-->
+            <input type="text" id="name" placeholder="Nombre completo">
+
+            <label for="pass">¿Tu mayor secreto?<label>
+            <input type="password" id="pass" placeholder="Tu secreto">
+            
+            <label for="search">¿Tu tema a interes?</label>
+            <input type="search" id="search" placeholder="Tema a interes">
+
+            <label for="tel">¿Tu primer número celular?</label>
+            <input type="tel" id="tel" placeholder="55-12-45-32-56-78">
+
+            <label for="email">¿Tu primer correo?</label>
+            <input type="email" id="email" placeholder="xxx@gmail.com">
+
+            <label for="url">¿URL favorita?</label>
+            <input type="url" id="url" placeholder="https//...">
+
+            <label for="number">¿Tu WhatsApp?</label>
+            <input type="number" id="number" placeholder="5510265574">
+
+            <label for="range">¿Que tan feliz estas?</label>
+            <input type="range" id="range" min="0" max="10" value="5">
+
+            <label for="date">¿Fecha de nacimiento?</label>
+            <input type="date" id="date">
+
+            <label for="time">¿Despues de tu primer alarma, en cuanto tiempo te tardas en levantarte?</label>
+            <input type="time" id="time">
+
+            <label for="datetime-local">¿Supongamos que eres viajero en el tiempo, a que fecha y hora te gustaria viajar?</label>
+            <input type="datetime-local" id="datetime-local">
+
+            <label for="month">¿El mejor mes de tu vida?</label>
+            <input type="month" id="month">
+
+            <label for="week">¿Tu mejor fin de semana de vacaiones?</label>
+            <input type="week" id="week">
+
+            <label for="color">¿Tu color favorito?</label>
+            <input type="color" id="color">
+
+            <label for="file">Sube tu pack xd</label>
+            <input type="file" id="file">
+
+            <label>Sexo: </label>
+            <label for="hombre"><input type="radio" id="hombre">Masculino</label>
+            <label for="mujer"><input type="radio" id="mujer">Femenino</label>
+            <label for="otro"><input type="radio" id="otro">Otro tipo de Gay</label>
+
+            <label for="reset">¿Borrar todos los campos que llenaste?</label>
+            <input type="reset" id="reset" onclick="resetearInputs()">
+
+            <label for="checkbox"><input type="checkbox" id="checkbox"> Acepto terminos</label>
+
+            <label for="button">Finalizar: </label>
+            <button type="button" onclick="openModal()" id="btn-finalizar">Finalizar test</button>
+
+            
+        </fieldset>
+    </form>
+    </div>    
+
+    <dialog>
+        <h1>A veces es bueno cuestionarte..</h1>
+        <p id="resultado"></p>
+        <button onclick="closeModal()">cerrar</button>
+    </dialog>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+          const meter = document.getElementById('progreso');
+          const pct   = document.getElementById('progreso-porcentaje');
+          if (!meter || !pct) return;
+
+          // lista dinámica de inputs dentro del form
+          const inputs = Array.from(document.querySelectorAll('.form input'));
+
+          function actualizar() {
+            let cont = 0;
+            inputs.forEach(i => {
+              const t = (i.type || '').toLowerCase();
+              if (t === 'button' || t === 'submit' || t === 'reset') return;
+              if (t === 'file') {
+                if (i.files && i.files.length > 0) cont++;
+              } else if (t === 'checkbox' || t === 'radio') {
+                if (i.checked) cont++;
+              } else {
+                if (String(i.value).trim() !== '') cont++;
+              }
+            });
+
+            const max = Number(meter.max) || 16;
+            meter.value = Math.min(cont, max);
+            pct.textContent = ` ${Math.round((meter.value / max) * 100)}%`;
+          }
+
+          // listeners para actualizar en tiempo real
+          inputs.forEach(i => {
+            i.addEventListener('input', actualizar);
+            i.addEventListener('change', actualizar);
+          });
+
+          // recalcular tras un reset nativo
+          const form = document.querySelector('.form');
+          if (form) form.addEventListener('reset', () => setTimeout(actualizar, 0));
+
+          // reemplazamos/definimos la función global resetearInputs para que la llame tu onclick
+          window.resetearInputs = function() {
+            // usamos setTimeout para ejecutarlo *después* del reset nativo si ya ocurrió
+            setTimeout(() => {
+              const all = Array.from(document.querySelectorAll('.form input'));
+              all.forEach(input => {
+                const tipo = (input.type || '').toLowerCase();
+                if (tipo === 'button' || tipo === 'submit') return;
+                if (tipo === 'radio' || tipo === 'checkbox') {
+                  input.checked = false;
+                  return;
+                }
+                if (tipo === 'file') {
+                  try { input.value = ''; } catch(e) {}
+                  return;
+                }
+                if (tipo === 'range') {
+                  if (input.hasAttribute('min')) input.value = input.getAttribute('min');
+                  else input.value = '';
+                  return;
+                }
+                if (tipo === 'color') {
+                  input.value = '#000000';
+                  return;
+                }
+                // otros inputs (text, email, date, etc.)
+                input.value = '';
+              });
+
+              // actualizar el meter luego de limpiar
+              actualizar();
+            }, 0);
+          };
+
+          // primer cálculo al cargar
+          actualizar();
+        });
+
+
+        function openModal(){
+            const modal= document.querySelector('dialog');
+
+            const nombre= document.getElementById('name').value;
+            const contra= document.getElementById('pass').value;
+            const busqueda= document.getElementById('search').value;
+            const tel= document.getElementById('tel').value;
+            const correo= document.getElementById('email').value;
+            const url= document.getElementById('url').value;
+            const whats= document.getElementById('number').value;
+            const feliz= document.getElementById('range').value;
+            const fechaNaci= document.getElementById('date').value;
+            const tiempoLevantarte= document.getElementById('time').value;
+            const viajero= document.getElementById('datetime-local').value;
+            const mes= document.getElementById('month').value;
+            const semana= document.getElementById('week').value;
+            const color= document.getElementById('color').value;
+            const archivo= document.getElementById('file').value;
+            const hombre= document.getElementById('hombre').checked;
+            const mujer= document.getElementById('mujer').checked;
+            const otro= document.getElementById('otro').checked;
+            const pase= document.getElementById('checkbox').checked;
+
+            let genero='';
+
+            if (hombre) {
+                genero='hombre';
+            } else if(mujer){
+                genero='mujer';
+            }else if(otro){
+                genero='gay';
+            }else{
+                genero='No binario';
+            }
+
+            /*console.log(nombre);
+            console.log(contra);
+            console.log(busqueda);
+            console.log(tel);
+            console.log(correo);
+            console.log(url);
+            console.log(whats);
+            console.log(feliz);
+            console.log(fechaNaci);
+            console.log(tiempoLevantarte);
+            console.log(viajero);
+            console.log(mes);
+            console.log(semana);
+            console.log(color);
+            console.log(archivo);
+            console.log(pase);
+            console.log(genero);*/
+
+            const resultado= document.getElementById('resultado');
+            resultado.textContent= `Hola ${nombre} tu color favorito es ${color}. Naciste el ${fechaNaci} y en promedio te tardas ${tiempoLevantarte}
+             en levantarte tras tu primer alarma. Eso quiere decir que tu felicidad se basa en un ${feliz} de calificación.
+             Tu mayor tema de busqueda es ${busqueda} y sera que lo buscas en esta url: ${url}, te identificas como ${genero} y tu mayor secreto es ${contra},
+             tu primer numero celular fue ${tel} y tu primer correo fue ${correo}, como dato curioso si fueras un viajero en el tiempo irias a la
+             fecha ${viajero}, pero si viajas puedes alterar la linea del tiempo y puede que tu mes ${mes} favorito cambie e incluso tu mejor fin de
+             semana de vacaiones que fue ${semana}. Guarda bien tu archivo ${archivo}, como consejo envialo a tu mismo numero ${whats}.`;
+
+            modal.showModal();
+        }
+
+        function closeModal(){
+            const modal= document.querySelector('dialog');
+            modal.close();
+        }
+
+        function resetearInputs(){
+            let inputs= Array.from(document.querySelectorAll('.form input'));
+            /*console.log(inputs);*/
+            inputs.forEach(input => {
+                input.value= '';
+            })
+            /*console.log(inputs);*/
+        }
+
+        function sumarMeter(){
+
+        }
+
+    </script>
+</body>
+</html>

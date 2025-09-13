@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 125px);
+    max-width: 500px;
+    background: rgb(25, 96, 81);
+    border-radius: 10px;
+    border: none;
+}
+
+.pantalla {
+    grid-row: 1/2;
+    grid-column: 1/5;
+
+    #pantalla {
+        width: 480px;
+        margin: 10px;
+        height: 105px;
+        background: rgb(219, 234, 228);
+        border: none;
+        border-radius: 10px;
+        margin: 10px;
+        font-size: 4rem;
+    }
+}
+
+.btn-igual {
+    grid-row: 5/7;
+    grid-column: 4/5;
+
+    #btn-igual {
+        width: 105px;
+        margin: 10px;
+        height: 220px;
+        background: white;
+        color: black;
+        font-size: 5rem;
+        border-radius: 10px;
+        background: rgb(203, 203, 38);
+
+    }
+}
+
+.btnBorrar {
+    grid-column: 1/4;
+
+    #btnBorrar {
+        width: 350px;
+        margin: 10px;
+        height: 105px;
+        background: white;
+        color: black;
+        font-size: 5rem;
+        border-radius: 10px;
+        background: rgb(203, 203, 38);
+
+    }
+}
+
+button {
+    width: 105px;
+    margin: 10px;
+    height: 105px;
+    background: white;
+    color: black;
+    font-size: 5rem;
+    border-radius: 10px;
+
+}
+
+button:hover {
+    transform: scale(0.95);
+    opacity: 0.5;
+}
