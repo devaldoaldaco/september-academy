@@ -1,0 +1,69 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor{
+    width: 960px;
+    height: 800px;
+    background-color: grey;
+    margin: auto;
+    border: 40px;
+}
+
+
+header{
+    background-color: greenyellow;
+    height: 150px;
+}
+
+header h2{
+    text-align: center;
+    line-height: 150px;
+}
+
+
+nav{
+    background-color: grey;
+    height: 500px;
+    width: 30%;
+    float: left;
+}
+
+nav h2{
+    text-align: center;
+    line-height: 150px;
+}
+
+main{
+    background-color: aqua;
+    height: 500px;
+    width: 70%;
+    float: right;
+}
+
+main h2{
+    text-align: center;
+    line-height: 100px;
+}
+
+main article{
+    background-color: blue;
+    height: 150px;
+    margin: 20px;
+}
+
+main article h2{
+    text-align: center;
+    line-height: 110px;
+}
+
+footer{
+    background-color: red;
+    height: 700px;
+}
+
+footer h2{
+    text-align: center;
+    line-height: 150px;
+}

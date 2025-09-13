@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input predictivo</title>
+    <style>
+        body {
+            background-color: grey;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 700px;
+        }
+
+        fieldset {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+        }
+
+        form {
+            background-color: white;
+            height: 47%;
+            width: 50%;
+            border-radius: 20PX;
+        }
+
+        input,
+        label {
+            margin: 10px;
+        }
+
+        button{
+            width: 80px;
+            height: 39px;
+            margin:1%;
+            margin-left: 5%;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+
+                button:hover{
+            width: 83px;
+            height: 42px;
+            margin:1%;
+            margin-left: 5%;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form action="">
+            <fieldset>
+                <legend>Paises</legend>
+                <label for="nombre">Nombre</label>
+                <input type="text" placeholder="Ingresa tu Nombre" id="nombre">
+
+                <label for="edad">Edad</label>
+                <input type="number" placeholder="Ingresa Edad" id="edad">
+
+                <label for="pais">Pais</label>
+                <input type="search" placeholder="Escoge tu paises" list="paises" id="pais">
+                <datalist id="paises">
+                    <option value="mexico">Mexico</option>
+                    <option value="brasil">Brasil</option>
+                    <option value="colombia">Colombia</option>
+                    <option value="canada">Canada</option>
+                    <option value="chile">Chile</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="japon">Japon</option>
+                    <option value="uruguay">Uruguay</option>
+                    <option value="peru">Peru</option>
+                    <option value="paraguay">Paraguay</option>
+                    <option value="bolivia">Bolivia</option>
+                    <option value="venezuela">Venezuela</option>
+                    <option value="guatemala">Guatemala</option>
+                    <option value="alemania">Alemania</option>
+                    <option value="españa">España</option>
+                    <option value="francia">Francia</option>
+                    <option value="portugal">Portugal</option>
+                    <option value="costa rica">Costa rica</option>
+                    <option value="el salvador">El salvador</option>
+                </datalist>
+            </fieldset>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+
+</html>

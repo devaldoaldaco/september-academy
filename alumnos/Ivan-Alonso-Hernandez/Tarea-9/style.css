@@ -1,0 +1,131 @@
+/* ===== SELECTORES CSS CON EXPLICACIONES DETALLADAS ===== */
+
+/* SELECTOR DESCENDIENTE (espacio) 
+   --------------------------------
+   Este selector busca todos los elementos <p> que estén EN CUALQUIER NIVEL 
+   dentro de un elemento con la clase "container-example", sin importar 
+   cuántos niveles de anidación haya. Es el selector de alcance más amplio.
+   
+   Ejemplo: 
+   <div class="container-example">
+       <p>Este será seleccionado (hijo directo)</p>
+       <div>
+           <p>Este también será seleccionado (nieto)</p>
+           <span>
+               <p>Este también será seleccionado (bisnieto)</p>
+           </span>
+       </div>
+   </div>
+*/
+.descendant .container-example p {
+    color: #e74c3c; /* Color rojo */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* SELECTOR HIJO DIRECTO (>) 
+   --------------------------
+   Este selector es MÁS ESPECÍFICO que el descendiente. Solo selecciona 
+   elementos <p> que sean HIJOS DIRECTOS de un elemento con la clase "child".
+   No seleccionará párrafos que estén en niveles más profundos de anidación.
+   
+   Ejemplo:
+   <div class="child">
+       <p>Este será seleccionado (hijo directo)</p>
+       <div>
+           <p>Este NO será seleccionado (nieto, no hijo directo)</p>
+       </div>
+   </div>
+*/
+.child > p {
+    color: #3498db; /* Color azul */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* SELECTOR HERMANO ADYACENTE (+) 
+   -------------------------------
+   Este selector busca el PRIMER elemento <p> que esté INMEDIATAMENTE DESPUÉS 
+   de un elemento <h3> y que compartan el mismo elemento padre. Solo afecta 
+   al primer hermano que cumpla la condición.
+   
+   Ejemplo:
+   <h3>Título</h3>
+   <p>Este será seleccionado (hermano adyacente inmediato)</p>
+   <p>Este NO será seleccionado (no es el inmediato)</p>
+*/
+.adjacent h3 + p {
+    color: #2ecc71; /* Color verde */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* SELECTOR HERMANOS GENERALES (~) 
+   --------------------------------
+   Este selector busca TODOS los elementos <p> que sean HERMANOS de un <h3> 
+   y que estén DESPUÉS de él en el código, sin importar si hay otros elementos 
+   entre ellos. A diferencia del selector adyacente (+), este afecta a todos 
+   los hermanos que cumplan la condición, no solo al primero.
+   
+   Ejemplo:
+   <h3>Título</h3>
+   <p>Este será seleccionado (hermano)</p>
+   <div>Otro elemento</div>
+   <p>Este también será seleccionado (hermano)</p>
+*/
+.general h3 ~ p {
+    color: #9b59b6; /* Color morado */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* SELECTOR DE GRUPO (,) 
+   ----------------------
+   Este selector permite APLICAR LOS MISMOS ESTILOS a múltiples elementos 
+   diferentes simultáneamente. Separa los selectores con comas y aplica 
+   las reglas CSS a todos los elementos que coincidan con cualquiera de ellos.
+   
+   Es útil para evitar repetir las mismas reglas CSS para diferentes selectores.
+   
+   Ejemplo:
+   <h4>Este será naranja</h4>
+   <h5>Este será naranja</h5>
+   <h6>Este será naranja</h6>
+   <p>Este NO será naranja</p>
+*/
+.group h4, 
+.group h5, 
+.group h6 {
+    color: #e67e22; /* Color naranja */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* SELECTOR DE ATRIBUTO ([atributo]) 
+   ----------------------------------
+   Este selector busca elementos basados en la PRESENCIA o VALOR de sus atributos.
+   
+   input[type="text"]: Selecciona solo inputs cuyo atributo type sea exactamente "text"
+   a[target="_blank"]: Selecciona enlaces que tengan el atributo target="_blank"
+   
+   Otros operadores útiles para selectores de atributo:
+   [atributo*="valor"] - Selecciona si el atributo CONTIENE el valor
+   [atributo^="valor"] - Selecciona si el atributo COMIENZA con el valor
+   [atributo$="valor"] - Selecciona si el atributo TERMINA con el valor
+   [atributo~="valor"] - Selecciona si el atributo CONTIENE la palabra completa
+*/
+.attribute input[type="text"] {
+    border: 2px solid #3498db; /* Borde azul */
+    background-color: #eaf6ff; /* Fondo azul muy claro */
+}
+
+.attribute a[target="_blank"] {
+    color: #9b59b6; /* Color morado */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Color de fondo para elementos pares (alternancia de colores) */
+.example-item:nth-child(even) {
+    background-color: #f5f5f5; /* Fondo gris muy claro */
+}
+
+/* Color de fondo para elementos impares (alternancia de colores) */
+.example-item:nth-child(odd) {
+    background-color: #fafafa; /* Fondo gris extremadamente claro */
+}
+

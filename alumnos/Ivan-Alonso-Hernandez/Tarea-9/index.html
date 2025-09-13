@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinadores</title>
+    <style>
+        div {
+            color: black;
+        }
+
+        span {
+            display: block;
+        }
+
+        div~p {
+            color: red;
+        }
+
+        div + span {
+            color: green;
+        }
+
+        div > h1{
+            color: aqua;
+        }
+
+        article h1{
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <span>Ejemplo ~ : div~p </span>
+        </div>
+        <p>p Hermano de un div</p>
+        <p>p Hermano de un div</p>
+        <p>p Hermano de un div</p>
+    </div>
+
+    <div>
+        <div>
+            <span>Ejemplo + : div + span</span>
+        </div>
+        <span>Primer hermano encontrado</span>
+        <span>hermano</span>
+        <span>hermano</span>
+        <span>hermano</span>
+    </div>
+
+    <div>
+        <div>
+            <h1>Hijo directo de un div : div > h1</h1>
+        </div>
+        <div>
+            <section>
+                <h1>No es un hijo directo de un div</h1>
+            </section>
+        </div>
+    </div>
+
+
+    <article>
+        <div>
+            <h1>Hijo de un article : article h1</h1>
+        </div>
+        <div>
+            <section>
+                <h1>Hijo de un Article: article h1</h1>
+            </section>
+        </div>
+    </article>
+
+</body>
+
+</html>

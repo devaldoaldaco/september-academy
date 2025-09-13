@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.seccion-1 {
+    margin: 0 auto;
+    width: 950px;
+}
+
+.seccion-1 .container {
+    display: flex;
+    padding: 100px;
+}
+
+.box {
+    padding: 30px;
+
+    p {
+        margin-bottom: 25%;
+    }
+
+    button {
+        width: 60%;
+        height: 11%;
+        border-radius: 15px;
+        border: none;
+        margin-bottom: 9%;
+    }
+
+    h2 {
+        margin-bottom: 10%;
+    }
+}
+
+#box-1 {
+    background-color: #df852f;
+    color: white;
+}
+
+
+#box-2 {
+    background-color: #116872;
+    color: white;
+}
+
+
+#box-3 {
+    background-color: #06413f;
+    color: white;
+}
+
+.seccion-2 {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.seccion-2 .container {
+    display: flex;
+    padding: 100px;
+}
+
+.img-furniture img {
+    width: 100%;
+}
+
+.text-furniture {
+    display: flex;
+    flex-direction: column;
+    padding: 3% 5%;
+    gap: 10px;
+    font-size: 90%;
+}
+
+.text-furniture img {
+    width: 11%;
+    height: 126%;
+    border-radius: 70px;
+}
+
+.perfil {
+    display: flex;
+    height: 40%;
+    gap: 4%;
+}
+
+.nombre-perfil span {
+    color: rgb(174, 173, 173);
+}
+
+.text-furniture p {
+    margin-bottom: 15px;
+}
+
+.text-furniture h3 {
+    font-size: 100%;
+}
+
+#icono-share {
+    margin: auto;
+    width: 4%;
+    height: 35%;
+    margin-left: 44%;
+}
+
+.seccion-3 {
+    margin: 0 auto;
+    width: 600px;
+    margin-bottom: 10vh;
+}
+
+.seccion-3 .container {
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    background-color: #182640;
+    width: 51%;
+    padding: 27px;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+#equilibrium-text {
+    color: #4e6181;
+
+    h3 {
+        color: white;
+        margin-bottom: 5%;
+    }
+}
+
+.container .information {
+    display: flex;
+    color: #47d5d9;
+
+    span {
+        color: #677a9a;
+    }
+}
+
+.information img {
+    width: 10%;
+
+
+}
+
+#vinilo {
+    background-color: grey;
+    border-radius: 100px;
+}
+
+.days{
+ margin-left: 44%;    
+}
+
+.creation{
+    display: flex;
+    gap: 10px;
+    border-top: 2px solid #243b63;
+    padding-top: 5%;
+    img{
+        width: 12%;
+        height: 30px;
+        border-radius: 50%;
+    }
+
+}
+
+.creation #span1{
+    color:  #4b699c;   
+}
+
+.creation #span2{
+    color: rgb(171, 171, 171);
+}

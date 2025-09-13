@@ -1,0 +1,100 @@
+body{
+  display:flex;
+  flex-direction: column;
+  height: 600px;
+  font-family: sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding: 13px;
+}
+
+header img{
+    width: 20px;
+    height: 20px;
+    text-decoration: none;
+}
+
+header a{
+    text-decoration: none;
+}
+
+.google_foto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+    margin-bottom: 20px;
+}
+
+.google_foto img{
+    width: 280px;
+    height: 120px;
+}
+
+.buscador{
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-left: 30%;
+    padding-bottom: 15px;
+}
+
+
+.buscador input{
+    width: 55%;
+    left: 60%;
+    padding: 14px;
+    border-radius: 24px;
+}
+
+.buscador img:first-child{
+    position: absolute;
+    left: 1%;
+    margin-top: 12px;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+}
+
+.buscador img:last-child{
+    position: absolute;
+    right: 44%;
+    margin-top: 12px;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+}
+
+.iconos{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+}
+
+.iconos img{
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+}
+
+footer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 15px;
+    margin-top: 16%;
+}
+
+footer button{
+    width: 170px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgb(0, 153, 255);
+    color: white;
+    border-color:rgb(0, 153, 255) ;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set y Map</title>
+</head>
+
+<body>
+    <script>
+
+        //Set
+
+        //Un Set es util para colecciones de datos donde solo te importan los valores 
+        //Es un estructura de datos nativa para respresentar conjuntos de datos 
+        // parecido a una array pero con la diferencia de que almacena datos unicos
+        //Se puede incluir cualquier tipo de elemento
+
+        const array = [1, 2, 3, 4, 5, 5, 'ivan' , true];
+        const set = new Set(array);
+
+        console.log(array);
+        console.log(set);
+
+        //Tiene diferentes tipos de propiedades o metodos 
+
+        //.size:Devuelve el numero de elementos en el set
+        const size = set.size;
+        console.log(`Numero de elementos: ${size}`);
+
+        //.add(valor): añade un valor al set
+        set.add(10);
+        set.add("ivan") //Valor respetido
+        console.log(set);
+
+        //.has(valor): verifica si un valor existe en el set
+        const has = set.has(10);
+        console.log(has)
+
+        //.delete(valor):Elimina un valor en set
+        set.delete(10);
+        console.log(set)
+        //.clear():Vacia el set
+
+
+        //desestrucuturacion
+        const array2 = [...set];
+        console.log(array2)
+        array2[0] = 7;
+
+        console.log(array)
+        console.log(array2)
+
+        //iterar
+        for(const item of set){
+            console.log(item)
+        }
+
+        //Map
+        //Es una estructura de datos nativa que permite implementar una estructura de tipo mapa
+        //Tiene valores guardados a traves de una clave para identificarlos se denomina pares clave-valor 
+        // parecido a un diccionario o base de datos 
+        //guardar informacion de forma dinamica
+
+        const map = new Map([[1 , "uno"], [2 , "dos"]]);
+        console.log(map)
+
+        const map2 = new Map([[1 , "1"],[2 , "2"], [1 , "3"]]) //No puede exisitir dos clave-valor con el mismo numero
+
+        //Metodos o propiedades 
+
+        //.set() : Fija una claver-valor en el mapa 
+        //Si lo usamos para una clave que no existe,se añade al mapa
+        //Si lo usamos para una clave que ya existe , lo sobrescribe
+
+        map.set(5,"cinco");
+        map.set("Ivan" , "nombre ivan")
+        console.log(map)
+
+        //size:Devuele el numero de elementos 
+
+        console.log(`Numero de elementos: ${map.size}`);
+
+        //has:Se usa para comprobar que un elemento existe en un mapa
+
+        const hasMap = map.has(5);
+        console.log(hasMap)
+
+        //delete: Se usa para eliminar un objeto en el mapa
+
+        map.delete(5);
+        console.log(map)
+
+
+        //clear:Borra todos los elementos del mapa
+        map2.clear()
+        console.log(`Numero de elementos: ${map2.size}`);
+
+        
+        //Obtener valor 
+        console.log(map.get(1))
+
+        //iterar 
+        
+        for(let item of map){
+            console.log(item)
+        }
+    </script>
+</body>
+
+</html>

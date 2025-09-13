@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fomulario paso por paso</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="contenido">
+        <h1>Tarea inputs</h1>
+        <button onclick="openModal()">Iniciar</button>
+    </div>
+    <dialog id="dialog1">
+        <meter value="10" min="0" max="100" class="meter"></meter>
+        <h2>Correo</h2>
+        <form action="" onsubmit="modal2(event)">
+            <fieldset>
+                <legend>Inputs</legend>
+                <label for="nombre">Nombre</label>
+                <input type="text" placeholder="nombre" id="nombre"><br>
+
+                <label for="email">email</label>
+                <input type="email" placeholder="email" id="email"><br>
+
+                <label for="fecha">Fecha</label>
+                <input type="date" placeholder="fecha" id="fecha"><br>
+
+                <label for="password">password</label>
+                <input type="password" placeholder="password" id="password">
+
+                <button type="submit">Siguiente</button>
+            </fieldset>
+        </form>
+    </dialog>
+
+    <dialog id="dialog2">
+        <meter value="0" min="0" max="100" class="meter"></meter>
+        <h2>Datos personales</h2>
+        <form action="" onsubmit="modal3(event)">
+            <fieldset>
+                <legend>Inputs</legend>
+                <label for="check">Ingles</label>
+                <input type="checkbox" placeholder="check" id="check"><br>
+
+                <label for="color">Color favorito</label>
+                <input type="color" placeholder="color" id="color"><br>
+
+                <label for="radio">Radio</label>
+                <input type="radio" placeholder="radio" id="radio"><br>
+
+                <button type="submit">Siguiente</button>
+            </fieldset>
+        </form>
+    </dialog>
+
+    <dialog id="dialog3">
+        <meter value="0" min="0" max="100" class="meter"></meter>
+        <h2>Direccion</h2>
+        <form action="">
+            <fieldset>
+                <legend>Inputs</legend>
+                <label for="range">Range</label>
+                <input type="range" placeholder="range" id="range"><br>
+
+                <label for="tel">Telefono</label>
+                <input type="tel" placeholder="tel" id="tel"><br>
+
+                <label for="pais">Pais</label>
+                <input type="search" placeholder="Pais" list="paises" id="pais">
+
+                <datalist id="paises">
+                    <option value="mexico">Mexico</option>
+                    <option value="brasil">Brasil</option>
+                    <option value="colombia">Colombia</option>
+                    <option value="canada">Canada</option>
+                    <option value="chile">Chile</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="japon">Japon</option>
+                    <option value="uruguay">Uruguay</option>
+                    <option value="peru">Peru</option>
+                    <option value="china">China</option>
+                </datalist>
+
+                <button>Cerrar</button>
+            </fieldset>
+        </form>
+    </dialog>
+
+    <script>
+        function openModal() {
+            const modal = document.getElementById(`dialog1`)
+            modal.showModal();
+        }
+
+        function modal2(event) {
+            event.preventDefault()
+            const modal = document.getElementById(`dialog1`)
+            const meter = modal.querySelector(`meter`)
+            const valorActual = meter.value;
+            modal.close();
+
+            const paso2 = document.getElementById(`dialog2`);
+            const meter2 = paso2.querySelector('meter');
+            meter2.value = valorActual + 45; 
+            paso2.showModal();
+        }
+
+        function modal3(event) {
+            event.preventDefault()
+            const paso2 = document.getElementById(`dialog2`);
+            const meter2 = paso2.querySelector(`meter`)
+            const valorActual = meter2.value;
+            paso2.close();
+
+            const paso3 = document.getElementById(`dialog3`);
+            const meter3 = paso3.querySelector('meter');
+            meter3.value = valorActual + 45; 
+            paso3.showModal();
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios variables</title>
+</head>
+
+<body>
+    <script>
+
+/////////////////// Ejercicios numeros /////////////////////////
+        {
+            let num = 100;
+            let num2 = 200;
+            console.log(`Resultado: ${num + num2}`)
+        }
+
+        {
+            let num = 500;
+            let num2 = 200;
+            console.log(`Resultado: ${num - num2}`)
+        }
+
+        {
+            let num = 100;
+            let num2 = 200;
+            console.log(`Resultado: ${num * num2}`)
+        }
+
+        {
+            let num = 300;
+            let num2 = 100;
+            console.log(`Resultado: ${num / num2}`)
+        }
+
+        {
+            let num = 300;
+            let num2 = 200;
+            console.log(`Resultado: ${num % num2}`)
+        }
+
+        {
+            let num = 10;
+            console.log(`Resultado: ${num ** 2}`)
+        }
+
+        {
+            let base = 44;
+            let altura = 20;
+            console.log(`Area rectangulo: ${base * altura}`)
+        }
+        {
+            const PI = 3.1416;
+            let radio = 34;
+            console.log(`Area circulo: ${PI * (radio ** 2)}`)
+        }
+        {
+            let lado = 11;
+            console.log(`Perimetro cuadrado: ${lado + lado + lado + lado}`)
+        }
+        {
+            let celsius = 25;
+            let fahrenheit = (celsius * 1.8) + 32;
+            console.log(`${celsius}º a fahrenheit: ${fahrenheit}`)
+        }
+        {
+            let kilometros = 15;
+            let millas = kilometros * 0.621371;
+            console.log(`${kilometros} km a millas: ${millas}`)
+        }
+        {
+            let num1 = 15;
+            let num2 = 10;
+            let num3 = 30;
+            let suma = num1 + num2 + num3;
+            console.log(`Promedio de ${num1},${num2},${num3}: ${suma / 3}`)
+        }
+        {
+            let num = 15;
+            console.log(`Doble de ${num}: ${num * 2}`)
+        }
+        {
+            let num = 15;
+            console.log(`Triple de ${num}: ${num * 3}`)
+        }
+        {
+            let num = 15;
+            let cuadrado = 15 ** 2;
+            let cubo = 15 ** 3;
+            console.log(`Cuadrado y cubo de ${num}: ${cuadrado}, ${cubo}`)
+        }
+
+
+        ////////////////// Ejercicios String //////////////////////////////////
+
+
+        {
+            let nombre = "Ivan";
+            console.log(`Hola ${nombre}`);
+        }
+        {
+            let nombre = "Ivan";
+            let apellido = "Alonso"
+            console.log(`Hola ${nombre} ${apellido}`);
+        }
+        {
+            let nombre = "Ivan";
+            let count = nombre.length
+            console.log(`Numero de caracteres de "${nombre}": ${count}`);
+        }
+        {
+            let nombre = "Ivan";
+            let mayusculas = nombre.toLocaleUpperCase()
+            console.log(`Hola ${mayusculas}`);
+        }
+
+        {
+            let nombre = "IVAN";
+            let minuscula = nombre.toLowerCase()
+            console.log(`Hola ${minuscula}`);
+        }
+
+        {
+            let nombre = "Ivan";
+            let primeraLetra = nombre[0]
+            console.log(`Hola ${primeraLetra}`);
+        }
+
+        {
+            let nombre = "Ivan";
+            let ultimaLetra = nombre[nombre.length - 1]
+            console.log(`Hola ${ultimaLetra}`);
+        }
+        {
+            let nombre = "Ivan";
+            let slice = nombre.slice(2)
+            console.log(`Hola ${slice}`);
+        }
+        {
+            let nombre = "Hola a todos";
+            let remplazar = nombre.replace('todos', 'ivan')
+            console.log(remplazar);
+        }
+
+        {
+            let nombre = "Hola a todos";
+            let search = nombre.includes('todos')
+            console.log(search);
+        }
+
+
+        {
+            let nombre = "Hola a todos como estan";
+            let separar = nombre.split(' ')
+            console.log(separar);
+        }
+
+
+
+        {
+            let nombre = "  Hola a todos como estan  ";
+            let espacios = nombre.trim()
+            console.log(espacios);
+        }
+
+
+        {
+            let nombre = "Hola a todos como estan  ";
+            let repetir = nombre.repeat(4)
+            console.log(repetir);
+        }
+
+        {
+            let nombre = "ivan";
+            let primeraLetraMay = nombre[0].toUpperCase();
+            console.log(primeraLetraMay);
+        }
+
+        {
+            let nombre = "hola como estan todos";
+            let letra = 'O';
+            let cadena = nombre.split(' ').join('').toLocaleLowerCase().split('');
+            let count = 0;
+            cadena.forEach(lett => {
+                if (lett === letra.toLocaleLowerCase()) {
+                    count++;
+                }
+            });
+            console.log(`La letra "${letra}" se repite: ${count}`);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

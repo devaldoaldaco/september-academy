@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="pantalla-box">
+            <input type="text" id="pantalla">
+        </div>
+        <div class="box"> 
+            <button onclick="limpiar()" value="c">C</button><br>
+            <button onclick="mostrarPantalla(value)" value="7">7</button>
+            <button onclick="mostrarPantalla(value)" value="8">8</button>
+            <button onclick="mostrarPantalla(value)" value="9">9</button>
+            <button onclick="mostrarPantalla(value)" value="/">/</button>
+            <button onclick="mostrarPantalla(value)" value="4">4</button>
+            <button onclick="mostrarPantalla(value)" value="5">5</button>
+            <button onclick="mostrarPantalla(value)" value="6">6</button>
+            <button onclick="mostrarPantalla(value)" value="*">*</button>
+            <button onclick="mostrarPantalla(value)" value="1">1</button>
+            <button onclick="mostrarPantalla(value)" value="2">2</button>
+            <button onclick="mostrarPantalla(value)" value="3">3</button>
+            <button onclick="mostrarPantalla(value)" value="+">+</button>
+            <button onclick="mostrarPantalla(value)" value="0">0</button>
+            <button onclick="mostrarPantalla(value)" value=".">.</button>
+            <button onclick="calcular()" value="=">=</button>
+            <button onclick="mostrarPantalla(value)" value="-">-</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
