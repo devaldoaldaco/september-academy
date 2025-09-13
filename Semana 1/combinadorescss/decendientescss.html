@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Of Thrones</title>
+    <style>
+        /*  Estilo general (herencia basica) */
+        body {
+            font-family: Arial, sans-serif;
+            color: darkblue;  /* Todos los textos heredan este color */
+        }
+
+        /*  Descendiente  */
+        div span {
+            color: red; /* Todos los <span> dentro de un <div> */
+        }
+
+        /* Hijo directo  */
+        div > span {
+            font-weight: bold; /* Solo los <span> que son hijos directos de un <div> */
+        }
+
+        /* Hermano adyacente */
+        section + span {
+            color: green; /* El <span> que aparece justo después de un <section> */
+        }
+
+        /*  Hermano general (~) */
+        div ~ span {
+            font-style: italic; /* Todos los <span> que sean hermanos posteriores de un <div> */
+        }
+    </style>
+</head>
+<body>
+  <div>
+    <div>
+        <span>xdddd</span> <!-- Es hijo directo de <div>, hereda darkblue pero el combinador lo vuelve rojo y en negrita -->
+        <section>
+            <span>XDDDDDD</span> <!--  Esta dentro de un <section>, pero sigue siendo descendiente de un <div>, por eso se pinta rojo -->
+        </section>
+    </div>
+  </div>  
+  <span>glooog</span> <!--  Es hermano general (~) de un <div>, asi que se vuelve cursiva -->
+</body>
+</html>

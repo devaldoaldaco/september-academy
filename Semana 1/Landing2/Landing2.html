@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Manage landing page</title>
+  <style>
+    /* Variables de colores y fuentes */
+    :root {
+      --orange-400: hsl(12, 88%, 59%);
+      --blue-950: hsl(228, 39%, 23%);
+      --gray-950: hsl(233, 12%, 13%);
+      --orange-50: hsl(13, 100%, 96%);
+      --gray-50: hsl(0, 0%, 98%);
+      --white: hsl(0, 0%, 100%);
+      --red-500: hsl(0, 100%, 50%);
+    }
+
+    /* Estilos generales */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--blue-950);
+      overflow-x: hidden;
+      background-image: url('images/bg-tablet-pattern.svg');
+      background-repeat: no-repeat;
+      background-position: right -200px top -200px;
+      background-size: 600px;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 32px;
+      background-color: var(--orange-400);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: hsl(12, 88%, 70%);
+      transform: translateY(-2px);
+    }
+
+    /* Header */
+    header {
+      padding: 40px 0;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      width: 146px;
+      height: 24px;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: var(--blue-950);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      color: var(--orange-400);
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 60px 0;
+      display: flex;
+      align-items: center;
+      gap: 100px;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-image {
+      flex: 1;
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: var(--blue-950);
+    }
+
+    .hero p {
+      margin-bottom: 30px;
+      color: var(--gray-950);
+      max-width: 350px;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 100px 0;
+      display: flex;
+      gap: 100px;
+    }
+
+    .features-intro {
+      flex: 1;
+    }
+
+    .features-intro h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: var(--blue-950);
+    }
+
+    .features-intro p {
+      color: var(--gray-950);
+      max-width: 350px;
+    }
+
+    .features-list {
+      flex: 1;
+    }
+
+    .feature-item {
+      margin-bottom: 40px;
+    }
+
+    .feature-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 15px;
+      background-color: var(--orange-50);
+      padding: 8px 0;
+      border-radius: 50px 0 0 50px;
+    }
+
+    .feature-number {
+      background-color: var(--orange-400);
+      color: white;
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+    }
+
+    .feature-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .feature-description {
+      padding-left: 90px;
+      color: var(--gray-950);
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      font-size: 2.5rem;
+      margin-bottom: 80px;
+      color: var(--blue-950);
+    }
+
+    .testimonial-slider {
+      display: flex;
+      gap: 30px;
+      overflow-x: auto;
+      padding: 20px 0;
+      scrollbar-width: none; /* Firefox */
+    }
+
+    .testimonial-slider::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Edge */
+    }
+
+    .testimonial-card {
+      background-color: var(--gray-50);
+      padding: 60px 30px 40px;
+      border-radius: 5px;
+      min-width: 540px;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .testimonial-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .testimonial-name {
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-text {
+      color: var(--gray-950);
+    }
+
+    .testimonial-actions {
+      margin-top: 50px;
+    }
+
+    /* CTA Section */
+    .cta {
+      background-color: var(--orange-400);
+      padding: 80px 0;
+      color: white;
+      background-image: url('images/bg-simplify-section-desktop.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .cta-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cta h2 {
+      font-size: 2.5rem;
+      max-width: 450px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--gray-950);
+      color: white;
+      padding: 80px 0 40px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 60px;
+    }
+
+    .footer-logo {
+      margin-bottom: 60px;
+      filter: brightness(0) invert(1);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icon {
+      width: 30px;
+      height: 30px;
+      transition: filter 0.3s ease;
+    }
+
+    .social-icon:hover {
+      filter: brightness(0) saturate(100%) invert(70%) sepia(40%) saturate(1000%) hue-rotate(320deg) brightness(100%) contrast(95%);
+    }
+
+    .footer-nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .footer-nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-nav a:hover {
+      color: var(--orange-400);
+    }
+
+    .footer-form {
+      display: flex;
+      gap: 10px;
+      position: relative;
+    }
+
+    .footer-form input {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 50px;
+      width: 100%;
+    }
+
+    .footer-form button {
+      padding: 12px 24px;
+      background-color: var(--orange-400);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .footer-form button:hover {
+      background-color: hsl(12, 88%, 70%);
+    }
+
+    .error-message {
+      color: var(--red-500);
+      font-size: 0.8rem;
+      margin-top: 5px;
+      display: none;
+      position: absolute;
+      bottom: -25px;
+      left: 20px;
+    }
+
+    .copyright {
+      grid-column: 1 / -1;
+      text-align: right;
+      color: hsl(0, 0%, 70%);
+      font-size: 0.9rem;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .mobile-menu.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-menu-content {
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: white;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 5px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .mobile-nav-menu {
+      list-style: none;
+      text-align: center;
+    }
+
+    .mobile-nav-menu li {
+      margin: 20px 0;
+    }
+
+    .mobile-nav-menu a {
+      text-decoration: none;
+      color: var(--blue-950);
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+
+    .close-menu {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        background-position: right -300px top -200px;
+        background-size: 500px;
+      }
+      
+      .hero, .features {
+        flex-direction: column;
+        gap: 60px;
+      }
+      
+      .hero-image {
+        order: -1;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+        text-align: center;
+      }
+      
+      .hero p {
+        text-align: center;
+        margin: 0 auto 30px;
+      }
+      
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .nav-menu {
+        display: none;
+      }
+      
+      .hamburger {
+        display: block;
+      }
+      
+      .features-intro h2 {
+        text-align: center;
+      }
+      
+      .features-intro p {
+        text-align: center;
+        margin: 0 auto;
+      }
+      
+      .feature-header {
+        background-color: transparent;
+      }
+      
+      .feature-description {
+        padding-left: 0;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .footer-nav {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .copyright {
+        text-align: center;
+      }
+      
+      .testimonial-card {
+        min-width: 300px;
+      }
+      
+      .cta {
+        background-image: url('images/bg-simplify-section-mobile.svg');
+        background-position: left center;
+      }
+      
+      .cta-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+      }
+      
+      .mobile-menu {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <img src="images/logo.svg" alt="Manage" class="logo">
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Product</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </nav>
+      <button class="btn">Get Started</button>
+      <div class="hamburger" id="hamburger-btn">
+        <img src="images/icon-hamburger.svg" alt="Menu">
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-content">
+      <div class="close-menu" id="close-menu">
+        <img src="images/icon-close.svg" alt="Close menu">
+      </div>
+      <ul class="mobile-nav-menu">
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Product</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Community</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Bring everyone together to build better products.</h1>
+        <p>Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view.</p>
+        <button class="btn">Get Started</button>
+      </div>
+      <div class="hero-image">
+        <img src="images/illustration-intro.svg" alt="Charts and graphs">
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <div class="features-intro">
+        <h2>What's different about Manage?</h2>
+        <p>Manage provides all the functionality your team needs, without the complexity. Our software is tailor-made for modern digital product teams.</p>
+      </div>
+      <div class="features-list">
+        <div class="feature-item">
+          <div class="feature-header">
+            <div class="feature-number">01</div>
+            <h3 class="feature-title">Track company-wide progress</h3>
+          </div>
+          <p class="feature-description">See how your day-to-day tasks fit into the wider vision. Go from tracking progress at the milestone level all the way done to the smallest of details. Never lose sight of the bigger picture again.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-header">
+            <div class="feature-number">02</div>
+            <h3 class="feature-title">Advanced built-in reports</h3>
+          </div>
+          <p class="feature-description">Set internal delivery estimates and track progress toward company goals. Our customisable dashboard helps you build out the reports you need to keep key stakeholders informed.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-header">
+            <div class="feature-number">03</div>
+            <h3 class="feature-title">Everything you need in one place</h3>
+          </div>
+          <p class="feature-description">Stop jumping from one service to another to communicate, store files, track tasks and share documents. Manage offers an all-in-one team productivity solution.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>What they've said</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial-card">
+          <img src="images/avatar-anisha.png" alt="Anisha Li" class="testimonial-avatar">
+          <h3 class="testimonial-name">Anisha Li</h3>
+          <p class="testimonial-text">"Manage has supercharged our team's workflow. The ability to maintain visibility on larger milestones at all times keeps everyone motivated."</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="images/avatar-ali.png" alt="Ali Bravo" class="testimonial-avatar">
+          <h3 class="testimonial-name">Ali Bravo</h3>
+          <p class="testimonial-text">"We have been able to cancel so many other subscriptions since using Manage. There is no more cross-channel confusion and everyone is much more focused."</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="images/avatar-richard.png" alt="Richard Watts" class="testimonial-avatar">
+          <h3 class="testimonial-name">Richard Watts</h3>
+          <p class="testimonial-text">"Manage allows us to provide structure and process. It keeps us organized and focused. I can't stop recommending them to everyone I talk to!"</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="images/avatar-shanai.png" alt="Shanai Gough" class="testimonial-avatar">
+          <h3 class="testimonial-name">Shanai Gough</h3>
+          <p class="testimonial-text">"Their software allows us to track, manage and collaborate on our projects from anywhere. It keeps the whole team in-sync without being intrusive."</p>
+        </div>
+      </div>
+      <div class="testimonial-actions">
+        <button class="btn">Get Started</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container cta-container">
+      <h2>Simplify how your team works today.</h2>
+      <button class="btn" style="background-color: white; color: var(--orange-400);">Get Started</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <img src="images/logo.svg" alt="Manage" class="footer-logo">
+        <div class="social-icons">
+          <a href="#"><img src="images/icon-facebook.svg" alt="Facebook" class="social-icon"></a>
+          <a href="#"><img src="images/icon-youtube.svg" alt="YouTube" class="social-icon"></a>
+          <a href="#"><img src="images/icon-twitter.svg" alt="Twitter" class="social-icon"></a>
+          <a href="#"><img src="images/icon-pinterest.svg" alt="Pinterest" class="social-icon"></a>
+          <a href="#"><img src="images/icon-instagram.svg" alt="Instagram" class="social-icon"></a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <a href="#">Home</a>
+        <a href="#">Pricing</a>
+        <a href="#">Products</a>
+        <a href="#">About Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Community</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="footer-form-container">
+        <form class="footer-form" id="newsletter-form">
+          <input type="email" placeholder="Updates in your inbox…" id="email-input">
+          <button type="submit">Go</button>
+          <div class="error-message" id="email-error">Please insert a valid email</div>
+        </form>
+      </div>
+      
+    </div>
+  </footer>
+
+  <script>
+ 
+  </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Ckass</title>
+    <link rel="styleheet" href="style.css">
+</head>
+<body>
+    <h1>hola</h1>
+    <h2>hola</h2>
+    <h3>hola</h3>
+    <h4>hola</h4>
+    <h5>hola</h5>
+    <h6>hola</h6>
+    <p>Silksong sale mañana</p>
+   
+    <span>modelo de cajas</span>
+    
+    <span>solo</span>
+
+    <ol type="circle">
+        <li>
+            <a href="silk">Silk</a> 
+        </li>
+        <li>
+            <a href="song">Song</a>
+        </li>
+    </ol>
+    <ul>
+        <li>
+            <a href="sec">SILKSONGS</a>
+        </li>
+
+    </ul>
+    <img src="image.png" alt="hornet from hollowkinght" width="200" height="100">
+    <img src="images/image copy.png" alt="hollowkinght" width="200" height="100">
+
+    <form action="https://youtu.be/6XGeJwsUP9c?si=wydSM4Da7kNsaPKl" method="GET">
+      <fieldset>
+        <legend>
+            Campo
+        </legend>
+        <label for="">Nombre</label>
+        <input id="Nombre" type="text" maxlength="12">
+        <br>
+        <br>
+        <label for="">Edad</label>
+        <input id="Edad" type="text" maxlength="2">
+        <br>
+        <br>
+        <label for="checkbox">Acepto terminos y condiciones</label>
+        <input type="checkbox">
+        <br>
+         <br>
+        <label for="">Password</label>
+        <input type="password">
+        <br>
+        <br>
+        <input type="color" onclick="llamado">
+
+        <br>
+
+
+        <label for="perritosInput">Selecciona una raza de perro:</label>
+        <input type="text" id="perritosInput" list="perritos" >
+        <datalist id="perritos">
+            <option value="Husky Siberiano">
+            <option value="Pastor Alemán">
+            <option value="Labrador Retriever">
+            <option value="Golden Retriever">
+            <option value="Bulldog Francés">
+            <option value="Bulldog Inglés">
+            <option value="Chihuahua">
+            <option value="Poodle">
+            <option value="Boxer">
+            <option value="Dálmata">
+            <option value="Beagle">
+            <option value="Rottweiler">
+            <option value="San Bernardo">
+            <option value="Schnauzer">
+            <option value="Corgi Galés">
+        </datalist>
+
+      </fieldset>
+    </form>
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/6XGeJwsUP9c?si=wydSM4Da7kNsaPKl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+   <script>
+    console.log("Este mensaje aparece en la consola, no en la página.");
+    console.log(2 + 3); // Muestra 5
+  </script>
+  <script>
+    let contador = 0;
+    const checkbox = document.getElementById("color");
+
+    checkbox.addEventListener("click", () => {
+    contador++;
+    console.log("Número de clics en el checkbox:", contador);
+  });
+  </script>
+</body>
+</html>
