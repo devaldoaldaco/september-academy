@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Vehículos</title>
+  <style>
+    body 
+    {
+      background-color: #0d1a2d;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container 
+    {
+      display: flex;
+      width: 900px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .card 
+    {
+      flex: 1;
+      padding: 30px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h3 
+    {
+      margin-bottom: 15px;
+      font-size: 22px;
+      text-transform: uppercase;
+    }
+
+    .card p 
+    {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
+
+    .card button 
+    {
+      background-color: #fff;
+      color: black;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card button:hover 
+    {
+      opacity: 0.8;
+    }
+
+    .sedans 
+    {
+      background-color: #e28525;
+    }
+
+    .suvs 
+    {
+      background-color: #016972;
+    }
+
+    .luxury 
+    {
+      background-color: #00403f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="card sedans">
+      <h3>Sedans</h3>
+      <p>Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city or on your next road trip.</p>
+      <button>Learn More</button>
+    </div>
+
+    <div class="card suvs">
+      <h3>SUVs</h3>
+      <p>Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation and off-road adventures.</p>
+      <button>Learn More</button>
+    </div>
+
+    <div class="card luxury">
+      <h3>Luxury</h3>
+      <p>Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury rental and arrive in style.</p>
+      <button>Learn More</button>
+    </div>
+  </div>
+
+</body>
+</html>

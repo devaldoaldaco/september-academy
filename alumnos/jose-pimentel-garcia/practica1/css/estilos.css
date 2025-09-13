@@ -1,0 +1,160 @@
+body 
+{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #232127;
+}
+
+#divMenu 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 80px;
+}
+
+.logo 
+{
+    font-size: 28px;
+    font-weight: 700;
+    color: #232127;
+}
+
+#divLinks 
+{
+    display: flex;
+    gap: 30px;
+}
+
+.link 
+{
+    font-size: 15px;
+    font-weight: 500;
+    color: #9e9aa7;
+    cursor: pointer;
+}
+
+.link:hover 
+{
+    color: #232127;
+}
+
+#divBotones 
+{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.login 
+{
+    font-size: 15px;
+    font-weight: 500;
+    color: #9e9aa7;
+    cursor: pointer;
+}
+
+.signup 
+{
+    background: #2acfcf;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    padding: 8px 22px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.signup:hover 
+{
+
+    background: #9be3e2;
+}
+
+#divHero 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 80px;
+}
+
+#divHeroTexto 
+{
+    max-width: 500px;
+}
+
+.titulo-hero 
+{
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.texto-hero 
+{
+    font-size: 18px;
+    color: #9e9aa7;
+}
+
+.boton-hero 
+{
+    background: #2acfcf;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.boton-hero:hover 
+{
+    background: #9be3e2;
+}
+
+#divHeroImagen img 
+{
+    width: 500px;
+    height: auto;
+}
+
+#divBarra 
+{
+    margin: 60px 80px;
+    padding: 40px;
+    background: #3b3054 url("../images/bg-shorten-desktop.svg") no-repeat right top;
+    background-size: cover;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#divBarra .cuadro-texto 
+{
+    flex: 1;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+.shorten-btn 
+{
+    background: #2acfcf;
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.shorten-btn:hover 
+{
+    background: #9be3e2;
+}

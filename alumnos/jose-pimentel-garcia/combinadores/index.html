@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Combinadores CSS</title>
+  <style>
+    div p 
+    {
+      color: rgb(255, 0, 204);
+    }
+
+    div > h2 
+    {
+      color: rgb(93, 95, 54);
+    }
+
+    h2 + p 
+    {
+      color: green;
+    }
+
+    h2 ~ p 
+    {
+      background-color: rgb(0, 247, 255);
+    }
+  </style>
+</head>
+<body>
+  <h1>Combinadores</h1>
+
+  <div>
+    <h2>Título dentro del div (hijo directo)</h2>
+    <p>Párrafo descendiente dentro del div</p>
+    <section>
+      <p>Párrafo descendiente (no hijo directo)</p>
+    </section>
+  </div>
+
+  <h2>título fuera del div</h2>
+  <p>Párrafo justo después del h2 (hermano adyacente)</p>
+  <p>Párrafo hermano general después del h2</p>
+  <p>Otro párrafo hermano general</p>
+</body>
+</html>

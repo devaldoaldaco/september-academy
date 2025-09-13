@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+let precioCarro1 = 20000;
+let precioCarro2 = 25000;
+console.log("Suma de precios:", precioCarro1 + precioCarro2);
+
+
+let velocidadMaxima = 220;
+let velocidadActual = 180;
+console.log("Diferencia de velocidad:", velocidadMaxima - velocidadActual);
+
+
+let costoLlanta = 150;
+let cantidadLlantas = 4;
+console.log("Costo total de llantas:", costoLlanta * cantidadLlantas);
+
+let distancia = 600; 
+let consumoLitros = 50; 
+console.log("Rendimiento km/l:", distancia / consumoLitros);
+
+
+let carrosEnFila = 17;
+let espaciosParqueo = 4;
+console.log("Carros sobrantes sin estacionar:", carrosEnFila % espaciosParqueo);
+
+
+let velocidad = 12;
+console.log("Velocidad al cuadrado:", velocidad ** 2);
+
+
+let largoCarro = 4.5;
+let anchoCarro = 2; 
+console.log("Área del carro (rectángulo):", largoCarro * anchoCarro);
+
+
+let radioLlanta = 0.35; 
+let areaLlanta = Math.PI * (radioLlanta ** 2);
+console.log("Área de la llanta:", areaLlanta);
+
+
+let ladoGarage = 5;
+console.log("Perímetro del garage:", 4 * ladoGarage);
+
+
+let tempMotorC = 90;
+let tempMotorF = (tempMotorC * 9/5) + 32;
+console.log("Temperatura del motor en Fahrenheit:", tempMotorF);
+
+
+let viajeKm = 120;
+let viajeMillas = viajeKm * 0.621371;
+console.log("Distancia del viaje en millas:", viajeMillas);
+
+
+let consumoCarro1 = 15; 
+let consumoCarro2 = 18;
+let consumoCarro3 = 20;
+let promedioConsumo = (consumoCarro1 + consumoCarro2 + consumoCarro3) / 3;
+console.log("Promedio de consumo:", promedioConsumo);
+
+
+let pasajeros = 2;
+console.log("Doble de pasajeros:", pasajeros * 2);
+
+
+let puertas = 2;
+console.log("Triple de puertas:", puertas * 3);
+
+
+let potenciaMotor = 3;
+console.log("Potencia al cuadrado:", potenciaMotor ** 2);
+console.log("Potencia al cubo:", potenciaMotor ** 3);
+
+
+let nombre = "José";
+console.log("Hola, " + nombre);
+
+
+let nombrePropietario = "José";
+let apellidoPropietario = "Pimentel";
+let nombreCompleto = nombrePropietario + " " + apellidoPropietario;
+console.log("Propietario del carro:", nombreCompleto);
+
+
+let marcaCarro = "Chevrolet";
+console.log("Cantidad de caracteres:", marcaCarro.length);
+
+
+let modeloCarro = "camaro";
+console.log("Modelo en mayúsculas:", modeloCarro.toUpperCase());
+
+
+let tipoCarro = "SUV";
+console.log("Tipo en minúsculas:", tipoCarro.toLowerCase());
+
+
+let colorCarro = "Rojo";
+console.log("Primera letra del color:", colorCarro[0]);
+
+
+let placa = "ABC123";
+console.log("Última letra/número de la placa:", placa[placa.length - 1]);
+
+
+let descripcion = "Carro deportivo de lujo";
+console.log("Palabra extraída:", descripcion.slice(6, 15)); 
+
+
+let frase = "El carro es lento";
+let nuevaFrase = frase.replace("lento", "rápido");
+console.log(nuevaFrase);
+
+
+let texto = "Este carro tiene aire acondicionado";
+console.log("¿Contiene 'aire'? :", texto.includes("aire"));
+
+
+let caracteristicas = "rápido cómodo moderno";
+let arreglo = caracteristicas.split(" ");
+console.log("Características en arreglo:", arreglo);
+
+let textoEspacios = "   Carro eléctrico   ";
+console.log("Texto sin espacios:", textoEspacios.trim());
+
+
+let aviso = "🚗 ";
+console.log(aviso.repeat(5));
+
+
+let motor = "v8";
+let motorCapitalizado = motor.charAt(0).toUpperCase() + motor.slice(1);
+console.log("Motor:", motorCapitalizado);
+
+
+let fraseCarro = "El carro rojo corre rápido";
+let letra = "r";
+let contador = 0;
+for (let i = 0; i < fraseCarro.length; i++) {
+  if (fraseCarro[i].toLowerCase() === letra) {
+    contador++;
+  }
+}
+console.log(`La letra '${letra}' aparece:`, contador, "veces");
+
+</script>
+    
+</body>
+</html>
