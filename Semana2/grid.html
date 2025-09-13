@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .grid {
+        flex-direction: column;
+        display: grid;
+        width: 400px;
+        height: 400px;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        }
+
+        .item {
+         background-color: blueviolet;
+         color: aliceblue;
+         align-items: center;
+         justify-items: center;
+         text-justify: center;
+        }
+
+        span {
+        justify-content: center;
+        
+
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+         <span class="item">1</span>
+         <span class="item">2</span>
+         <span class="item">3</span>
+         <span class="item">4</span>
+         <span class="item">5</span>
+         <span class="item">5</span>
+         <span class="item">5</span>
+         <span class="item">5</span>
+         <span class="item">5</span>
+         <span class="item">5</span>
+         <span class="item">5</span>
+         <span class="item">5</span>
+         <span class="item">5</span>
+         <span class="item">5</span>
+         <span class="item">5</span>
+         <span class="item">5</span>
+         
+         
+    </div>
+    <script>
+        {
+        let nombre = 'Anabelle';
+        let apellido = 'Rodriguez';
+        console.log(nombre, apellido);
+        }
+        {
+        const multa = 100;
+        const pi = 3.1416 ;
+        let ranma = multa*pi;
+        console.log(ranma);
+        }
+         {
+         let elefante = 50;
+         let rata = 10;
+         let resultado = elefante>rata;
+         console.log ("elefante vale:",elefante,"rata vale:",rata)
+         if(resultado === true) {console.log("En efecto el elefante es mayor");
+         }
+         }
+           {
+            let dragon=50, caballero=10; console.log(`dragon vale: ${dragon}, caballero vale: ${caballero}. ${dragon>caballero ? "En efecto el dragon es mayor" : ""}`);
+
+           }
+    </script>
+</body>
+</html>
