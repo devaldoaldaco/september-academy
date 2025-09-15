@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  background: #fafafa;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  background: #1316ad;
+  color: white;
+  padding: 3rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+}
+
+.cover video {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem;
+  text-align: justify;
+}
+
+section {
+  flex: 3;
+  min-width: 60%;
+}
+
+article {
+  margin-bottom: 2rem;
+}
+
+article img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin: 0.5rem 0;
+}
+
+/*NOTA: como el section de los articulos y el aside son hijos de main, entonces poner al aside el margen a la izq
+ayuda a separarlos y así no se tocan, para que quedé la barrita a su lado */
+aside {
+  flex: 1;
+  background: #ffd700;
+  color: black;
+  padding: 2rem;
+  border-radius: 5px;
+  margin-left: 1px;
+}
+
+aside h3 {
+  margin-top: 0;
+}
+
+footer {
+  background: #1316ad;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+footer a {
+  color: #ffd700;
+  text-decoration: none;
+}

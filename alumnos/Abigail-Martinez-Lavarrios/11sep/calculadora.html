@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="calculadora.css">
+</head>
+<body>
+  <div class="calculadora">
+    <input type="text" id="pantalla" disabled>
+    <div class="teclado">
+      <button onclick="limpiar()">C</button>
+      <button onclick="borrar()">⌫</button>
+      <button onclick="porcentaje()">%</button>
+      <button onclick="operar('/')">÷</button>
+
+      <button onclick="insertar('7')">7</button>
+      <button onclick="insertar('8')">8</button>
+      <button onclick="insertar('9')">9</button>
+      <button onclick="operar('*')">×</button>
+
+      <button onclick="insertar('4')">4</button>
+      <button onclick="insertar('5')">5</button>
+      <button onclick="insertar('6')">6</button>
+      <button onclick="operar('-')">−</button>
+
+      <button onclick="insertar('1')">1</button>
+      <button onclick="insertar('2')">2</button>
+      <button onclick="insertar('3')">3</button>
+      <button onclick="operar('+')">+</button>
+
+      <button onclick="insertar('0')" class="cero">0</button>
+      <button onclick="insertar('.')">.</button>
+      <button onclick="calcular()">=</button>
+    </div>
+  </div>
+
+  <script>
+    let pantalla = document.getElementById("pantalla");
+let operacion = "";
+let resetear = false;
+
+function insertar(valor) {
+  if (resetear) {
+    pantalla.value = "";
+    resetear = false;
+  }
+  pantalla.value += valor;
+}
+
+function operar(op) {
+  if (pantalla.value !== "") {
+    operacion += pantalla.value + " " + op + " ";
+    pantalla.value = "";
+  }
+}
+
+function calcular() {
+  if (pantalla.value !== "") {
+    operacion += pantalla.value;
+    try {
+      pantalla.value = eval(operacion);
+    } catch (e) {
+      pantalla.value = "Error";
+    }
+    operacion = "";
+    resetear = true;
+  }
+}
+
+function limpiar() {
+  pantalla.value = "";
+  operacion = "";
+}
+
+function borrar() {
+  pantalla.value = pantalla.value.slice(0, -1);
+}
+
+function porcentaje() {
+  if (pantalla.value !== "") {
+    pantalla.value = parseFloat(pantalla.value) / 100;
+  }
+}
+  </script>
+</body>
+</html>

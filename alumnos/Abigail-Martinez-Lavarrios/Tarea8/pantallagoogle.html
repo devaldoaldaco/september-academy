@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pantalla Google</title>
+    <link rel="stylesheet" href="pgoogle.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#">Gmail</a>
+        <a href="#">Imagenes</a>
+        <a href="#">Aplicaciones</a>
+        <span class="perfil" title="Perfil"></span>
+      </nav>
+    </header>
+
+    <div class="stack">
+   
+      <h1 class="logo" aria-label="marca">
+        <span class="c-a">G</span><span class="c-r">o</span><span class="c-am">o</span><span class="c-a">g</span><span class="c-v">l</span><span class="c-r">e</span>
+      </h1>
+
+      <div class="search" role="search" aria-label="Buscar">
+        <span class="icon" aria-hidden="true">🔎</span>
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Buscar..."
+          aria-label="Caja de busqueda"
+        />
+        <div class="trailing">
+          <div class="divider" aria-hidden="true"></div>
+          <button
+            type="button"
+            class="icon"
+            title="Busqueda por voz"
+            aria-label="Busqueda por voz"
+          >
+            🎤
+          </button>
+          <button
+            type="button"
+            class="icon"
+            title="Buscar por imagen"
+            aria-label="Buscar por imagen"
+          >
+            📷
+          </button>
+        </div>
+      </div>
+
+      <!-- lista de sugerencias -->
+      <ul id="suggestions"></ul>
+    </div>
+
+    <script>
+      const input = document.getElementById("searchInput");
+      const suggestions = document.getElementById("suggestions");
+
+      const palabras = [
+        "HTML tutorial",
+        "HTML5",
+        "CSS tutorial",
+        "CSS grid",
+        "JavaScript tutorial",
+        "JavaScript DOM",
+        "Python tutorial",
+        "Node.js",
+        "GitHub",
+        "Google",
+        "Google Translate",
+        "Google Maps",
+        "Google Drive",
+        "Gmail",
+        "Google Fotos",
+        "React",
+        "Angular",
+        "Vue.js",
+        "Node.js tutorial",
+        "Python ejemplos",
+        "Java tutorial",
+        "Aprender HTML",
+        "Aprender CSS",
+        "Curso JavaScript",
+        "Tutorial Python",
+        "Noticias actuales",
+        "Videos populares",
+        "Tendencias musicales",
+        "Mejores peliculas",
+        "Videos de perritos",
+        "Videos de gatos",
+        "Moda otoñal",
+        "Mejores parques",
+        "Paises mas felices",
+        "Estrenos cine",
+        "Vuelos baratos",
+        "Comida mexicana",
+        "Cantante del año",
+        "Vacaciones",
+        "Moda y consumo",
+      ];
+
+      // actualizar sugerencias
+      input.addEventListener("input", () => {
+        const value = input.value.toLowerCase();
+        suggestions.innerHTML = "";
+
+        if (value) {
+          const filtradas = palabras.filter((p) =>
+            p.toLowerCase().includes(value)
+          );
+
+          filtradas.forEach((p) => {
+            const li = document.createElement("li");
+            li.textContent = p;
+            li.addEventListener("click", () => {
+              input.value = p;
+              suggestions.innerHTML = "";
+            });
+            suggestions.appendChild(li);
+          });
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!input.contains(e.target)) suggestions.innerHTML = "";
+      });
+    </script>
+  </body>
+</html>

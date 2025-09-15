@@ -1,0 +1,66 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #b4d2ff;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+    color: #2574eb;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #a241da;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #7e26b1;
+}
+
+dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 20px;
+  width: 500px;
+  max-width: 90%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+fieldset {
+  border: 2px solid #a241da;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+legend {
+  color: #7e26b1;
+  font-weight: bold;
+}
+
+input, select {
+  margin: 5px 0;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+meter {
+  width: 200px;
+  height: 20px;
+}

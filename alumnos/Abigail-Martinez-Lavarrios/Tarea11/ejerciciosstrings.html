@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>variables string</title>
+  </head>
+
+  <body>
+    <script>
+      // 1. Nombre
+      let nombre = "Abigail";
+      console.log("Me llamo " + nombre);
+
+      // 2. Nombre y apellido
+      let apellido = "Martínez";
+      let nombreCompleto = nombre + " " + apellido;
+      console.log(nombreCompleto);
+
+      // 3. Número de caracteres
+      let cadena = "Mantarraya";
+      console.log("Caracteres:", cadena.length);
+
+      // 4. Mayúsculas
+      console.log(cadena.toUpperCase());
+
+      // 5. Minúsculas
+      console.log(cadena.toLowerCase());
+
+      // 6. Primera letra
+      console.log("Primera letra de la palabra anterior", cadena[0]);
+
+      // 7. Última letra
+      console.log("Ultima letra de la palabra anterior:", cadena[cadena.length - 1]);
+
+      // 8. Substring
+      console.log("Obtener una parte de la cadena:", cadena.slice(0, 6));
+
+      // 9. Reemplazar palabra
+      let frase = "Me gusta viajar";
+      console.log(frase.replace("viajar", "dibujar"));
+
+      // 10. Verificar palabra
+      console.log(frase.includes("gusta"));
+
+      // 11. Separar palabras
+      let palabras = frase.split(" ");
+      console.log(palabras);
+
+      // 12. Quitar espacios
+      let textoConEspacios = "   Mi gato es naranja   ";
+      console.log(textoConEspacios.trim());
+
+      // 13. Repetir texto
+      console.log("Fresas ".repeat(4));
+
+      // 14. Primera letra mayúscula
+      let palabra = "piña";
+      let capitalizada = palabra[0].toUpperCase() + palabra.slice(1);
+      console.log(capitalizada);
+
+      // 15. Contar letras
+      let texto = "pasteles";
+      let contador = 0;
+      for (let i = 0; i < texto.length; i++) {
+        if (texto[i] === "e") {
+          contador++;
+        }
+      }
+      console.log("Veces que aparece 'e'en 'pasteles':", contador);
+    </script>
+
+    s
+  </body>
+</html>

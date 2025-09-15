@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formulario con Modal</title>
+    <link rel="stylesheet" href="formmodal.css" />
+  </head>
+  <body>
+    <h1>Tarea: Formulario con barra de avance y modal</h1>
+
+    <button onclick="openModal()">Abrir formulario</button>
+    <meter id="progress" min="0" max="4" value="0"></meter>
+
+    <dialog id="formModal">
+      <h1>Formulario</h1>
+      <p>Llena tus datos paso a paso</p>
+
+      <form id="mainForm">
+        <!-- Paso 1 -->
+        <div class="step active">
+          <fieldset>
+            <legend>Datos personales</legend>
+            <label>Nombre:</label>
+            <input type="text" name="nombre" required /><br />
+            <label>Contraseña:</label>
+            <input type="password" name="password" required /><br />
+            <label>Email:</label>
+            <input type="email" name="email" required /><br />
+            <label>Teléfono:</label>
+            <input type="tel" name="tel" /><br />
+            <label>Edad:</label>
+            <input type="number" name="edad" min="0" max="120" /><br />
+            <label>Página web:</label>
+            <input type="url" name="url" />
+          </fieldset>
+          <button type="button" onclick="nextStep()">Continuar</button>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="step">
+          <fieldset>
+            <legend>Preferencias</legend>
+            <label>Color favorito:</label>
+            <input type="color" name="color" /><br />
+            <label>Selecciona una fecha:</label>
+            <input type="date" name="fecha" /><br />
+            <label>Hora de contacto preferida:</label>
+            <input type="time" name="hora" />
+          </fieldset>
+          <button type="button" onclick="nextStep()">Continuar</button>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="step">
+          <fieldset>
+            <legend>Opciones</legend>
+            <p>Género:</p>
+            <input type="radio" name="genero" value="masculino" /> Masculino
+            <input type="radio" name="genero" value="femenino" /> Femenino<br />
+
+            <p>Intereses:</p>
+            <input type="checkbox" name="intereses" value="musica" /> Música
+            <input type="checkbox" name="intereses" value="deporte" /> Deporte
+            <input type="checkbox" name="intereses" value="viajes" />
+            Viajes<br /><br />
+
+            <label>Nivel de satisfacción:</label>
+            <input type="range" name="satisfaccion" min="0" max="10" />
+          </fieldset>
+          <button type="button" onclick="nextStep()">Continuar</button>
+        </div>
+
+        <!-- Paso 4 -->
+        <div class="step">
+          <fieldset>
+            <legend>Hidden para un campo oculto</legend>
+            <input type="hidden" name="idUsuario" value="12345" />
+            <p>(Campo oculto que se envía con el formulario)</p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Acciones</legend>
+            <button
+              type="button"
+              onclick="alert('Botón cualquiera')"
+            >
+              Botón genérico
+            </button>
+            <input type="reset" value="Reiniciar formulario" />
+            <input type="submit" value="Enviar formulario" />
+          </fieldset>
+        </div>
+      </form>
+
+      <button type="button" onclick="closeModal()">Cerrar</button>
+    </dialog>
+
+    <script>
+      const modal = document.getElementById("formModal");
+      const progress = document.getElementById("progress");
+      const steps = document.querySelectorAll(".step");
+      const form = document.getElementById("mainForm");
+
+      let currentStep = 0;
+      const totalSteps = steps.length;
+
+      function openModal() {
+        modal.showModal();
+        updateProgress();
+      }
+
+      function closeModal() {
+        modal.close();
+      }
+
+      function updateProgress() {
+        progress.value = currentStep + 1; // empieza en 1
+      }
+
+      function nextStep() {
+        if (currentStep < totalSteps - 1) {
+          steps[currentStep].classList.remove("active");
+          currentStep++;
+          steps[currentStep].classList.add("active");
+          updateProgress();
+        } else {
+          closeModal();
+        }
+      }
+
+      // manejar submit
+      form.addEventListener("submit", (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        console.log(
+          "Datos enviados:",
+          Object.fromEntries(new FormData(form).entries())
+        );
+        closeModal();
+      });
+
+      // ejemplo de interacción con input tipo color
+      const color = document.querySelector('[type="color"]');
+      color.addEventListener("input", (ev) =>
+        console.log("Color elegido:", ev.target.value)
+      );
+
+      // ejemplo de comunicación con ventana
+      window.addEventListener("message", (ev) => {
+        console.log("Mensaje recibido en window:", ev.data);
+      });
+    </script>
+  </body>
+</html>
