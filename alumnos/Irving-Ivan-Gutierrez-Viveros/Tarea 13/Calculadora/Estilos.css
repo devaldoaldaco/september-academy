@@ -1,0 +1,36 @@
+.container{
+  background-color: rgba(7, 142, 232, 0.558);
+  border: 1px solid;
+  border-radius: 6%;
+  text-align: center;
+  max-width: 100%;
+  height: auto;
+}
+
+.container input{
+  text-align: center
+}
+
+.inputDato{
+  padding: 0.5rem 1rem;
+}
+
+.operador {
+margin: 1rem;
+border: 1px solid;
+font-size: medium;
+}
+
+.operador:hover{
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.resultado{
+border: 1px solid;
+border-radius: 15px;
+display: inline-block;
+background-color: white;
+padding: 0.1rem 0.5rem;
+margin-bottom: 1rem;
+}

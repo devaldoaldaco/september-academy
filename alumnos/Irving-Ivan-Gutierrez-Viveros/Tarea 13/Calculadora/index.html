@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aplicacion calculadora</title>
+    <link href="Estilos.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Aplicacion calculadora</h1>
+
+      <form id="forma">
+        <div>
+          <label for="dato1"><p>Operando A</p></label>
+          <input class="inputDato" type="number" placeholder="Primer dato" id="dato1"/>
+        </div>
+
+        <div>
+          <label for="dato2"><p>Operando B</p></label>
+          <input class="inputDato" type="number" placeholder="Segundo dato" id="dato2"/>
+        </div>
+      </form>
+      <p>
+        <button class="operador" onclick="sumar()">Sumar</button>
+        <button class="operador" onclick="restar()">Restar</button>
+        <button class="operador" onclick="multiplicar()">Multiplicar</button>
+        <button class="operador" onclick="dividir()">Dividir</button>
+      </p>
+      <div class="resultado" id="resultado"></div>
+    </div>
+
+    <script src="calculadora.js"></script>
+  </body>
+</html>
