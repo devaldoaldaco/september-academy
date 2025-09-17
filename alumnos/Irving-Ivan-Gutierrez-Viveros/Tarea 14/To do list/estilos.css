@@ -1,0 +1,52 @@
+body {
+  background-color: rgba(0, 102, 255, 0.485);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background-color: white;
+  text-align: center;
+  margin: 3rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+.container input {
+  border: 2px solid blue;
+  border-radius: 0.5rem;
+  padding: 0.7rem 4rem;
+  text-align: center;
+  margin-top: 0.6rem;
+  margin-bottom: 4rem;
+}
+
+.add {
+  background-color: rgba(12, 63, 215, 0.849);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1rem;
+  margin-left: 1rem;
+}
+
+.add:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.trash {
+  background-color: blue;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.5rem 0.6rem;
+  color: white;
+  display: flex;
+}
+
+.btn {
+  background-color: blue;
+  color: white;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+}
