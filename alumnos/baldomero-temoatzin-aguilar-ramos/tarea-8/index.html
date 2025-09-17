@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Predictivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Buscador con autocompletado</h2>
+
+    <div class="contenedor-busqueda">
+        <input type="text" id="buscador" placeholder="Escribe una fruta...">
+        <div id="resultados" class="lista-sugerencias"></div>
+    </div>
+
+    <script>
+        const frutas = [
+            "Manzana", "Mango", "Mandarina",
+            "Melón", "Melocotón", "Melisa",
+            "Banana", "Uva", "Pera",
+            "Sandía", "Kiwi", "Cereza"
+        ];
+
+        const inputBuscador = document.getElementById("buscador");
+        const cajaResultados = document.getElementById("resultados");
+
+        inputBuscador.addEventListener("input", () => {
+            const texto = inputBuscador.value.toLowerCase().trim();
+            cajaResultados.innerHTML = "";
+
+            if (texto.length > 0) {
+                const coincidencias = frutas.filter(fruta =>
+                    fruta.toLowerCase().startsWith(texto)
+                );
+
+                coincidencias.forEach(fruta => {
+                    const opcion = document.createElement("div");
+                    opcion.textContent = fruta;
+                    opcion.onclick = () => {
+                        inputBuscador.value = fruta;
+                        cajaResultados.innerHTML = "";
+                    };
+                    cajaResultados.appendChild(opcion);
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

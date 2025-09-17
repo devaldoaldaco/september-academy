@@ -1,0 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.contenedor {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  width: 350px;
+}
+h1 {
+  margin-top: 0;
+  font-size: 22px;
+  color: #333;
+  text-align: center;
+}
+.nueva-tarea {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+.nueva-tarea input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.nueva-tarea button {
+  background: #ff6b6b;
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.nueva-tarea button:hover {
+  background: #e84141;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+  background: #f9f9f9;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+li span {
+  flex: 1;
+  margin-left: 8px;
+}
+li.completada span {
+  text-decoration: line-through;
+  color: #888;
+}
+.contador {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+button.borrar {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}

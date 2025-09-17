@@ -1,0 +1,33 @@
+/* (espacio) */
+div p {
+  color: red;
+}
+
+/* hijo directo (>) */
+div > p {
+  font-weight: bold;
+  color: blue;
+}
+
+/* Hermano adyacente (+) */
+h1 + p {
+  font-size: 20px;
+  background: yellow;
+}
+
+/* Hermano general (~) */
+h2 ~ p {
+  color: green;
+  font-style: italic;
+}
+
+/* Universal (*) */
+* {
+  margin: 5px;
+  font-family: Arial, sans-serif;
+}
+
+/* Agrupar (,) */
+h1, h2 {
+  text-decoration: underline;
+}
