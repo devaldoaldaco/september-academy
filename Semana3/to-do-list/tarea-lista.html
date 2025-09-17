@@ -1,0 +1,31 @@
+<!-- basicos/tarea-lista.html -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tareas</title>
+  <link rel="stylesheet" href="tarea-lista.css">
+  <style>
+    body {
+      background-color: rgb(30, 119, 236);
+    }
+    input{
+      background-color: rgb(26, 218, 176);
+    }
+    button{
+      background-color: rgb(42, 137, 221);
+      
+    }
+  </style>
+</head>
+<body>
+  <h1>Lista de tareas</h1>
+  <input id="nuevaTarea" placeholder="Agrega uana tarea :D">
+  <button onclick="agregarTarea()">Agregar</button>
+
+  <ul id="lista"></ul>
+  <p>Completadas: <span id="comp"></span> | Incompletas: <span id="incomp"></span></p>
+
+  <script src="tarea-lista.js"></script>
+</body>
+</html>
