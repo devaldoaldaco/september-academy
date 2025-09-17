@@ -1,0 +1,118 @@
+:root{
+  --bg: #f6f8fb;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --panel: #ffffff;
+  --border: #e5e7eb;
+  --primary: #2563eb;
+  --primary-hover: #1e4fd6;
+  --ok: #16a34a;
+  --warn: #f59e0b;
+  --err: #ef4444;
+  --radius-lg: 14px;
+  --radius-sm: 10px;
+  --shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+*{box-sizing:border-box}
+
+html,body{height:100%}
+
+body{
+  margin:0;
+  font:14px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:5;
+  background:rgba(246,248,251,.9);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(6px);
+}
+
+.wrap{max-width:1080px;margin:0 auto;padding:16px}
+
+h1{margin:0;font-size:20px;font-weight:700}
+
+main .grid{display:grid;gap:16px;padding:16px 0 28px}
+
+@media(min-width:900px){
+  main .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+.card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+  padding:14px;
+}
+
+.card h2{margin:0 0 10px;font-size:16px}
+
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+
+input,textarea,select{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  background:#fff;
+  color:var(--text);
+  outline:none;
+  transition:border-color .15s ease,box-shadow .15s ease,background .15s ease;
+}
+
+input:focus,textarea:focus,select:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 3px rgba(37,99,235,.15);
+}
+
+textarea{min-height:80px;resize:vertical}
+
+button{
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  background:#fff;
+  color:var(--text);
+  cursor:pointer;
+  transition:transform .05s ease,background .15s ease,border-color .15s ease;
+}
+
+button:hover{background:#f3f4f6}
+
+button:active{transform:translateY(1px)}
+
+button.run{
+  background:var(--primary);
+  color:#fff;
+  border-color:var(--primary);
+}
+
+button.run:hover{
+  background:var(--primary-hover);
+  border-color:var(--primary-hover);
+}
+
+.out{
+  background:#fbfdff;
+  border:1px dashed var(--border);
+  border-radius:var(--radius-sm);
+  padding:10px;
+  min-height:44px;
+  white-space:pre-wrap;
+  color:#111827;
+}
+
+.muted{color:var(--muted)}
+
+.card .row>input,
+.card .row>select,
+.card .row>textarea{flex:1 1 220px}
+
+.card .row>button{flex:0 0 auto}
