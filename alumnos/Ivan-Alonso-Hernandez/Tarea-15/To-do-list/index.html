@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <h1>Lista de tareas</h1>
+        <div class="input-button">
+            <input id="inputIngresarTarea" type="text" placeholder="Introduce tarea">
+            <button id="buttonAdd" onclick="agregarTarea()">Add</button>
+        </div>
+        <p id="mensajeError"></p>
+        <ul id="listaTareas"></ul>
+        <p id="mensajeVacio">No hay tareas</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
