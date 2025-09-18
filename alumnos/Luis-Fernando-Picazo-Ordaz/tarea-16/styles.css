@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(19, 64, 66);
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+header {
+    flex: 1;
+    margin-top: 2rem;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    flex: 10;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+      width: 90%;
+    max-width: 900px;
+    height: auto;
+    background-color: rgb(162, 214, 217);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-rows: auto;
+    padding: 1rem;
+    text-align: center;
+    gap: 20px;
+}
+
+
+.pokemon {
+   display: flex;
+    flex-direction: column;
+    background-color: rgb(57, 130, 142);
+    padding: 1rem;
+
+    font-size: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.pokemon:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    border: 7px solid rgb(39, 88, 90);
+}
+
+dialog {
+    width: 200px;
+    height: 150px;
+    background-color: rgb(57, 130, 142);
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+dialog p {
+    font-size: 20px;
+}
+
+dialog[open] {
+    visibility: visible;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+dialog button {
+    margin-top: 10px;
+    padding: 5px 15px;
+    border: none;
+    background-color: rgb(39, 88, 90);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+    border: none;
+}
+
+dialog button:hover {
+    background-color: rgb(30, 70, 72);
+}
