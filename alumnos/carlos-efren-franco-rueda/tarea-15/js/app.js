@@ -65,7 +65,7 @@
 
       var btn = document.createElement('button');
       btn.className = 'del';
-      btn.textContent = '🗑';
+      btn.textContent = '🗑️';
 
       li.appendChild(span);
       li.appendChild(btn);
