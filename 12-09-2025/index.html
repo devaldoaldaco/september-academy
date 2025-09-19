@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FUNCTIONS & THIS</h1>
+    <button>CLICKME</button>
+    <script>
+        function quePedoConThis() {
+            console.log(this);
+        }
+
+        quePedoConThis();
+
+        const persona = {
+            nombre: 'ALDO',
+            saludar: function() {
+                console.log('HOLA');
+                console.log(this.nombre);
+                // this es el objeto dueno de la funcion 
+            }, // function expression
+            despedir: () => {
+                console.log(this.nombre);
+            }
+        }
+
+        persona.saludar();
+        persona.despedir();
+
+        const despedir = (event) => {
+
+            console.log(this); // objeto global
+            console.log(event.target)
+        };
+
+        const btn = document.querySelector('button');
+        btn.addEventListener('click', quePedoConThis);
+
+        const restar = (a,b) => a - b;
+
+        const resultado = restar(1,2);
+        console.log(resultado);
+    </script>
+</body>
+</html>
