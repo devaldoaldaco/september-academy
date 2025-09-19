@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #b3860d;
+        }
+
+        .tablero {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            height: 400px;
+            max-width: 400px;
+            min-width: 400px;
+            max-height: 400px;
+            min-height: 400px;
+            border: 10px solid #704214;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }  
+
+        .fila {
+            display: flex;
+            flex: 1;
+        }
+
+        .casilla {
+            flex: 1;
+        }
+
+        .negra {
+            background-color: #000000;
+        }
+
+        .blanca {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="tablero">   <!-- Usa flex-direction column para organizar las filas verticalmente  -->
+        <!-- Filas de el tablero -->
+        <div class="fila">  <!-- .fila  Usa display flex para organizar las casillas horizontalmente -->
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+        </div>
+        <div class="fila">
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+        </div>
+        <div class="fila">
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+        </div>
+        <div class="fila">
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+        </div>
+        <div class="fila">
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+        </div>
+        <div class="fila">
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+        </div>
+        <div class="fila">
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+        </div>
+        <div class="fila">
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+            <div class="casilla blanca"></div>
+            <div class="casilla negra"></div>
+        </div>
+    </div>
+</body>
+</html>

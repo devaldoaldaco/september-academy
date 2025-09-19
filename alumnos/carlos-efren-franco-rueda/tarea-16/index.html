@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PokeApi</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="contenedor">
+    <h1 class="titulo">CONEXIÓN API POKÉMON</h1>
+
+    <form id="barra" class="barra" autocomplete="off">
+      <label class="campo">
+        <span>Tipo</span>
+        <select id="seleccionarTipo">
+          <option value="">Todos</option>
+        </select>
+      </label>
+
+      <div class="buscar">
+        <input id="entrada" type="search" placeholder="Buscar por nombre o ID…" required />
+        <button class="boton-icono" type="submit" aria-label="Buscar">🔎</button>
+      </div>
+    </form>
+
+    <article id="tarjeta" class="tarjeta" hidden>
+      <header class="cabeza">
+        <img id="imagen" class="imagen" alt="Sprite de Pokémon" />
+        <div>
+          <h2 id="nombre">—</h2>
+          <p id="subtitulo" class="suave">#— • —</p>
+          <div id="etiquetasPokemon" class="etiquetas"></div>
+        </div>
+      </header>
+
+      <div class="estadisticas">
+        <div><span>HP</span><strong id="hp">—</strong></div>
+        <div><span>ATQ</span><strong id="ataque">—</strong></div>
+        <div><span>DEF</span><strong id="defensa">—</strong></div>
+        <div><span>ATQ.ESP</span><strong id="ataqueEsp">—</strong></div>
+        <div><span>DEF.ESP</span><strong id="defensaEsp">—</strong></div>
+        <div><span>VEL</span><strong id="velocidad">—</strong></div>
+      </div>
+    </article>
+
+    <p id="estado" class="estado" aria-required="false"></p>
+
+    
+    <div id="paginacion" aria-label="Paginación de resultados por tipo">
+      <button id="btn-prev" type="button">Anterior</button>
+      <span id="page-info"></span>
+      <button id="btn-next" type="button">Siguiente</button>
+    </div>
+
+    <section id="cuadricula" class="cuadricula" aria-label="Ejemplos por tipo"></section>
+  </main>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

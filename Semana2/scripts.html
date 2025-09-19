@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    
+    <h1>Lo interesante esta en la consola</h1>
+
+<script>
+    
+    {
+        //Ejercicio 1  Multiplicacion
+          const multa = 100;
+        const pi = 3.1416 ;
+        let ranma = multa*pi;
+        console.log("multiplicacion:",ranma);
+    }
+    {
+        //Ejercicio 2 Suma
+         const num1 = 15;
+        const num2 = 7;
+        const suma = num1 + num2;
+        console.log("suma:",suma);
+        console.log("");
+    }
+    {
+        //Ejercicio 3 Resta
+         const num3 = 20;
+        const num4 = 8;
+        const resta = num3 - num4;
+        console.log("resta:", resta);
+        console.log("");
+    }
+    {
+        //Ejercicio 4 Division
+        const dividendo = 50;
+        const divisor = 5;
+        const division = dividendo / divisor;
+        console.log("division:",division); 
+        console.log("");
+    }
+    {
+        //Ejercicio 5 Modulo
+        const num7 = 17;
+        const num8 = 5;
+        const modulo = num7 % num8;
+        console.log("modulo:", modulo);
+        console.log("");
+    }
+    {
+        //Ejercicio 6 Cuadrado
+         const num9 = 12;
+        const cuadrado = num9 * num9;
+        console.log("el cuadrado de 12 es:", cuadrado );
+        console.log("");
+    }
+    {
+        //Ejercicio 7 Area
+        const base = 8;
+        const altura = 6;
+        const areaRectangulo = base * altura;
+         console.log("el area de el rectangulo es:", areaRectangulo, "si tenemos en cuenta que su base mide", base, "y su altura mide", altura);
+         console.log("");
+    }
+    {
+        //Ejercicio 8 Area de un circulo
+         const radio = 5;
+        const pi = 3.1416;
+        const areaCirculo = pi * radio * radio;
+        console.log("El area de nuestro circulo es:", areaCirculo, "respetando la formula de pi por radio al cuadrado" );
+        console.log("");
+    }
+    {
+        //Ejercicio 9 Perimetro
+        const lado = 7;
+        const perimetroCuadrado = 4 * lado;
+        console.log("el perimetro de el cuadrado es:", perimetroCuadrado);
+        console.log("");
+    }
+    {
+      // Ejercicio  10 Celsius a Fahrenheit
+        const celsius = 25;
+        const fahrenheit = (celsius * 9/5) + 32;
+        console.log("si tenemos", celsius, "grados celsius, nuestros grados fahrenheit serian:", fahrenheit);
+        console.log("");
+        
+    }
+    {
+        // Ejercicio 11 Kilometros a millas
+        const km = 10;
+        const millas = km * 0.621371;
+        console.log("si tenemos", km,"kilometros son", millas,"millas");
+        console.log("");
+    }
+    {
+        // Ejercicio 12 Promedio de tres numeros
+        const a = 15;
+        const b = 25;
+        const c = 35;
+        const promedio = (a + b + c) / 3;
+        console.log("el promedio de",a, b, c,"es", promedio);
+            function sumaa(){
+        return a*b;
+         } //en este caso los valores a y b ya estan definidos pero si la funcion estuviera fuera de el bloque se tendrian que definir dentro de la misma funcion 
+         console.log(sumaa());
+         //si estuviera fuera de el bloque se definiria asi function sumaa(a = 1, b = 1) { return a * b;*} console.log(sumaa()); // 1
+         
+  
+     
+console.log(sumaa()); // 1
+console.log("");
+
+    }
+    {
+        // Ejercicio 13  Doble de un numero
+        const num10 = 9;
+        const doble = num10 * 2;
+        console.log("el doble es:", doble);
+        console.log("");
+    }
+    {
+        // Ejercicio 14 Triple de un numero
+        const num11 = 7;
+        const triple = num11 * 3;
+        console.log("el triple de 7 es:", triple);
+        console.log("");
+    }
+    {
+        // Ejercicio 15 Cuadrado y cubo de un numero
+        const num12 = 4;
+        const cuadrado2 = num12 * num12;
+        const cubo = num12 * num12 * num12;
+        console.log("el cuadrado y cubo de 4 es:",cuadrado2,cubo,"respectivamente");
+        console.log("");
+    }
+   //un objeto en general se crea
+    const auto = {
+      marca: 'Subaru',
+      puertas: '4'
+    }
+    console.log(auto['marca']);
+    console.log(auto.marca)
+    console.log(""); 
+
+        // Ejercicio 1: Mensaje de saludo
+        const nombre = "Ana";
+        console.log("Ejercicio 1 - Saludo:");
+        console.log(`Hola, ${nombre}`);
+        console.log(""); // Linea en blanco
+
+        // Ejercicio 2: Unir nombre y apellido
+        const nombre2 = "Carlos";
+        const apellido = "Gómez";
+        const nombreCompleto = nombre2 + " " + apellido;
+        console.log("Ejercicio 2 - Nombre completo:");
+        console.log(nombreCompleto);
+        console.log("");
+
+        // Ejercicio 3: Contar caracteres
+        const texto = "JavaScript";
+        const longitud = texto.length;
+        console.log("Ejercicio 3 - Longitud:");
+        console.log(`"${texto}" tiene ${longitud} caracteres`);
+        console.log("");
+
+        // Ejercicio 4: Convertir a mayusculas
+        const texto2 = "hola mundo";
+        const mayusculas = texto2.toUpperCase();
+        console.log("Ejercicio 4 - Mayusculas:");
+        console.log(mayusculas);
+        console.log("");
+
+        // Ejercicio 5: Convertir a minusculas
+        const texto3 = "PROGRAMACIÓN";
+        const minusculas = texto3.toLowerCase();
+        console.log("Ejercicio 5 - Minusculas:");
+        console.log(minusculas);
+        console.log("");
+
+        // Ejercicio 6: Primera letra
+        const texto4 = "España";
+        const primeraLetra = texto4[0];
+        console.log("Ejercicio 6 - Primera letra:");
+        console.log(`La primera letra de "${texto4}" es "${primeraLetra}"`);
+        console.log("");
+
+        // Ejercicio 7: Ultima letra
+        const texto5 = "Ordenador";
+        const ultimaLetra = texto5[texto5.length - 1];
+        console.log("Ejercicio 7 - Última letra:");
+        console.log(`La última letra de "${texto5}" es "${ultimaLetra}"`);
+        console.log("");
+
+        // Ejercicio 8: Extraer parte de texto
+        const texto6 = "JavaScript es genial";
+        const parte = texto6.substring(0, 10);
+        console.log("Ejercicio 8 - Substring:");
+        console.log(parte);
+        console.log("");
+
+        // Ejercicio 9: Reemplazar palabra
+        const texto7 = "Me gusta el café";
+        const nuevoTexto = texto7.replace("café", "té");
+        console.log("Ejercicio 9 - Reemplazar:");
+        console.log(nuevoTexto);
+        console.log("");
+
+        // Ejercicio 10: Verificar si contiene palabra
+        const texto8 = "Aprendiendo JavaScript";
+        const contiene = texto8.includes("JavaScript");
+        console.log("Ejercicio 10 - Incluye:");
+        console.log(`¿Contiene "JavaScript"? ${contiene}`);
+        console.log("");
+
+        // Ejercicio 11: Separar palabras en array
+        const texto9 = "Hola mundo desde JavaScript";
+        const palabras = texto9.split(" ");
+        console.log("Ejercicio 11 - Split:");
+        console.log(palabras);
+        console.log("");
+
+        // Ejercicio 12: Eliminar espacios
+        const texto10 = "   texto con espacios   ";
+        const sinEspacios = texto10.trim();
+        console.log("Ejercicio 12 - Trim:");
+        console.log(`"${texto10}" -> "${sinEspacios}"`);
+        console.log("");
+
+        // Ejercicio 13: Repetir texto
+        const texto11 = "¡Hola! ";
+        const repetido = texto11.repeat(3);
+        console.log("Ejercicio 13 - Repeat:");
+        console.log(repetido);
+        console.log("");
+
+        // Ejercicio 14: Primera letra mayúscula
+        const texto12 = "programación";
+        const primeraMayuscula = texto12.charAt(0).toUpperCase() + texto12.slice(1);
+        console.log("Ejercicio 14 - Primera mayuscula:");
+        console.log(primeraMayuscula);
+        console.log("");
+
+        // Ejercicio 15: Contar letras en frase
+        const frase = "El perro corre tras la pelota";
+        const letra = "e";
+        const contarLetra = (frase.split(letra).length - 1);
+        console.log("Ejercicio 15 - Contar letras:");
+        console.log(`La letra "${letra}" aparece ${contarLetra} veces en: "${frase}"`);
+
+    
+</script>
+</body>
+</html>

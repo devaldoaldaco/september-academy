@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ejercicios JS</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header><div class="wrap"><h1>Ejercicios JS</h1></div></header>
+  <main class="wrap">
+    <p class="muted">Cada tarjeta tiene sus entradas, un botón <code>Ejecutar</code> y una salida.</p>
+
+    <section class="grid">
+
+      <article class="card" id="ex1">
+        <h2>1) Formato de moneda</h2>
+        <div class="row">
+          <input id="e1-num" type="text" placeholder="1234567" />
+          <select id="e1-cur">
+            <option value="MXN">MXN</option>
+            <option value="USD">USD</option>
+          </select>
+          <button class="run" onclick="run1()">Ejecutar</button>
+        </div>
+        <div class="out" id="e1-out"></div>
+      </article>
+
+      <article class="card" id="ex2">
+        <h2>2) Frecuencia de caracteres</h2>
+        <textarea id="e2-text" placeholder="Escribe un texto"></textarea>
+        <div class="row"><button class="run" onclick="run2()">Ejecutar</button></div>
+        <div class="out" id="e2-out"></div>
+      </article>
+
+      <article class="card" id="ex3">
+        <h2>3) String de fechas → objetos</h2>
+        <input id="e3-str" type="text" value="2025-09-15, 2023-02-10, 2024-06-25" />
+        <div class="row"><button class="run" onclick="run3()">Ejecutar</button></div>
+        <div class="out" id="e3-out"></div>
+      </article>
+
+      <article class="card" id="ex4">
+        <h2>4) Emails en string → arreglo limpio y validado</h2>
+        <input id="e4-str" type="text" placeholder="a@x.com; b@y.mx; malo@@z" />
+        <div class="row"><button class="run" onclick="run4()">Ejecutar</button></div>
+        <div class="out" id="e4-out"></div>
+      </article>
+
+      <article class="card" id="ex5">
+        <h2>5) Objeto Playlist</h2>
+        <div class="row">
+          <input id="e5-titulo" placeholder="Título" />
+          <input id="e5-artista" placeholder="Artista" />
+          <input id="e5-dur" placeholder="Duración (segundos)" />
+          <button onclick="pl.addSong()">Agregar</button>
+          <button onclick="pl.removeSong()">Eliminar última</button>
+          <button class="run" onclick="pl.totalTime()">Duración total</button>
+        </div>
+        <div class="out" id="e5-out"></div>
+      </article>
+
+      <article class="card" id="ex6">
+        <h2>6) Biblioteca (prestar / devolver / disponibles)</h2>
+        <div class="row">
+          <input id="e6-titulo" placeholder="Título libro" />
+          <button onclick="lib.add()">Agregar</button>
+          <button onclick="lib.prestar()">Prestar</button>
+          <button onclick="lib.devolver()">Devolver</button>
+          <button class="run" onclick="lib.disponibles()">Ver disponibles</button>
+        </div>
+        <div class="out" id="e6-out"></div>
+      </article>
+
+      <article class="card" id="ex7">
+        <h2>7) Carrito con descuento</h2>
+        <div class="row">
+          <input id="e7-nombre" placeholder="Producto" />
+          <input id="e7-precio" placeholder="Precio" />
+          <input id="e7-cant" placeholder="Cantidad" />
+          <button onclick="cart.add()">Agregar</button>
+          <button onclick="cart.clear()">Vaciar</button>
+          <button class="run" onclick="cart.total()">Total</button>
+        </div>
+        <div class="out" id="e7-out"></div>
+      </article>
+
+      <article class="card" id="ex8">
+        <h2>8) Sistema bancario simple</h2>
+        <div class="row">
+          <input id="e8-user" placeholder="Usuario" />
+          <input id="e8-monto" placeholder="Monto" />
+          <button onclick="bank.crear()">Crear usuario</button>
+          <button onclick="bank.depos()">Depositar</button>
+          <button onclick="bank.retirar()">Retirar</button>
+          <input id="e8-user2" placeholder="A usuario (transferir)" />
+          <button onclick="bank.transferir()">Transferir</button>
+        </div>
+        <div class="out" id="e8-out"></div>
+      </article>
+
+      <article class="card" id="ex9">
+        <h2>9) Estadísticas de arreglo</h2>
+        <input id="e9-arr" placeholder="Ej: 5, 8, 2, 9" />
+        <div class="row"><button class="run" onclick="run9()">Ejecutar</button></div>
+        <div class="out" id="e9-out"></div>
+      </article>
+
+      <article class="card" id="ex10">
+        <h2>10) ¿Es palíndromo?</h2>
+        <input id="e10-str" placeholder="Efren lava la tina" />
+        <div class="row"><button class="run" onclick="run10()">Ejecutar</button></div>
+        <div class="out" id="e10-out"></div>
+      </article>
+
+      <article class="card" id="ex11">
+        <h2>11) Mayor de una lista</h2>
+        <textarea id="e11-json" placeholder='[{"nombre":"Ana","edad":20},{"nombre":"Carlos","edad":33}]'></textarea>
+        <div class="row"><button class="run" onclick="run11()">Ejecutar</button></div>
+        <div class="out" id="e11-out"></div>
+      </article>
+
+      <article class="card" id="ex12">
+        <h2>12) Romanos → Enteros</h2>
+        <input id="e12-rom" placeholder="XIV" />
+        <div class="row"><button class="run" onclick="run12()">Ejecutar</button></div>
+        <div class="out" id="e12-out"></div>
+      </article>
+
+      <article class="card" id="ex13">
+        <h2>13) Simular operación asíncrona (callback)</h2>
+        <div class="row">
+          <input id="e13-payload" placeholder="dato a consultar" />
+          <select id="e13-ok">
+            <option value="1">éxito</option>
+            <option value="0">error</option>
+          </select>
+          <button class="run" onclick="run13()">Lanzar</button>
+        </div>
+        <div class="out" id="e13-out"></div>
+      </article>
+
+      <article class="card" id="ex14">
+        <h2>14) Pipeline: filtrar → transformar → reducir</h2>
+        <input id="e14-arr" placeholder="Ej: 1,2,3,4,5,6" />
+        <div class="row"><button class="run" onclick="run14()">Procesar</button></div>
+        <div class="out" id="e14-out"></div>
+      </article>
+
+      <article class="card" id="ex15">
+        <h2>15) Login con callback</h2>
+        <div class="row">
+          <input id="e15-user" placeholder="usuario" />
+          <input id="e15-pass" placeholder="contraseña" type="password" />
+          <button class="run" onclick="run15()">Login</button>
+        </div>
+        <div class="out" id="e15-out"></div>
+      </article>
+
+      <article class="card" id="ex16">
+        <h2>16) Tareas secuenciales (setTimeout + callback)</h2>
+        <textarea id="e16-tareas" placeholder='["Cargar datos","Procesar","Guardar"]'></textarea>
+        <div class="row"><button class="run" onclick="run16()">Ejecutar</button></div>
+        <div class="out" id="e16-out"></div>
+      </article>
+
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

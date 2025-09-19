@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simple</title>
+    <style>
+        body {
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #8a7103;
+        }
+        .calculadora {
+            background: rgb(80, 80, 80);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 15px;
+            width: 220px;
+        }
+        .pantalla {
+            background: #0cd32d;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 24px;
+            height: 40px;
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            text-align: right;
+        }
+        .botones {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+        button {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 18px;
+            height: 40px;
+        }
+        button:hover {
+            background: #eee;
+        }
+        .operador {
+            background: #f0f0f0;
+        }
+        .igual {
+            background: #4caf50;
+            color: white;
+        }
+        .limpiar {
+            background: #ff5252;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculadora">
+        <div class="pantalla" id="pantalla">0</div>
+        <div class="botones">
+            <button class="limpiar" onclick="c()">C</button>
+            <button onclick="borrar()">Del</button>
+            <button class="operador" onclick="op('/')">/</button>
+            <button class="operador" onclick="op('*')">×</button>
+            
+            <button onclick="num('7')">7</button>
+            <button onclick="num('8')">8</button>
+            <button onclick="num('9')">9</button>
+            <button class="operador" onclick="op('-')">-</button>
+            
+            <button onclick="num('4')">4</button>
+            <button onclick="num('5')">5</button>
+            <button onclick="num('6')">6</button>
+            <button class="operador" onclick="op('+')">+</button>
+            
+            <button onclick="num('1')">1</button>
+            <button onclick="num('2')">2</button>
+            <button onclick="num('3')">3</button>
+            <button class="igual" onclick="calcular()">=</button>
+            
+            <button onclick="num('0')" style="grid-column: span 2">0</button>
+            <button onclick="punto()">.</button>
+        </div>
+    </div>
+
+    <script>
+        let a = '0'; //numero que se muestra actualmente en la pantalla
+        let b = ''; //almacena el primer operando cuando se presiona un operador
+        let o = null; //null o una cadena como '+' '-' '*' '/'
+        const p = document.getElementById('pantalla'); // elemento HTML donde se muestra `a`
+        
+        function actualizar() {
+            p.textContent = a;
+        }
+        
+        function num(n) {
+            a = a === '0' || a === 'Error' ? n : a + n;
+            actualizar();
+        }
+        
+        function punto() {
+            if (!a.includes('.')) {
+                a += '.';
+                actualizar();
+            }
+        }
+        
+        function op(x) {
+            if (a === 'Error') return;
+            if (o !== null) calcular();
+            b = a;
+            a = '0';
+            o = x;
+        }
+        
+        function calcular() {
+            if (!o || !b) return; //la condición (!o || !b) se cumple si o es falsy o b es falsy. || → operador OR (o lógico)
+            
+            const n1 = parseFloat(b);
+            const n2 = parseFloat(a);
+            let r;
+            
+            if (o === '+') r = n1 + n2;
+            if (o === '-') r = n1 - n2;
+            if (o === '*') r = n1 * n2;
+            if (o === '/') r = n2 !== 0 ? n1 / n2 : 'Error';
+            
+            a = r.toString();
+            o = null;
+            b = '';
+            actualizar();
+        }
+        
+        function c() {
+            a = '0';
+            b = '';
+            o = null;
+            actualizar();
+        }
+        
+        function borrar() {
+            a = a.length === 1 || a === 'Error' ? '0' : a.slice(0, -1);
+            actualizar();
+        }
+        
+        actualizar();
+    </script>
+</body>
+</html>
