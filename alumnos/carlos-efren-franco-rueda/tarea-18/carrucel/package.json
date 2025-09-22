@@ -1,0 +1,17 @@
+{
+  "name": "carrucel",
+  "version": "1.0.0",
+  "description": "this is my element component",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "lit",
+    "web",
+    "component",
+    "polymer"
+  ],
+  "author": "carlos.franco",
+  "license": "ISC"
+}
