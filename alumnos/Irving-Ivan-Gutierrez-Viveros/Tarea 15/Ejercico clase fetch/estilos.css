@@ -1,0 +1,29 @@
+body{
+  text-align: center;
+  background-color: rgba(255, 255, 0, 0.464);
+}
+
+body input{
+  text-align: center;
+  width: 25rem;
+  font-size: 2rem;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  padding: 2rem;
+}
+
+.pokemon-container{
+display: flex;
+justify-content: center;
+gap: 3rem;
+}
+
+.container-fetch{
+  border: 1px solid black;
+  border-radius: 2rem;
+  background-color: white;
+}
