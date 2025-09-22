@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            background-color: green;
+            color: white;
+            border: none;
+        }
+        button[disabled] {
+            background-color: black;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="gender">Genero:</label>
+        <input type="radio" name="gender" id="genderMale"> Male
+        <input type="radio" name="gender" id="genderFemale"> Female
+        <button>Enviar informacion</button>
+    </form>
+    <script src="./index.js"></script>
+</body>
+</html>
