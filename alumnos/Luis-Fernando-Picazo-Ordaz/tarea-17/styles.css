@@ -1,0 +1,60 @@
+/* body {
+    height: 100vh;
+    background-color: rgb(59, 59, 59);
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    height: 90%;
+    position: relative;
+}
+
+button {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    height: 100px;
+}
+
+button:hover {
+    background-color: rgba(174, 174, 174, 0.5);
+}
+
+button:active {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+button:last-child {
+    right: 0%;
+    bottom: 45%;
+}
+
+button:first-child {
+    bottom: 45%;
+    z-index: 2;
+}
+
+.imgs-container {
+    max-width: 90vw;
+    height: 100%;
+    display: flex;
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+} */
