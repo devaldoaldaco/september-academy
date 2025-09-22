@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title> Carrusel con LitElement</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body style="margin:0; background:linear-gradient(135deg,#f5f7fa,#c3cfe2); font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif">
+  <h1 style="text-align:center; color:#283593; margin:20px 0 8px">Galería (Tarea 18)</h1>
+
+  <carrusel-imagenes id="gal"></carrusel-imagenes>
+
+  <script type="module" src="./carrucel/components/carrusel-imagenes.js"></script>
+
+  <script type="module">
+    const gal = document.getElementById('gal');
+    gal.imagenes = [
+      { src: './carrucel/img/img1.jpeg', alt: 'Imagen 1', leyenda: 'Primera' },
+      { src: './carrucel/img/img2.jpeg', alt: 'Imagen 2', leyenda: 'Segunda' },
+      { src: './carrucel/img/img3.jpeg', alt: 'Imagen 3', leyenda: 'Tercera' },
+    ];
+  </script>
+</body>
+</html>
