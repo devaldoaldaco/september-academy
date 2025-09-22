@@ -1,0 +1,43 @@
+body {
+  font-family: Verdana, sans-serif;
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+.contenedor-busqueda {
+  position: relative;
+  width: 300px;
+}
+
+.contenedor-busqueda input {
+  width: 100%;
+  padding: 8px;
+  font-size: 15px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+.lista-sugerencias {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  max-height: 180px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.lista-sugerencias div {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.lista-sugerencias div:hover {
+  background-color: #efefef;
+}
