@@ -1,0 +1,100 @@
+body{
+  background-color: rgb(44, 21, 61);
+}
+
+:host 
+{
+  display: block;
+  width: 650px;
+  margin: auto;
+  font-family: sans-serif;
+  position: relative;
+  background-color: rgb(44, 37, 49);
+}
+
+.carousel 
+{
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  background: #1e1e1e;
+}
+
+.slides 
+{
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.card 
+{
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.card img 
+{
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.card h3 
+{
+  margin: 0;
+  font-size: 20px;
+}
+
+.controls 
+{
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+button 
+{
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+button:hover 
+{
+  background: rgba(0,0,0,0.9);
+}
+
+.indicators 
+{
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.indicators span {
+  width: 12px;
+  height: 12px;
+  background: #666;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.indicators span.active {
+  background: white;
+}
