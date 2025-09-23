@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    //Variables
+//1. Escribe un programa que convierta un número en formato de moneda (ejemplo: 1234567 → $1,234,567.00).
+let numero = 1234567;
+
+let moneda = numero.toLocaleString('Mx' ,{
+  style: 'currency',
+  currency: 'MXN'
+});
+
+console.log(moneda);
+
+//2. Crea un programa que guarde en una variable un texto y cuente cuántas veces aparece cada letra (frecuencia de caracteres).
+let texto = 'around the world';
+let frecuencia={};
+
+for (let letras of texto.toLowerCase()) {
+
+if (letras >= 'a' && letras <= 'z') {
+    if (frecuencia[letras]) {
+      frecuencia[letras]++;
+    } else {
+      frecuencia[letras] = 1;
+    }
+  }
+}
+console.log(frecuencia);
+//3. Dado un string con fechas en formato "2025-09-15, 2023-02-10, 2024-06-25", conviértelo en un arreglo de objetos con {año, mes, día}.
+
+let fechas = "2025-09-15, 2023-02-10, 2024-06-25";
+
+let fechasArray = fechas.split(", ");
+
+let resultado = fechasArray.map(fecha => {
+  let [año, mes, día] = fecha.split("-").map(Number);
+  return { año, mes, día };
+});
+
+console.log(resultado);
+
+//4. Declara una variable con una lista de correos electrónicos en un solo string separados por ; y conviértela en un arreglo limpio y validado.
+
+let correos = "ivan@hotmail.com ; irving@hotmail.com;  susana@outlook.com; c@@.com ; ";
+
+let arregloCorreos = correos.split(";");
+
+arregloCorreos = arregloCorreos
+  .map(correo => correo.trim())            
+  .filter(correo => correo !== "");       
+
+let regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+let correosValidados = arregloCorreos.filter(correo => regexCorreo.test(correo));
+
+console.log("Correos válidos:", correosValidados);
+
+//Objetos
+//1. Modela un objeto que represente una playlist de música. Debe tener canciones (título, artista, duración) y métodos para: 
+// •	Agregar canciones
+// •	Eliminar canciones
+// •	Calcular la duración total de la playlist
+
+const listaDeCanciones = {
+  nombre: "Lista de canciones",
+  canciones: [],
+
+  agregarCancion: function(titulo, artista, duracion) {
+    this.canciones.push({ titulo, artista, duracion });
+  },
+
+  eliminarCancion: function(titulo) {
+    this.canciones = this.canciones.filter(cancion => cancion.titulo !== titulo);
+  },
+
+  calcularDuracionTotal: function() {
+    let totalSegundos = this.canciones.reduce((total, cancion) => {
+      return total + cancion.duracion;
+    }, 0);
+
+    const minutos = Math.floor(totalSegundos / 60);
+    const segundos = totalSegundos % 60;
+    return `${minutos}m ${segundos}s`;
+  },
+
+  mostrarCanciones: function() {
+    console.log(`${this.nombre}`);
+    this.canciones.forEach((c, i) => {
+      console.log(`${i + 1}. ${c.titulo} - ${c.artista} (${c.duracion}s)`);
+    });
+  }
+};
+
+listaDeCanciones.agregarCancion("feelgood.inc", "gorillaz", 140);
+listaDeCanciones.agregarCancion("Dare", "Gorillaz", 240);
+listaDeCanciones.agregarCancion("Chamber Reflection", "Mac De Marco", 280);
+
+listaDeCanciones.mostrarCanciones();
+
+console.log("Duración playlist:", listaDeCanciones.calcularDuracionTotal());
+
+listaDeCanciones.eliminarCancion("Dare");
+
+console.log("Después de eliminar una canción:");
+listaDeCanciones.mostrarCanciones();
+console.log("Duración playlist:", listaDeCanciones.calcularDuracionTotal());
+
+
+//2. Crea un objeto que represente una biblioteca con libros. Cada libro debe tener un estado (disponible o prestado). Agrega métodos para:
+// •	Prestar un libro
+// •	Devolverlo
+// •	Mostrar la lista de libros disponibles
+
+const biblioteca = {
+  libros: [
+    { titulo: "Un saco de huesos", autor: "Stephen King", estado: "disponible" },
+    { titulo: "Padre rico padre pobre", autor: "Robert Kiyosaki, Sharon Lechter", estado: "disponible" },
+    { titulo: "1984", autor: "George Orwell", estado: "prestado" },
+  ],
+
+  prestar: function(titulo) {
+    const libro = this.libros.find(libro => libro.titulo === titulo);
+    if (!libro) {
+      console.log(`El libro "${titulo}" no existe en la biblioteca.`);
+    } else if (libro.estado === "prestado") {
+      console.log(`El libro "${titulo}" ya está prestado.`);
+    } else {
+      libro.estado = "prestado";
+      console.log(`Prestaste el libro "${titulo}".`);
+    }
+  },
+
+  debolver: function(titulo) {
+    const libro = this.libros.find(libro => libro.titulo === titulo);
+    if (!libro) {
+      console.log(`El libro "${titulo}" no pertenece a esta biblioteca.`);
+    } else if (libro.estado === "disponible") {
+      console.log(`El libro "${titulo}" ya estaba disponible.`);
+    } else {
+      libro.estado = "disponible";
+      console.log(`Devolviste el libro "${titulo}".`);
+    }
+  },
+
+  librosDisponibles: function() {
+    console.log("Libros disponibles:");
+    this.libros
+      .filter(libro => libro.estado === "disponible")
+      .forEach(libro => {
+        console.log(`- ${libro.titulo} (${libro.autor})`);
+      });
+  }
+};
+
+biblioteca.librosDisponibles();
+biblioteca.prestar("Padre rico padre pobre");
+biblioteca.librosDisponibles();
+biblioteca.debolver("Padre rico padre pobre");
+biblioteca.librosDisponibles();
+biblioteca.prestar("1984");
+
+
+
+//3. Genera un objeto que represente un carrito de compras. Además de calcular el total, debe aplicar descuentos si el total supera cierto monto.
+
+const carrito = {
+  productos: [],
+
+  agregarProducto: function(nombre, precio, cantidad) {
+    this.productos.push({ nombre, precio, cantidad });
+  },
+
+  calcularTotalSinDescuento: function() {
+    return this.productos.reduce((total, producto) => {
+      return total + (producto.precio * producto.cantidad);
+    }, 0);
+  },
+
+  calcularTotalSinDescuentoConDescuento: function() {
+    const total = this.calcularTotalSinDescuento();
+    const descuento = total > 1000 ? 0.1 : 0;
+    const totalConDescuento = total - (total * descuento);
+
+    return {
+      total: total.toFixed(2),
+      descuento: (descuento * 100) + '%',
+      totalFinal: totalConDescuento.toFixed(2)
+    };
+  },
+
+  mostrarResumen: function() {
+    console.log("Productos en el carrito:");
+    this.productos.forEach(p => {
+      console.log(`- ${p.nombre} x${p.cantidad} = $${p.precio * p.cantidad}`);
+    });
+
+    const resumen = this.calcularTotalSinDescuentoConDescuento();
+    console.log(`Total: $${resumen.total}`);
+    console.log(`Descuento: ${resumen.descuento}`);
+    console.log(`Total final: $${resumen.totalFinal}`);
+  }
+};
+
+carrito.agregarProducto("PlayStation", 800, 1);
+carrito.agregarProducto("Control", 50, 2);
+carrito.agregarProducto("Memoria", 200, 1);
+
+carrito.mostrarResumen();
+
+
+//4. Crea un objeto que represente un sistema bancario simple con usuarios y cuentas. Debe tener métodos para:
+// •	Depositar
+// •	Retirar
+// •	Transferir dinero entre cuentas
+
+const banco = {
+  usuarios: {
+    "ivan": { saldo: 1000 },
+    "irving": { saldo: 500 },
+    "pedro": { saldo: 2000 }
+  },
+
+  depositar: function(nombre, monto) {
+    if (this.usuarios[nombre]) {
+      this.usuarios[nombre].saldo += monto;
+      console.log(`Depósito exitoso. Nuevo saldo de ${nombre}: $${this.usuarios[nombre].saldo}`);
+    } else {
+      console.log(`Usuario ${nombre} no encontrado.`);
+    }
+  },
+
+  retirar: function(nombre, monto) {
+    const usuario = this.usuarios[nombre];
+    if (!usuario) {
+      console.log(`Usuario ${nombre} no encontrado.`);
+    } else if (usuario.saldo < monto) {
+      console.log(`Fondos insuficientes en la cuenta de ${nombre}.`);
+    } else {
+      usuario.saldo -= monto;
+      console.log(`Retiro exitoso. Nuevo saldo de ${nombre}: $${usuario.saldo}`);
+    }
+  },
+
+  transferir: function(origen, destino, monto) {
+    const userOrigen = this.usuarios[origen];
+    const userDestino = this.usuarios[destino];
+
+    if (!userOrigen || !userDestino) {
+      console.log(`Usuario origen o destino no válido.`);
+    } else if (userOrigen.saldo < monto) {
+      console.log(`${origen} no tiene suficiente saldo para transferir.`);
+    } else {
+      userOrigen.saldo -= monto;
+      userDestino.saldo += monto;
+      console.log(`Transferencia exitosa de $${monto} de ${origen} a ${destino}.`);
+      console.log(`Saldo de ${origen}: $${userOrigen.saldo}`);
+      console.log(`Saldo de ${destino}: $${userDestino.saldo}`);
+    }
+  },
+
+  mostrarSaldos: function() {
+    console.log("Saldos de cuentas:");
+    for (let usuario in this.usuarios) {
+      console.log(`- ${usuario}: $${this.usuarios[usuario].saldo}`);
+    }
+  }
+};
+
+banco.mostrarSaldos();
+banco.depositar("ivan", 300);
+banco.retirar("irving", 100);
+banco.transferir("pedro", "ivan", 500);
+banco.mostrarSaldos();
+
+
+//Funciones
+//1. Crea una función que reciba un arreglo de números y devuelva un objeto con estadísticas: {max, min, promedio, suma}.
+
+function estadisticas(numeros) {
+  let suma = 0;
+  let max = numeros[0];
+  let min = numeros[0];
+
+  for (let num of numeros) {
+    suma += num;
+    if (num > max) max = num;
+    if (num < min) min = num;
+  }
+
+  let promedio = suma / numeros.length;
+
+  return {
+    max,
+    min,
+    promedio,
+    suma
+  };
+}
+
+let datos = [10, 5, 8, 20, 3];
+let calcularEstadisticas = estadisticas(datos);
+console.log(calcularEstadisticas);
+
+
+
+//2. Escribe una función que valide si una cadena es un palíndromo (ignorando mayúsculas, espacios y acentos).
+
+function esPalindromo(texto) {
+  texto = texto.toLowerCase().replace(/\s+/g, '');
+
+  texto = texto
+    .replace(/á/g, 'a')
+    .replace(/é/g, 'e')
+    .replace(/í/g, 'i')
+    .replace(/ó/g, 'o')
+    .replace(/ú/g, 'u');
+
+  let reverso = texto.split('').reverse().join('');
+  return texto === reverso;
+}
+
+console.log(esPalindromo("Anita lava la tina"));
+console.log(esPalindromo("tres tristes tigres triscaban trigo en un trigal"));
+
+
+//3. Escribe una función que reciba una lista de personas ({nombre, edad}) y devuelva la persona de mayor edad.
+
+function personaMayor(personas) {
+  let mayor = personas[0];
+
+  for (let i = 1; i < personas.length; i++) {
+    if (personas[i].edad > mayor.edad) {
+      mayor = personas[i];
+    }
+  }
+
+  return mayor;
+}
+
+const lista = [
+  { nombre: "Ivan", edad: 25 },
+  { nombre: "Irving", edad: 40 },
+  { nombre: "Michael", edad: 35 }
+];
+
+console.log(personaMayor(lista)); 
+
+
+//4. Implementa una función que convierta números romanos a enteros ("XIV" → 14).
+
+function conversor(romano) {
+  const valores = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000
+  };
+
+  let total = 0;
+
+  for (let i = 0; i < romano.length; i++) {
+    let actual = valores[romano[i]];
+    let siguiente = valores[romano[i + 1]];
+
+    if (siguiente && actual < siguiente) {
+      total -= actual;
+    } else {
+      total += actual;
+    }
+  }
+
+  return total;
+}
+
+console.log(conversor("IV"));
+console.log(conversor("X"));
+console.log(conversor("MCMC"));
+
+
+//Callbacks
+//1. Crea una función que simule una operación asíncrona (como consultar una base de datos) usando setTimeout. La función debe recibir un callback que maneje éxito y error.
+
+function asincrono(callback) {
+  setTimeout(() => {
+    const error = Math.random() < 0.3;
+
+    if (error) {
+      callback("Error: algo salió mal", null);
+    } else {
+      callback(null, "Éxito: Todos los ejercicios completados, regresando valor callback queu");
+    }
+  }, 1000);
+}
+
+asincrono((error, resultado) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(resultado);
+  }
+});
+
+
+//2. Implementa una función que procese una lista de números en 3 pasos:
+// •	Filtrar (callback)
+// •	Transformar (callback)
+// •	Reducir a un valor final (callback)
+
+function procesarLista(lista, filtro, transformar, reducir, valorInicial) {
+  const filtrados = lista.filter(filtro);
+  const transformados = filtrados.map(transformar);
+  const valorFinal = transformados.reduce(reducir, valorInicial);
+  return valorFinal;
+}
+
+const numeros = [1, 2, 3, 4, 5, 6];
+
+const esPar = n => n % 2 === 0;
+const multiplicarPor10 = n => n * 10;
+const sumar = (acc, val) => acc + val;
+
+const valorFinal = procesarLista(numeros, esPar, multiplicarPor10, sumar, 0);
+
+console.log(valorFinal); 
+
+
+//3. Escribe una función que simule un sistema de login: recibe usuario y contraseña y usa un callback para responder si la validación fue exitosa o fallida.
+
+function login(usuario, contraseña, callback) {
+  const usuarioCorrecto = "admin";
+  const contraseñaCorrecta = "1234";
+
+
+
+  if (usuario === usuarioCorrecto && contraseña === contraseñaCorrecta) {
+    callback(null, "Login exitoso");
+  } else {
+    callback("Usuario o contraseña incorrectos", null);
+  }
+}
+
+login("admin", "1234", function(error, mensaje) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(mensaje);
+  }
+});
+
+login("admin", "0000", function(error, mensaje) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(mensaje);
+  }
+});
+
+
+//4. Crea una función que lea un arreglo de tareas (strings) y las ejecute una por una con setTimeout, usando un callback cuando todas hayan terminado.
+
+function ejecutarTareas(tareas, callbackFinal) {
+  let index = 0;
+
+  function ejecutarSiguiente() {
+    if (index < tareas.length) {
+      console.log(`Ejecutando: ${tareas[index]}`);
+      setTimeout(() => {
+        index++;
+        ejecutarSiguiente();
+      }, 1000);
+    } else {
+      callbackFinal();
+    }
+  }
+  ejecutarSiguiente();
+}
+
+const misTareas = ["Hacer el desayuno", "Hacer la tarea", "Estudiar"];
+
+ejecutarTareas(misTareas, function() {
+  console.log("Todas las tareas han terminado.");
+});
+
+
+  </script>
+</body>
+</html>
