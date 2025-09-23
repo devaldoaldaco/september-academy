@@ -1,0 +1,23 @@
+{
+  "name": "september-academy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devaldoaldaco/september-academy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devaldoaldaco/september-academy/issues"
+  },
+  "homepage": "https://github.com/devaldoaldaco/september-academy#readme",
+  "dependencies": {
+    "lit": "^3.3.1"
+  }
+}

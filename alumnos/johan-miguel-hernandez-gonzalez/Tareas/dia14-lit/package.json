@@ -1,0 +1,26 @@
+{
+  "name": "dia14-lit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "rutas.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^7.1.7"
+  },
+  "dependencies": {
+    "@fullcalendar/core": "^6.1.19",
+    "@fullcalendar/daygrid": "^6.1.19",
+    "@fullcalendar/google-calendar": "^6.1.19",
+    "@fullcalendar/web-component": "^6.1.19",
+    "@material/web": "^2.4.0",
+    "bootstrap-icons": "^1.13.1",
+    "lit": "^3.3.1"
+  }
+}
