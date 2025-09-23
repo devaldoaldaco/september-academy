@@ -1,0 +1,16 @@
+
+:root {
+    --color-blue-100: #060606;
+    --color-blue-80: #06121f;
+    --color-blue-60: #0c2339;
+    --color-blue-40: #123555;
+    --color-blue-20: #184876;
+    --color-border: #3d3d3dff;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    box-sizing: border-box;
+}
