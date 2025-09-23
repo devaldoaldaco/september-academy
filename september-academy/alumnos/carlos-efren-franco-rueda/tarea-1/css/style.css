@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #3b3550; 
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 20px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.user-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.logo {
+  display: block;
+  margin: 60px auto 20px;
+  width: 300px;
+  height: auto;
+}
+
+.search-box {
+  text-align: center;
+}
+.search-box input {
+  width: 600px;
+  max-width: 90%;
+  padding: 14px 20px;
+  border-radius: 24px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  color: #000;
+}
+
+.shortcuts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.shortcut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  cursor: pointer;
+}
+
+.shortcut img, .shortcut span {
+  width: 56px;
+  height: 56px;
+  background: #50486a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: white;
+}
+
+.shortcut p {
+  margin-top: 8px;
+  font-size: 12px;
+  text-align: center;
+  color: #ddd;
+}
+
+footer {
+  margin-top: auto;
+  padding: 15px;
+  text-align: right;
+}
+
+.personalizar {
+  background: #50486a;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.personalizar:hover {
+  background: #675c85;
+}

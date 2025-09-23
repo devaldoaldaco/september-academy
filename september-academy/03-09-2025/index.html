@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        ::backdrop {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        #title:hover {
+            background-color: aquamarine;
+        }
+
+        h1:hover {
+            background-color: red;
+        }
+
+        #h2 {
+            background-color: blue!important;
+        }
+    </style>
+</head>
+<body>
+    <!--HEADERS textos-->
+    <h1 id="title">titulo h1</h1>
+    <h2 id="h2" style="background-color: black; color: white;">titulo h2</h2>
+    <h3>titulo h3</h3>
+    <h4>titulo h4</h4>
+    <h5>titulo h5</h5>
+    <h6>titulo h6</h6>
+    <br>
+    <br>
+    <br>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta cumque nesciunt, nostrum harum at iure iusto sunt obcaecati reprehenderit! Pariatur delectus at neque reprehenderit explicabo voluptas inventore qui architecto sint.</p>
+    <p>1Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae laboriosam sequi dolor quis, quos similique aliquid, velit aspernatur necessitatibus accusantium sed, ab labore hic dolores vel. Minus voluptatem consectetur ipsum.</p>
+    <span>Lorem ipsum</span>
+    <span>Lorem ipsum 2</span>
+    <ol start="100">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="/nosotros">Noso&nbsp;tros</a>
+        </li>
+        <li>
+            <a href="/productos">Productos</a>
+        </li>
+    </ol>
+
+    <ul type="circle">
+        <li>
+            <a href="#titleMain">Home</a>
+        </li>
+        <li>
+            <a href="nosotros.html">Nosotros</a>
+        </li>
+        <li>
+            <a href="https://www.google.com" target="_blank">Productos</a>
+        </li>
+    </ul>
+
+    <h3 id="titleMain">TITULTO MAMALON</h3>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta cumque nesciunt, nostrum harum at iure iusto sunt obcaecati reprehenderit! Pariatur delectus at neque reprehenderit explicabo voluptas inventore qui architecto sint.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta cumque nesciunt, nostrum harum at iure iusto sunt obcaecati reprehenderit! Pariatur delectus at neque reprehenderit explicabo voluptas inventore qui architecto sint.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta cumque nesciunt, nostrum harum at iure iusto sunt obcaecati reprehenderit! Pariatur delectus at neque reprehenderit explicabo voluptas inventore qui architecto sint.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta cumque nesciunt, nostrum harum at iure iusto sunt obcaecati reprehenderit! Pariatur delectus at neque reprehenderit explicabo voluptas inventore qui architecto sint.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta cumque nesciunt, nostrum harum at iure iusto sunt obcaecati reprehenderit! Pariatur delectus at neque reprehenderit explicabo voluptas inventore qui architecto sint.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta cumque nesciunt, nostrum harum at iure iusto sunt obcaecati reprehenderit! Pariatur delectus at neque reprehenderit explicabo voluptas inventore qui architecto sint.</p>
+
+    <img src="/images/image/jpg" alt="Placeholder image" width="100px" height="100px" style="height: 200px;">
+
+
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+        </tr>
+        <tr>
+            <td>Aldo</td>
+            <td>28</td>
+        </tr>
+        <tr>
+            <td>María</td>
+            <td>25</td>
+        </tr>
+    </table>
+
+    <form>
+        <fieldset>
+            <legend>Registro</legend>
+
+            <input id="name" placeholder="NOMBRE COMPLETO" type="text" maxlength="10" pattern="[a-zA-Z0-9_]{6,12}">
+
+            <input type="submit">
+
+            <input type="checkbox" checked>
+
+            <label for="pass">Password: </label>
+            <input type="password" name="pass" id="pass">
+
+            <input type="color">
+        </fieldset>
+    </form>
+
+    <video>
+        <source src="https://youtu.be/9Gbl-IDp1qc?si=9opdAmZCWx6yJfp0">
+    </video>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/9Gbl-IDp1qc?si=9opdAmZCWx6yJfp0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15049.279116198208!2d-99.20098225!3d19.441774900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2021a6e3a3d09%3A0x9372e2224c033cb3!2sMuseo%20Soumaya!5e0!3m2!1sen!2smx!4v1757012453183!5m2!1sen!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <header></header>
+    <aside>
+        <nav>
+            <ul>
+                <li id="firstLi">item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ul>
+        </nav>
+    </aside>
+    <menu>
+        <ul>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+        </ul>
+    </menu>
+    <main></main>
+    <article>
+        <section></section>
+    </article>
+    <footer>
+        <nav>
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ul>
+        </nav>
+    </footer>
+
+    <figure>
+        <img src="foto.jpg" alt="Foto">
+        <figcaption>Descripción de la foto</figcaption>
+    </figure>
+
+    <details>
+        <summary>Ver mas ...</summary>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ex incidunt repudiandae voluptatem autem quidem, ipsum at veritatis nulla provident, possimus odit nam, maxime error hic nemo iusto molestias quaerat?</p>
+    </details>
+    
+    <button onclick="openModal()">open modal</button>
+    <dialog>
+        <h2>Este es el titulo de la modal</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A consequuntur dolor fugit nulla ipsam tempora nostrum ullam excepturi ut sequi rerum iusto labore, perferendis amet incidunt quod sit officiis voluptatibus!</p>
+        <button onclick="closeModal()">close</button>
+    </dialog>
+
+    <meter value="0.9" main="0" max="1"></meter>
+
+    <input type="text" id="perritosSearch" list="perritos">
+
+    <datalist id="perritos">
+        <option value="rott wailler">rott wailler</option>
+        <option value="san bernardo">san bernardo</option>
+        <option value="chihuahua">chihuahua</option>
+        <option value="pomeranian">pomeranian</option>
+    </datalist>
+
+    <script>
+function openModal() {
+const modal = document.querySelector('dialog');    
+modal.showModal();
+}
+
+function closeModal() {
+const modal = document.querySelector('dialog');    
+modal.close();
+}
+const form = document.querySelector('form');
+form.addEventListener('submit', (ev) => {
+ev.preventDefault();
+ev.stopPropagation();
+console.log(ev);
+});
+console.log(window);
+const color=document.querySelector('[type="color"]');
+color.addEventListener('click', (ev) => console.log(ev));
+
+// comunicacion entre window
+window.addEventListener('message', (ev) => {
+console.log(ev);
+});
+const iframe = document.querySelector('iframe')
+console.log(iframe)
+
+// esto lo debe hacer la pagina web que esta embebida en el iframe
+iframe.contentWindow.postMessage("{name: 'aldo'}");
+    </script>
+    
+</body>
+</html>

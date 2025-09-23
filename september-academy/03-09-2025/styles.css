@@ -1,0 +1,17 @@
+body {
+background-color: brown;
+}
+
+ul {
+margin: 2rem;
+color: white;
+}
+
+li {
+color: unset; /*inherit*/
+margin: unset; /*initial*/
+}
+
+#firstLi {
+color: initial;
+}

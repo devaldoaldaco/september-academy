@@ -1,0 +1,8 @@
+/* basicos/tarea-lista.css */
+li {
+  cursor: pointer;
+}
+li.completada {
+  text-decoration: line-through;
+  color: gray;
+}

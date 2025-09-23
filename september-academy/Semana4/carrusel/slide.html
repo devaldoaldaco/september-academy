@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel Simple</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: brown;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        .slideshow-container {
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .mySlides {
+            display: none;
+        }
+        
+        .mySlides.active {
+            display: block;
+        }
+        
+        .mySlides img {
+            width: 100%;
+            vertical-align: middle;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+            background-color: rgba(0,0,0,0.5);
+            border: none;
+            user-select: none;
+        }
+        
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .prev.disabled, .next.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .prev.disabled:hover, .next.disabled:hover {
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .text {
+            color: #ffffff;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            background-color: black;
+        }
+        
+        .dots {
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        
+        .dot.active, .dot:hover {
+            background-color: #717171;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+            <!-- Imagenes -->
+            <div class="mySlides active">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Montañas">
+                <div class="text">imagen 1</div>
+            </div>
+            
+            <div class="mySlides">
+                <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843" alt="Desierto">
+                <div class="text">imagen 2</div>
+            </div>
+            
+            <div class="mySlides">
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" alt="Naturaleza">
+                <div class="text">imagen 3</div>
+            </div>
+            
+            <div class="mySlides">
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Playa">
+                <div class="text">imagen 4</div>
+            </div>
+            
+            <!-- Botones anterior y siguiente -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        
+        <!-- Puntos indicadores -->
+        <div class="dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        const totalSlides = 4;
+        
+        // Inicializar el carrusel
+        showSlides(slideIndex);
+        updateButtonStates();
+        
+        // Función para avanzar/retroceder
+        function plusSlides(n) {
+            const newIndex = slideIndex + n;
+            
+            // Verificar límites
+            if (newIndex < 1 || newIndex > totalSlides) {
+                return; // No hacer nada si excede los límites
+            }
+            
+            showSlides(slideIndex += n);
+            updateButtonStates();
+        }
+        
+        // Función para ir a una slide especifica
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+            updateButtonStates();
+        }
+        
+        // Mostrar la slide actual
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) { slideIndex = slides.length; }
+            if (n < 1) { slideIndex = 1; }
+            
+            // Ocultar todas las slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            
+            // Desactivar todos los dots
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            
+            // Mostrar la slide actual y activar su dot
+            slides[slideIndex-1].classList.add("active");
+            dots[slideIndex-1].classList.add("active");
+        }
+        
+        // Actualizar estado de los botones
+        function updateButtonStates() {
+            const prevButton = document.querySelector(".prev");
+            const nextButton = document.querySelector(".next");
+            
+            // Reiniciar estados
+            prevButton.classList.remove("disabled");
+            nextButton.classList.remove("disabled");
+            
+            // Aplicar estados según la posicion
+            if (slideIndex === 1) {
+                prevButton.classList.add("disabled");
+            }
+            
+            if (slideIndex === totalSlides) {
+                nextButton.classList.add("disabled");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .seccion {
+            display: none;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .activa {
+            display: block;
+        }
+        .barra-progreso {
+            height: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .progreso {
+            height: 100%;
+            background-color: #4caf50;
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.5s;
+        }
+        .botones {
+            margin-top: 20px;
+        }
+        input, select, textarea {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario</h1>
+    
+    <!-- Barra de progreso -->
+    <div class="barra-progreso">
+        <div class="progreso" id="barra-progreso"></div>
+    </div>
+    
+    <!-- Datos personales -->
+    <div class="seccion activa" id="seccion1">
+        <h2>Datos Personales</h2>
+        
+          <label for="nombre">Nombre completo:</label>
+          <input type="text" id="nombre" placeholder="Ej: Cris Marquez" required>
+        
+          <label for="email">Correo electronico:</label>
+          <input type="email" id="email" placeholder="Ej: ids@ejemplo.com" required>
+        
+          <label for="telefono">Telefono:</label>
+          <input type="tel" id="telefono" placeholder="Ej: 55 5555555"pattern="[0-9\-]+"required>
+        
+        <div class="botones">
+            <button onclick="siguienteSeccion(1)">Continuar</button>
+        </div>
+    </div>
+    
+    <!-- Datos financieros -->
+    <div class="seccion" id="seccion2">
+        <h2>Datos Financieros</h2>
+        
+        <label for="ingresos">Ingresos mensuales:</label>
+        <input type="number" id="ingresos" min="0" placeholder="Ej: 2500" required>
+        
+        <label for="gastos">Gastos mensuales:</label>
+        <input type="number" id="gastos" min="0" placeholder="Ej: 1500" required>
+        
+        <label for="tipo-cuenta">Tipo de cuenta bancaria:</label>
+        <select id="tipo-cuenta" required>
+            <option value="">Seleccione una opcion</option>
+            <option value="ahorros">Ahorros</option>
+            <option value="corriente">Corriente</option>
+            <option value="nomina">Nomina</option>
+        </select>
+        
+        <div class="botones">
+            <button onclick="anteriorSeccion(2)">Anterior</button>
+            <button onclick="siguienteSeccion(2)">Continuar</button>
+        </div>
+    </div>
+    
+    <!-- Preferencias personales -->
+    <div class="seccion" id="seccion3">
+        <h2>Preferencias Personales</h2>
+        
+          <label for="color">Color favorito:</label>
+          <input type="color" id="color" value="#000000">
+        
+          <label for="fecha">Fecha de nacimiento:</label>
+          <input type="date" id="fecha" required>
+        
+          <label for="comentarios">Comentarios adicionales:</label>
+          <textarea id="comentarios" rows="4" placeholder="Escribe aqui cualquier comentario adicional..."></textarea>
+        
+        <div class="botones">
+            <button onclick="anteriorSeccion(3)">Anterior</button>
+            <button onclick="enviarFormulario()">Enviar</button>
+        </div>
+    </div>
+    
+    <script>
+        // Funcion para avanzar a la siguiente seccion
+        function siguienteSeccion(seccionActual) {
+            // Validar campos requeridos antes de continuar
+            if (!validarSeccion(seccionActual)) {
+                alert("Por favor, complete todos los campos requeridos.");
+                return;
+            }
+            
+            // Ocultar seccion actual
+            document.getElementById('seccion' + seccionActual).classList.remove('activa');
+            
+            // Mostrar siguiente seccion
+            document.getElementById('seccion' + (seccionActual + 1)).classList.add('activa');
+            
+            // Actualizar barra de progreso
+            actualizarProgreso(seccionActual + 1);
+        }
+        
+        // Funcion para regresar a la seccion anterio
+        function anteriorSeccion(seccionActual) {
+            // Ocultar seccion actual
+            document.getElementById('seccion' + seccionActual).classList.remove('activa');
+            
+            // Mostrar seccion anterior
+            document.getElementById('seccion' + (seccionActual - 1)).classList.add('activa');
+            
+            // Actualizar barra de progreso
+            actualizarProgreso(seccionActual - 1);
+        }
+        
+        // Funcion para actualizar la barra de progreso
+        function actualizarProgreso(seccion) {
+            // Calcular porcentaje completado (33% por sección)
+            const porcentaje = (seccion / 3) * 100;
+            
+            // Actualizar visualmente la barra de progreso
+            document.getElementById('barra-progreso').style.width = porcentaje + '%';
+        }
+        
+        // Función para validar los campos requeridos de una seccion
+        function validarSeccion(seccion) {
+            let valido = true;
+            
+            if (seccion === 1) {
+                // Validar campos de la seccion 1
+                if (!document.getElementById('nombre').value) valido = false;
+                if (!document.getElementById('email').value) valido = false;
+                if (!document.getElementById('telefono').value) valido = false;
+            } else if (seccion === 2) {
+                // Validar campos de la seccion 2
+                if (!document.getElementById('ingresos').value) valido = false;
+                if (!document.getElementById('gastos').value) valido = false;
+                if (!document.getElementById('tipo-cuenta').value) valido = false;
+            } else if (seccion === 3) {
+                // Validar campos de la seccion 3
+                if (!document.getElementById('fecha').value) valido = false;
+            }
+            
+            return valido;
+        }
+        
+        // Funcion para enviar el formulario
+        function enviarFormulario() {
+            if (validarSeccion(3)) {
+                alert("¡Formulario completado con éxito!\n\nDatos enviados para procesamiento.");
+                // Aquí normalmente se enviarían los datos a un servidor
+            } else {
+                alert("Por favor, complete todos los campos requeridos.");
+            }
+        }
+    </script>
+</body>
+</html>
