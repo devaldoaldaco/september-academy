@@ -18,7 +18,7 @@ export class Nav1 extends LitElement{
         }
 
         .nav-title > img{
-            width: 4rem;
+            width: 3rem;
         }
 
         .nav-title > svg{

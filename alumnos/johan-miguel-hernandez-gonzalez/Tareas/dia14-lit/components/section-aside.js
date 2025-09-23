@@ -109,7 +109,7 @@ export class Aside extends LitElement {
         return html`
       <div class="section-aside">
         <div class="fab-wrap">
-          <md-branded-fab label="Crear evento" @click=${this._abrirModal}>
+          <md-branded-fab label="Agendar evento" @click=${this._abrirModal}>
             <svg slot="icon" viewBox="0 0 36 36" width="24" height="24" aria-hidden="true">
               <path fill="#34A853" d="M16 16v14h4V20z"></path>
               <path fill="#4285F4" d="M30 16H20l-4 4h14z"></path>
@@ -142,7 +142,7 @@ export class Aside extends LitElement {
       ${this.modalVisible ? html`
         <div class="modal-overlay" @click=${this._overlayClick}>
           <div class="modal" @click=${e => e.stopPropagation()}>
-            <h3>Nuevo evento</h3>
+            <h3>Agendar evento</h3>
 
             <div>
               <label>Nombre</label>
