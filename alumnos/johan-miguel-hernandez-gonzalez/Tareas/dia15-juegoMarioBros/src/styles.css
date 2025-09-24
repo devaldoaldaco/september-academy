@@ -1,0 +1,29 @@
+body { 
+    margin: 0; 
+}
+
+.juego {
+  background-image: url('./images/fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60rem;
+  display: grid;
+  grid-template-rows: 35rem 15rem 10rem; 
+}
+
+mario-juego,
+puntos-juego {
+  display: block;         
+  background: transparent;
+}
+
+mario-juego{
+    grid-row: 2/3;
+}
+
+puntos-juego {
+    grid-row: 1/2;
+}
+
+
