@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script type="module">
+import { LitElement, html, css } from "https://unpkg.com/lit@3/index.js?module";
+
+class CalendarApp extends LitElement {
+  static styles = css`
+    :host {
+      display: flex;
+      font-family: Arial, sans-serif;
+      gap: 16px;
+      padding: 12px;
+    }
+    .main { flex: 1; }
+    button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      background-color: #0d6efd;
+      color: white;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    button:hover { background-color: #0b5ed7; }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.4);
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+    .modal.active { display: flex; }
+    .modal-content {
+      background: white;
+      padding: 16px;
+      border-radius: 8px;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .modal-content label { font-size: 14px; font-weight: 500; }
+    .colors {
+      display: flex;
+      gap: 4px;
+    }
+    .color-box {
+      width: 24px; height: 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+    .color-box.selected { border: 2px solid black; }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: 60px repeat(7, 1fr);
+      grid-template-rows: 60px repeat(23, 60px);
+      border: 1px solid #ccc;
+    }
+    .day-header { border-left: 1px solid #ccc; border-bottom: 1px solid #ccc; text-align: center; background: #f8f9fa; display: flex; flex-direction: column; justify-content: center; }
+    .day-name { font-weight: 600; font-size: 14px; }
+    .day-number { font-size: 12px; color: #6b7280; margin-top: 2px; }
+    .hour-cell { border-top: 1px solid #eee; text-align: right; padding-right: 4px; font-size: 12px; color: #666; }
+    .day-cell { border-left: 1px solid #eee; border-top: 1px solid #eee; position: relative; }
+    .event { position: absolute; left: 4px; right: 4px; background: rgba(13,110,253,0.2); border-left: 4px solid #0d6efd; padding: 2px 4px; font-size: 12px; border-radius: 4px; overflow: hidden; }
+
+    /* Mini mes lateral */
+    .month-view { width: 200px; padding: 8px; border-radius: 6px; background: #f8f9fa; font-size: 12px; flex-shrink: 0; }
+    .month-view header { text-align: center; font-weight: 600; margin-bottom: 4px; }
+    .month-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+    .month-day { padding: 4px; text-align: center; border-radius: 4px; background: #fff; }
+    .month-day.today { background: #0d6efd; color: white; }
+  `;
+
+  static properties = {
+    events: { type: Array },
+    showModal: { type: Boolean },
+    selectedColor: { type: String },
+    weekStart: { type: Object }
+  };
+
+  constructor() {
+    super();
+    this.events = [
+      { title: "Clase", day: 1, start: 9, end: 11, color: "#0d6efd" },
+      { title: "Reunión", day: 3, start: 14, end: 15, color: "#28a745" },
+    ];
+    this.showModal = false;
+    this.selectedColor = "#0d6efd";
+    this.weekStart = this.getStartOfWeek(new Date());
+    this.colors = ["#0d6efd","#28a745","#dc3545","#ffc107","#6f42c1"];
+  }
+
+  toggleModal() { this.showModal = !this.showModal; }
+
+  selectColor(color) { this.selectedColor = color; }
+
+  addEvent(e) {
+    e.preventDefault();
+    const title = this.renderRoot.querySelector("#title").value;
+    const day = parseInt(this.renderRoot.querySelector("#day").value);
+    const start = parseInt(this.renderRoot.querySelector("#start").value);
+    const end = parseInt(this.renderRoot.querySelector("#end").value);
+    if(title && start<end){
+      this.events = [...this.events, {title,day,start,end,color:this.selectedColor}];
+      this.showModal = false;
+    }
+  }
+
+  getStartOfWeek(date) {
+    const d = new Date(date);
+    const day = (d.getDay()+6)%7; 
+    d.setDate(d.getDate()-day);
+    d.setHours(0,0,0,0);
+    return d;
+  }
+
+  getWeekDates() {
+    const dates=[];
+    for(let i=0;i<7;i++){
+      const d=new Date(this.weekStart);
+      d.setDate(this.weekStart.getDate()+i);
+      dates.push(d);
+    }
+    return dates;
+  }
+
+  renderMonth() {
+    const today = new Date();
+    const firstDay = new Date(today.getFullYear(),today.getMonth(),1);
+    
+    const daysInMonth = new Date(today.getFullYear(),today.getMonth()+1,0).getDate();
+    const dayOffset = firstDay.getDay()===0?6:firstDay.getDay()-1;
+    const cells=[];
+    for(let i=0;i<dayOffset;i++) cells.push(html`<div class="month-day"></div>`);
+    for(let i=1;i<=daysInMonth;i++){
+      const isToday = i===today.getDate();
+      cells.push(html`<div class="month-day ${isToday?"today":""}">${i}</div>`);
+    }
+    return html`
+      <div class="month-view">
+        <header>${today.toLocaleDateString('es-ES',{month:'long',year:'numeric'})}</header>
+        <div class="month-grid">
+          <div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div><div>Dom</div>
+          ${cells}
+        </div>
+      </div>
+    `;
+  }
+
+  render() {
+    const days = ["Lun","Mar","Mié","Jue","Vie","Sáb","Dom"];
+    const hours = Array.from({length:23},(_,i)=>i+1);
+    const weekDates = this.getWeekDates();
+
+    return html`
+      <div class="main">
+        <button @click=${this.toggleModal}>Crear</button>
+
+
+        <div class="modal ${this.showModal?"active":""}">
+          <div class="modal-content">
+            <form @submit=${this.addEvent}>
+              <label>Evento</label>
+              <input id="title" type="text" required />
+              
+              <label>Día</label>
+              <select id="day">${days.map((d,i)=>html`<option value="${i+1}">${d}</option>`)}</select>
+              <label>Hora inicio</label>
+              <select id="start">${hours.map(h=>html`<option value="${h}">${h}:00</option>`)}</select>
+              <label>Hora fin</label>
+              <select id="end">${hours.map(h=>html`<option value="${h}">${h}:00</option>`)}</select>
+              <label>Color</label>
+              <div class="colors">
+                ${this.colors.map(c=>html`
+                  <div class="color-box ${this.selectedColor===c?"selected":""}" 
+                       style="background:${c}" 
+                       @click=${()=>this.selectColor(c)}></div>
+                `)}
+              </div>
+              <div style="margin-top:8px; display:flex; justify-content:flex-end; gap:4px;">
+                <button type="button" @click=${this.toggleModal}>Cancelar</button>
+                <button type="submit">Agregar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+       
+
+        <div class="calendar">
+          <div></div>
+          ${weekDates.map((d,i)=>html`
+            <div class="day-header">
+              <div class="day-name">${days[i]}</div>
+              <div class="day-number">${d.getDate()}</div>
+            </div>
+          `)}
+          ${hours.map(h=>html`
+            <div class="hour-cell">${h}:00</div>
+            ${days.map(()=>html`<div class="day-cell"></div>`)}
+          `)}
+          ${this.events.map(ev=>html`
+            <div class="event"
+              style="grid-column:${ev.day+1}; grid-row:${ev.start+1}/${ev.end+1};
+                     background:${ev.color}33; border-left:4px solid ${ev.color}">
+              ${ev.title}
+            </div>
+          `)}
+        </div>
+      </div>
+
+     
+
+      ${this.renderMonth()}
+    `;
+  }
+}
+
+customElements.define("calendar-app", CalendarApp);
+</script>
+</head>
+<body>
+  <calendar-app></calendar-app>
+</body>
+</html>

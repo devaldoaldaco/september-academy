@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #0b0c10, #1f2833);
+  color: #c5c6c7;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #66fcf1;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  animation: fadeIn 5s ease-in-out;
+}
+
+th, td {
+  border: 1px solid #45a29e;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #1f2833;
+  color: #66fcf1;
+}
+
+td img {
+  max-width: 150px;
+  border-radius: 10px;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #45a29e;
+  }
+
+  td {
+    text-align: left;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+    color: #66fcf1;
+  }
+}
+
+.cometa {
+  position: fixed;
+  top: -50px;
+  left: -50px;
+  width: 4px;
+  height: 80px;
+  background: linear-gradient(180deg, rgb(255, 225, 0), transparent);
+  opacity: 0.7;
+  transform: rotate(45deg);
+  animation: comet 6s linear infinite;
+}
+
+@keyframes comet {
+  0% {
+    transform: translate(-100px, -100px) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(120vw, 120vh) rotate(45deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(150vw, 150vh) rotate(45deg);
+    opacity: 0;
+  }
+}

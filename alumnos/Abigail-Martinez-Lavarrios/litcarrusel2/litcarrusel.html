@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Carrusel con Lit</title>
+  <script type="module">
+    import { LitElement, html, css } from "https://unpkg.com/lit@3/index.js?module";
+
+    class ImageCarousel extends LitElement {
+      static properties = {
+        slideIndex: { type: Number },
+        images: { type: Array }
+      };
+
+      static styles = css`
+        * { box-sizing: border-box; }
+
+        .slideshow-container {
+          max-width: 1000px;
+          position: relative;
+          margin: auto;
+        }
+
+        .mySlides {
+          display: none;
+        }
+
+        .prev, .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          margin-top: -22px;
+          padding: 16px;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+        }
+
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+          background-color: rgba(0,0,0,0.8);
+        }
+
+        .text {
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 8px;
+          width: 100%;
+          text-align: center;
+        }
+
+        .numbertext {
+          color: #f2f2f2;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: absolute;
+          top: 0;
+        }
+
+        .dot {
+          cursor: pointer;
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+          background-color: #717171;
+        }
+
+        .fade {
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+          from {opacity: .4}
+          to {opacity: 1}
+        }
+      `;
+
+      constructor() {
+        super();
+        this.slideIndex = 0;
+        // aquí pones tus imágenes y captions
+        this.images = [
+          { src: "img1.jpeg", caption: "Caption Text" },
+          { src: "img2.jpeg", caption: "Caption Two" },
+          { src: "img3.jpeg", caption: "Caption Three" },
+          { src: "img4.jpg", caption: "Caption Four" }
+        ];
+      }
+
+      plusSlides(n) {
+        this.showSlides(this.slideIndex + n);
+      }
+
+      currentSlide(n) {
+        this.showSlides(n);
+      }
+
+      showSlides(n) {
+        if (n >= this.images.length) { this.slideIndex = 0; }
+        else if (n < 0) { this.slideIndex = this.images.length - 1; }
+        else { this.slideIndex = n; }
+      }
+
+      render() {
+        return html`
+          <div class="slideshow-container">
+            ${this.images.map(
+              (img, i) => html`
+                <div class="mySlides fade" style="display:${i === this.slideIndex ? 'block' : 'none'}">
+                  <div class="numbertext">${i + 1} / ${this.images.length}</div>
+                  <img src="${img.src}" style="width:100%">
+                  <div class="text">${img.caption}</div>
+                </div>
+              `
+            )}
+
+            <a class="prev" @click=${() => this.plusSlides(-1)}>&#10094;</a>
+            <a class="next" @click=${() => this.plusSlides(1)}>&#10095;</a>
+          </div>
+
+          <br>
+
+          <div style="text-align:center">
+            ${this.images.map(
+              (_, i) => html`
+                <span class="dot ${i === this.slideIndex ? 'active' : ''}"
+                      @click=${() => this.currentSlide(i)}></span>
+              `
+            )}
+          </div>
+        `;
+      }
+    }
+
+    customElements.define("image-carousel", ImageCarousel);
+  </script>
+</head>
+<body>
+  <h1>Ejercicio carrusel con Lit Element</h1>
+  <br />
+  <image-carousel></image-carousel>
+</body>
+</html>

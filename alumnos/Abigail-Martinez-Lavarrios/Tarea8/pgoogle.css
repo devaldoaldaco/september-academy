@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: white;
+    color: inherit;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 50px;
+    font-size: 14px;
+}
+
+header nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #5f6368;
+}
+
+header nav .perfil {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-left: 15px;
+    border-radius: 50%;
+    background: linear-gradient(rgb(111, 111, 255), rgb(255, 146, 164));
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.logo {
+    font-size: 80px;
+    margin-bottom: 30px;
+}
+
+.c-a { color: #4285F4; }
+.c-r { color: #DB4437; }
+.c-am { color: #F4B400; }
+.c-v { color: #0F9D58; }
+
+.search {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    padding: 5px 15px;
+    box-shadow: 0 1px 6px rgba(32,33,36,.28);
+    background-color: white;
+}
+
+.search > input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 8px;
+}
+
+.search .trailing {
+    display: flex;
+    align-items: center;
+}
+
+.search .divider {
+    width: 1px;
+    height: 24px;
+    background-color: #dfe1e5;
+    margin: 0 10px;
+}
+
+.search button.icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+#suggestions {
+    list-style: none;
+    width: 500px;
+    margin-top: 0;
+    padding: 0;
+    border: 1px solid #dfe1e5;
+    border-top: none;
+    border-radius: 0 0 24px 24px;
+    background-color: white;
+    max-height: 250px;
+    overflow-y: auto;
+    box-shadow: 0 1px 6px rgba(32,33,36,.28);
+    position: absolute;
+    z-index: 10;
+}
+
+#suggestions li {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#suggestions li:hover {
+    background-color: #f1f3f4;
+}
+
+/* Conectores */
+#suggestions li + li {
+    border-top: 1px solid #e0e0e0;
+}
+
+.ejemplo-herencia {
+    color: rgb(227, 106, 248);
+    margin-top: 50px;
+}
+
+.ejemplo-herencia span {
+    color: inherit;
+}
+
+.ejemplo-herencia em {
+    color: initial;
+}
+
+.ejemplo-herencia strong {
+    color: unset;
+}
