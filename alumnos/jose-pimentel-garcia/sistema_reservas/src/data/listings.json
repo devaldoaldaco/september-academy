@@ -1,0 +1,38 @@
+[
+  {
+    "id": "apt-centro-1",
+    "title": "Depto moderno en el Centro",
+    "location": "Ciudad de México",
+    "type": "Departamento",
+    "price": 1200,
+    "img": "/images/depcdmx.jpg",
+    "desc": "A pasos de restaurantes y museos. WiFi rápido."
+  },
+  {
+    "id": "casa-playa-1",
+    "title": "Casa frente al mar",
+    "location": "Cancún",
+    "type": "Casa",
+    "price": 2600,
+    "img": "/images/casaplaya.jpg",
+    "desc": "Vista al océano, terraza amplia y alberca."
+  },
+  {
+    "id": "cabaña-bosque-1",
+    "title": "Cabaña en el bosque",
+    "location": "Valle de Bravo",
+    "type": "Cabaña",
+    "price": 1500,
+    "img": "/images/cabaña.jpg",
+    "desc": "Rústica y acogedora, ideal para desconectarse."
+  },
+  {
+    "id": "loft-roma-1",
+    "title": "Loft en colonia Roma",
+    "location": "Ciudad de México",
+    "type": "Loft",
+    "price": 1700,
+    "img": "/images/loft.jpg",
+    "desc": "Estilo industrial, cerca de cafés y parques."
+  }
+]
